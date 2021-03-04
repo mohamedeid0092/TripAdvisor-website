@@ -1,0 +1,87 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-body ">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- <agm-map *ngFor="let item of hotel.map" [latitude]="item.latitude" [longitude]="item.longitude"></agm-map> -->
+            <agm-map [latitude]="latitude" [longitude]="longitude"></agm-map>
+          </div>
+          <div class="col-md-6 pl-2">
+            <h2 class='text-danger'>{{hotel.name}}</h2>
+            <div>
+              <span class="font-weight-bold">Hotel Class: </span>
+              <span>{{getClass()}}</span>
+            </div>
+            <div>
+              <span class="font-weight-bold">Price per Night: </span>
+              <span class='text-success'>{{theBestDeal.obj[0].pricePerNight | number: "1.0"}} EGP</span>
+            </div>
+            <div>
+            </div>
+            
+            <span class="font-weight-bold">Aminities: </span><br>
+            <div class='row'>
+              <div class='d-inline col-6'>
+                <span *ngFor='let amt of hotel.amenities.slice(0,(hotel.amenities.length/2)+1)'>
+                  <span><i class="fas fa-check  pl-3"></i><span class='text-primary amnt'>
+                      {{getAmt(amt)}}</span></span><br>
+                </span>
+              </div>
+
+              <div class='d-inline col-6'>
+                <span *ngFor='let amt of hotel.amenities.slice((hotel.amenities.length/2)+1,hotel.amenities
+                .length)'>
+                  <span><i class="fas fa-check"></i><span class='text-primary amnt pr-3'>
+                      {{getAmt(amt)}}</span></span><br>
+                </span>
+              </div>
+              <!-- <span *ngFor='let amt of hotel.amenities; let index =i'>{{getAmt(amt)}} <span *ngIf="index  !== hotel.amenities.length-1">-</span></span> -->
+            </div>
+
+            <div>
+              <span class="font-weight-bold">Hotel Style : </span>
+              <span *ngFor="let style of hotel.style">
+                <span>{{style}} - </span>
+              </span>
+            </div>
+
+
+            <div>
+              <span class="font-weight-bold">Distance: </span><br>
+              <span class="font-weight-bold pl-3">From Main Street: </span>
+              <span>{{hotel.distance.mainStreet}} Km</span><br>
+              <span class="font-weight-bold pl-3">From Beach : </span>
+              <span>{{hotel.distance.beach}} Km</span><br>
+              <span class="font-weight-bold pl-3">From Park : </span>
+              <span>{{hotel.distance.park}} Km</span> <br>
+              <span class="font-weight-bold pl-3">From City Center : </span>
+              <span>{{hotel.distance.cityCenter}} Km</span><br>
+            </div>
+
+            <div>
+              <span class="font-weight-bold">Language Spoken : </span>
+              <span *ngFor="let lang of hotel.languageSpoken ;let index=i">
+                <span>{{getLanguageSpoken(lang)}} - </span>
+              </span>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="mr-3 float-end btn btn-warning button-raduis text-center" data-toggle="modal"
+          data-target="#booking" (click)='bookNow()'>
+          Book Now
+        </button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+      <app-booking></app-booking>
+
+
+    </div>
+  </div>
+</div>

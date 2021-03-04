@@ -1,0 +1,133 @@
+<div class="bg-white p-3 category border">
+
+  <div>
+    <h2 class="d-inline-block mb-3">Establishment Type</h2>
+    <form class="mb-4">
+      <div class="custom-checkbox" *ngFor='let estb of categories.Establishment'>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" alt='estb' name={{estb.name}} id={{estb._id}} (change)='Filter($event)' />
+            <span class="label-text"><span class="check-label-font">
+                {{estb.name}} </span></span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr />
+
+  <div>
+    <h2 class="d-inline-block mb-3">Restaurant features</h2>
+
+    <form class="mb-4">
+      <div class="custom-checkbox" *ngFor='let feature of categories.features'>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" alt='popular' name={{feature.name}} id={{feature._id}} (change)='Filter($event)' />
+            <span class="label-text"><span class="check-label-font">{{feature.name}}</span></span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr />
+
+  <div>
+    <h2 class="d-inline-block mb-3">Meals </h2><br>
+
+    <form class="mb-4">
+      <div class="custom-checkbox" *ngFor='let meals of categories.meals'>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" alt='distance' name={{meals.name}} id={{meals._id}} (change)='Filter($event)' />
+            <span class="label-text"><span class="check-label-font"> {{meals.name}}</span></span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr />
+
+
+  <div>
+    <h2 class="d-inline-block mb-3">Price </h2>
+
+    <form class="mb-4">
+      <div class="custom-checkbox" *ngFor='let price of categories.Pricerange'>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" alt='aminities' name={{price.name}} id={{price._id}} (change)='Filter($event)' />
+            <span class="label-text"><span class="check-label-font">{{price.name}}</span></span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <hr />
+  <div>
+    <h2 class="d-inline-block mb-3">Cuisine </h2>
+
+    <form class="mb-4">
+      <div class="custom-checkbox" *ngFor='let cuisine of sliceCuisine()'>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" name={{cuisine.name}} id={{cuisine._id}} (change)='Filter($event)' />
+            <span class="label-text"><span class="check-label-font">{{cuisine.name}}</span></span>
+          </label>
+        </div>
+      </div>
+      <a  id="cuisine" role="button" (click)="getMore($event)"  class="font-weight-bold text-body small dropdown-toggle"
+        >Show {{ moreCuisine ? "Less" : "More" }}</a>
+    </form>
+  </div>
+  <hr />
+
+  <div>
+    <h2 class="d-inline-block mb-3">Dishes </h2>
+
+    <form class="mb-4">
+      <div class="custom-checkbox" *ngFor='let dish of sliceDishes()'>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" name={{dish.name}} id={{dish._id}} (change)='Filter($event)' />
+            <span class="label-text"><span class="check-label-font">{{dish.name}}</span></span>
+          </label>
+        </div>
+      </div>
+      <a  id="dishes" role="button" (click)="getMore($event)"  class="font-weight-bold text-body small dropdown-toggle"
+        >Show {{ moreCuisine ? "Less" : "More" }}</a>
+    </form>
+  </div>
+
+  <div>
+    <h2 class="d-inline-block mb-3">Dietary Restrictions </h2>
+
+    <form class="mb-4">
+      <div class="custom-checkbox" *ngFor='let restrecion of categories.DietaryRestrictions'>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" name={{restrecion.name}} id={{restrecion._id}} (change)='Filter($event)' />
+            <span class="label-text"><span class="check-label-font">{{restrecion.name}}</span></span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div>
+    <h2 class="d-inline-block mb-3">Good for </h2>
+
+    <form class="mb-4">
+      <div class="custom-checkbox" *ngFor='let goodFor of categories.goodFor'>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" name={{goodFor.name}} id={{goodFor._id}} (change)='Filter($event)' />
+            <span class="label-text"><span class="check-label-font">{{goodFor.name}}</span></span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>

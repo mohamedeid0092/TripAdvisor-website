@@ -1,0 +1,28 @@
+         
+            .item{
+                color:black;
+                font-size: 17px; 
+                transition: .1s ease;
+                cursor: pointer;
+            }
+            .seconditem{
+               color:black;
+               cursor: pointer; 
+            }
+            .seconditem:hover{
+                color:rgb(121, 118, 118);
+            }
+            
+            .item:hover{
+                border-color: black;
+                color: black;
+                border: 2px solid black;
+                border-radius: 10px;
+                
+                
+            }
+            .post-icon{
+                color: black;
+                background-color: white;
+                font-size:20px;
+            }

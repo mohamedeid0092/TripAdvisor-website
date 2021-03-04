@@ -1,0 +1,136 @@
+$searchWidth : 27rem;
+$searchHeight : 3.4rem;
+$iFontSize : 1rem;
+$borderColor:#efefef;
+$background: #f2f2f2;
+$hotelsDivheight :17rem;
+
+body {
+  background-color: $background;
+}
+
+.row {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+[class*="col-"] {
+  padding: 0px;
+  margin: 0px;
+}
+
+i {
+  font-size: $iFontSize;
+}
+
+
+a:link a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.form-check {
+  padding: 0;
+}
+
+
+
+
+.dot {
+  height: 1rem;
+  width: 1rem;
+  background-color: #05ac6f;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.hotel-div {
+  &:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  }
+}
+
+.button-raduis {
+  border-radius: 12px;
+  color: black;
+  font-size: large;
+
+}
+
+.check {
+  font-size: 1.2rem;
+}
+
+.style-like {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 3;
+  font-size: larger;
+  width: 2rem;
+  height: 2rem;
+  color: rgba(214, 149, 149, 0.295);
+}
+
+.heart-color:hover {
+  color: rgb(236, 87, 87);
+}
+
+.style-slider {
+  z-index: 1;
+}
+
+
+.badge-style {
+  position: absolute;
+  top: 1rem;
+  left: 0px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.badge-text {
+  font-size: normal;
+}
+
+#lamp {
+  font-size: xxx-large;
+}
+
+.index-3 {
+  position: absolute;
+  bottom: 4rem;
+  left: 2px;
+  z-index: 3;
+  cursor: pointer;
+  color: white;
+}
+
+.info {
+  background-color: #faf1ed;
+}
+
+.display {
+  display: block;
+}
+
+.col-1-change {
+  width: 8.33%;
+}
+
+@media only screen and (max-width: 900px) {
+  .col-1-change {
+    width: 0%;
+    display: none;
+  }
+
+  body {
+    font-size: 50%;
+  }
+}

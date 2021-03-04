@@ -1,0 +1,163 @@
+<div class="modal fade" id="example2Modal" tabindex="-1" role="dialog" aria-labelledby="example2ModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-body ">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- <agm-map *ngFor="let item of hotel.map" [latitude]="item.latitude" [longitude]="item.longitude"></agm-map> -->
+            <agm-map [latitude]="latitude" [longitude]="longitude"></agm-map>
+          </div>
+          <div class="col-md-6 pl-2">
+            <h2 class='text-danger'>{{resturant.name}}</h2>
+            <div>
+              <span class="font-weight-bold">Address : </span>
+              <span> {{resturant.address.streetname}} street</span>
+            </div>
+            <div>
+              <span class="font-weight-bold">website: </span>
+              <a href={{resturant.contact.website}}><span class='text-success'>visit Us</span></a>
+            </div>
+            <div>
+              <span class="font-weight-bold">Open hours : </span>
+              <span> {{resturant.contact.openhours}}</span>
+            </div>
+
+            <div>
+              <span class="font-weight-bold">Features : </span>
+              <div class="row">
+                <div class='d-inline col-6'>
+                  <span *ngFor='let feature of resturant.features.slice(0,(resturant.features.length/2)+1)'>
+                    <span><i class="fas fa-check  pl-3"></i><span class='text-primary amnt'>
+                        {{getfeatures(feature)[0].name}}</span></span><br> </span>
+                </div>
+                <div class='d-inline col-6'>
+                  <span
+                    *ngFor='let feature of resturant.features.slice((resturant.features.length/2)+1,resturant.features.length)'>
+                    <span><i class="fas fa-check  pl-3"></i><span class='text-primary amnt'>
+                        {{getfeatures(feature)[0].name}}</span></span><br> </span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <span class="font-weight-bold">Meals : </span>
+              <div class="row">
+                <div class='d-inline col-6'>
+                  <span *ngFor='let meal of resturant.meals.slice(0,(resturant.meals.length/2)+1)'>
+                    <span><i class="fas fa-stroopwafel pl-3"></i><span class='text-primary amnt'>
+                        {{getMeals(meal)[0].name}}</span></span><br> </span>
+                </div>
+                <div class='d-inline col-6'>
+                  <span *ngFor='let meal of resturant.meals.slice((resturant.meals.length/2)+1,resturant.meals.length)'>
+                    <span><i class="fas fa-stroopwafel pl-3"></i><span class='text-primary amnt'>
+                        {{getMeals(meal)[0].name}}</span></span><br> </span>
+                </div>
+              </div>
+            </div>
+            <div>
+            </div>
+
+            <span class="font-weight-bold">Establishment : </span><br>
+            <div class="row">
+              <div class='d-inline col-6'>
+                <span *ngFor='let estb of resturant.Establishment.slice(0,(resturant.Establishment.length/2)+1)'>
+                  <span><i class="fas fa-certificate  pl-3"></i><span class='text-primary amnt'>
+                      {{getEstablish(estb)[0].name}}</span></span><br> </span>
+              </div>
+              <div class='d-inline col-6'>
+                <span
+                  *ngFor='let estb of resturant.Establishment.slice((resturant.Establishment.length/2)+1,resturant.Establishment.length)'>
+                  <span><i class="fas fa-certificate  pl-3"></i><span class='text-primary amnt'>
+                      {{getEstablish(estb)[0].name}}</span></span><br> </span>
+              </div>
+            </div>
+
+            <span class="font-weight-bold">Cuisine :</span><br>
+            <div class="row">
+              <div class='d-inline col-6'>
+                <span *ngFor='let estb of resturant.cuisine.slice(0,(resturant.cuisine.length/2)+1)'>
+                  <span><i class="fas fa-mortar-pestle  pl-3"></i><span class='text-primary amnt'>
+                      {{getCuisine(estb)[0].name}}</span></span><br> </span>
+              </div>
+              <div class='d-inline col-6'>
+                <span *ngFor='let estb of
+                  resturant.cuisine.slice((resturant.cuisine.length/2)+1,resturant.cuisine.length)'>
+                  <span><i class="fas fa-mortar-pestle  pl-3"></i><span class='text-primary amnt'>
+                      {{getCuisine(estb)[0].name}}</span></span><br> </span>
+              </div>
+            </div>
+
+            <span class="font-weight-bold">Dishs :</span><br>
+            <div class="row">
+              <div class='d-inline col-6'>
+                <span *ngFor='let dish of resturant.dishes.slice(0,(resturant.dishes.length/2)+1)'>
+                  <span><i class="fas fa-disease  pl-3"></i><span class='text-primary amnt'>
+                      {{getDishes(dish)[0].name}}</span></span><br> </span>
+              </div>
+              <div class='d-inline col-6'>
+                <span
+                  *ngFor='let dish of resturant.dishes.slice((resturant.dishes.length/2)+1,resturant.dishes.length)'>
+                  <span><i class="fas fa-disease pl-3"></i><span class='text-primary amnt'>
+                      {{getDishes(dish)[0].name}}</span></span><br> </span>
+              </div>
+            </div>
+
+
+            <span class="font-weight-bold">Dietary Restrictions :</span><br>
+            <div class="row">
+              <div class='d-inline col-6'>
+                <span
+                  *ngFor='let diR of resturant.DietaryRestrictions.slice(0,(resturant.DietaryRestrictions.length/2)+1)'>
+                  <span><i class="fas fa-check pl-3"></i><span class='text-primary amnt'>
+                      {{getDir(diR)[0].name}}</span></span><br> </span>
+              </div>
+              <div class='d-inline col-6'>
+                <span
+                  *ngFor='let diR of
+                   resturant.DietaryRestrictions.slice((resturant.DietaryRestrictions.length/2)+1,resturant.DietaryRestrictions.length)'>
+                  <span><i class="fas fa-check pl-3"></i><span class='text-primary amnt'>
+                      {{getDir(diR)[0].name}}</span></span><br> </span>
+              </div>
+            </div>
+
+            <span class="font-weight-bold">Menu :</span><br>
+            <div class="row">
+              <div class='d-inline col-6'>
+                <span *ngFor='let dish of resturant.menu.slice(0,(resturant.menu.length/2)+1)'>
+                  <span><i class="fas fa-concierge-bell pl-3"></i><span class='text-primary amnt'>
+                      {{dish}}</span></span><br> </span>
+              </div>
+              <div class='d-inline col-6'>
+                <span *ngFor='let dish of resturant.menu.slice((resturant.menu.length/2)+1,resturant.menu.length)'>
+                  <span><i class="fas fa-concierge-bell pl-3"></i><span class='text-primary amnt'>
+                      {{dish}}</span></span><br> </span>
+              </div>
+            </div>
+
+            <span class="font-weight-bold">Good For :</span><br>
+            <div class="row">
+              <div class='d-inline col-6'>
+                <span *ngFor='let good of resturant.goodFor.slice(0,(resturant.goodFor.length/2)+1)'>
+                  <span><i class="far fa-star pl-3"></i><span class='text-primary amnt'>
+                      {{getgoodFor(good)[0].name}}</span></span><br> </span>
+              </div>
+              <div class='d-inline col-6'>
+                <span *ngFor='let good of
+                   resturant.goodFor.slice((resturant.goodFor.length/2)+1,resturant.goodFor.length)'>
+                  <span><i class="far fa-star pl-3"></i><span class='text-primary amnt'>
+                      {{getgoodFor(good)[0].name}}</span></span><br> </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning " data-dismiss="modal">OK</button>
+      </div>
+
+
+    </div>
+  </div>
+</div>

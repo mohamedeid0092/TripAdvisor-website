@@ -1,0 +1,409 @@
+<!-- Navigation Buttons -->
+<div class="container mt-5 w-100">
+  <div class="row">
+    <!-- Item button list -->
+    <div class="col-12" style="text-align: center">
+      <ul class="list-inline">
+        <!-- Button 1 -->
+        <li class="list-inline-item mx-2">
+          <a routerLink="home">
+            <button type="button" class="btn btn-outline-dark btn1 butt">
+              <div style="float: left">Hotels</div>
+              <div style="float: right">
+                <svg viewBox="0 0 24 24" width="1em" height="1em">
+                  <path
+                    d="M20.587 12.139V4.144H3.424v7.986A3.805 3.805 0 002 15.097v4.755h1.906v-1.905h16.188v1.91H22v-4.76a3.804 3.804 0 00-1.413-2.958zm-1.906-6.09V8.83a5.048 5.048 0 00-2.865-.876c-1.565 0-2.952.69-3.816 1.749-.864-1.059-2.252-1.749-3.818-1.749-1.07 0-2.056.324-2.851.866V6.049h13.35zm-.258 5.248c-.077-.005-.155-.012-.234-.012h-4.971c.438-.838 1.437-1.426 2.598-1.426 1.168 0 2.173.593 2.607 1.438zm-7.643-.012H5.812c-.081 0-.159.007-.238.012.434-.844 1.438-1.438 2.606-1.438 1.163 0 2.163.588 2.6 1.426zM3.906 16.04v-.943c0-1.051.855-1.905 1.906-1.905h12.376c1.051 0 1.905.854 1.905 1.905v.943H3.906z">
+                  </path>
+
+                </svg>
+              </div>
+            </button></a>
+        </li>
+
+        <!-- Button 2 -->
+        <li class="list-inline-item">
+          <a routerLink="resturants"><button type="button" class="btn btn-outline-dark btn1 butt">
+              <div style="float: left">Restaurants</div>
+              <div style="float: right">
+                <svg viewBox="0 0 24 24" width="1em" height="1em">
+                  <path
+                    d="M18.753 21.459l-5.502-5.504-2.85 2.851-1.663-1.662-4.315 4.315-1.343-1.344 4.316-4.316-4.004-4.003A4.718 4.718 0 012 8.438c0-1.269.494-2.461 1.392-3.358l.834-.835 7.362 7.362.866-.866c-1.099-1.719-.777-3.972.912-5.661l2.538-2.538 1.343 1.344-2.538 2.537c-.785.787-1.254 1.903-.852 2.916l4.423-4.422 1.343 1.344-4.429 4.428c.31.13.64.188.977.164.646-.043 1.299-.364 1.838-.904a630.937 630.937 0 002.642-2.653L22 8.631s-1.241 1.255-2.647 2.66c-.865.865-1.951 1.383-3.057 1.456a4.027 4.027 0 01-2.501-.66l-.864.862 7.166 7.166-1.344 1.344zM4.291 6.995A2.835 2.835 0 003.9 8.438c0 .762.296 1.478.835 2.015l5.666 5.667 1.506-1.507-7.616-7.618z">
+                  </path>
+                </svg>
+              </div>
+            </button></a>
+        </li>
+
+        <!-- Button 4 -->
+        <li class="list-inline-item">
+          <a routerLink="cruises"><button type="button" class="btn btn-outline-dark btn1 butt">
+              <div style="float: left">Cruises</div>
+              <div style="float: right">
+                <i class="fas fa-ship"></i>
+              </div>
+            </button></a>
+        </li>
+
+        <!-- Button 5 -->
+        <li class="list-inline-item">
+          <a routerLink="shopping"><button type="button" class="btn btn-outline-dark btn1 butt">
+              <div style="float: left">Shopping</div>
+              <div style="float: right">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+            </button></a>
+        </li>
+
+        <!-- Button 6 -->
+        <li class="list-inline-item">
+          <div class="dropdownToggel">
+            <a><button (click)="myFunction()" id="dropbtn" type="button" class="btn btn-outline-dark btn1 butt">
+                <div style="float: left">More</div>
+                <div style="float: right">
+                  <svg x="0" y="0" viewBox="0 0 24 24" width="1em" height="1em">
+                    <circle cx="4.5" cy="11.9" r="2.5"></circle>
+                    <circle cx="19.5" cy="11.9" r="2.5"></circle>
+                    <circle cx="12" cy="11.9" r="2.5"></circle>
+                  </svg>
+                </div>
+              </button>
+              <div *ngIf="isToggel == true" id="myDropdown" class="dropdown-contentToggel">
+                <a class="drop" routerLink>Best Of 2020</a>
+                <a class="drop" routerLink>Media Center</a>
+                <a class="drop" routerLink>Help Center</a>
+              </div>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Search Container -->
+<div class="container">
+  <div class="cont1">
+    <div class="cont2">
+      <div class="cont3">
+        <img src="../../../assets/Image sources/home.svg" />
+      </div>
+      <div class="cont4">
+        <div class="cont5">Find the good out there</div>
+        <div class="cont6">
+          <form class="form1" name="myForm">
+            <input ng-model="q" (keyup)="onKeySearch($event)" #searchInput class="input1" type="text" autocomplete="off"
+              autocorrect="off" autocapitalize="off" spellcheck="false" required="" name="q" placeholder="Where to?"
+              title="Search" aria-label="Search" value="" aria-label="Search" />
+            <button type="submit" formaction="/Search" class="search1" title="Search" aria-label="Search" tabindex="-1">
+              <svg viewBox="0 0 24 24" width="1em" height="1em" class="searchIcon">
+                <path
+                  d="M22 20.514l-5.517-5.519a8.023 8.023 0 001.674-4.904c0-4.455-3.624-8.079-8.079-8.079C5.624 2.012 2 5.636 2 10.091s3.624 8.079 8.079 8.079a8.03 8.03 0 004.933-1.695l5.512 5.514L22 20.514zm-11.921-4.431c-3.305 0-5.993-2.688-5.993-5.992s2.688-5.992 5.993-5.992a6 6 0 015.992 5.992 6 6 0 01-5.992 5.992z">
+                </path>
+              </svg>
+            </button>
+            <!-- search div -->
+            <!-- <div *ngIf="this.search?.length>0 || searchInput.touched" class="searchCont" data-test-attribute="typeahead-results">
+        <hr class="hSperator">
+        <a class="searchLink" >
+        <div class="searchSt ">
+        <svg viewBox="0 0 24 24" width="24px" height="24px">
+        <path d="M22 20.514l-5.517-5.519a8.023 8.023 0 001.674-4.904c0-4.455-3.624-8.079-8.079-8.079C5.624 2.012 2 5.636 2 10.091s3.624 8.079 8.079 8.079a8.03 8.03 0 004.933-1.695l5.512 5.514L22 20.514zm-11.921-4.431c-3.305 0-5.993-2.688-5.993-5.992s2.688-5.992 5.993-5.992a6 6 0 015.992 5.992 6 6 0 01-5.992 5.992z"></path></svg></div><div class="searchTxt">
+        <div class="txt">{{searchInput.value}}</div></div></a><hr class="hSperator"><a class="searchLink" href="/Search?q=hotels&amp;searchSessionId=4DDB76B5083493BEDBFD92A2AA4C4D8C1612375333612ssid&amp;searchNearby=&amp;latitude=&amp;longitude=&amp;geo=1">
+        <div class="searchSt "><svg viewBox="0 0 24 24" width="24px" height="24px" class="_2HBN-k68 "><path d="M22 20.514l-5.517-5.519a8.023 8.023 0 001.674-4.904c0-4.455-3.624-8.079-8.079-8.079C5.624 2.012 2 5.636 2 10.091s3.624 8.079 8.079 8.079a8.03 8.03 0 004.933-1.695l5.512 5.514L22 20.514zm-11.921-4.431c-3.305 0-5.993-2.688-5.993-5.992s2.688-5.992 5.993-5.992a6 6 0 015.992 5.992 6 6 0 01-5.992 5.992z"></path></svg>
+        </div><div class="searchTxt"><div class="txt">{{searchInput.value}}</div></div></a><hr class="_1HvHQ6Xs">
+        <a class="searchLink" href="/HotelsList-Hawaii-All-Inclusive-Resorts-zfp41237.html"><div class="searchSt "><svg viewBox="0 0 24 24" width="24px" height="24px" class="_2HBN-k68 ">
+            <path d="M20.587 12.139V4.144H3.424v7.986A3.805 3.805 0 002 15.097v4.755h1.906v-1.905h16.188v1.91H22v-4.76a3.804 3.804 0 00-1.413-2.958zm-1.906-6.09V8.83a5.048 5.048 0 00-2.865-.876c-1.565 0-2.952.69-3.816 1.749-.864-1.059-2.252-1.749-3.818-1.749-1.07 0-2.056.324-2.851.866V6.049h13.35zm-.258 5.248c-.077-.005-.155-.012-.234-.012h-4.971c.438-.838 1.437-1.426 2.598-1.426 1.168 0 2.173.593 2.607 1.438zm-7.643-.012H5.812c-.081 0-.159.007-.238.012.434-.844 1.438-1.438 2.606-1.438 1.163 0 2.163.588 2.6 1.426zM3.906 16.04v-.943c0-1.051.855-1.905 1.906-1.905h12.376c1.051 0 1.905.854 1.905 1.905v.943H3.906z"></path></svg></div>
+        <div class="searchTxt"><div class="txt">hawaii all inclusive resorts</div><div><div class=" _1AZDEEAe">United States, North America</div></div></div></a>
+        </div> -->
+            <div *ngIf="this.search?.length > 0 || searchInput.touched" class="searchCont"
+              data-test-attribute="typeahead-results">
+              <!-- <div class="row"> -->
+              <a class="searchLink m-0 pl-3">
+                <!-- <div class="col-4"> -->
+                <div class="searchSt">
+                  <svg viewBox="0 0 24 24" width="24px" height="24px" class="_2HBN-k68">
+                    <path
+                      d="M20.587 12.139V4.144H3.424v7.986A3.805 3.805 0 002 15.097v4.755h1.906v-1.905h16.188v1.91H22v-4.76a3.804 3.804 0 00-1.413-2.958zm-1.906-6.09V8.83a5.048 5.048 0 00-2.865-.876c-1.565 0-2.952.69-3.816 1.749-.864-1.059-2.252-1.749-3.818-1.749-1.07 0-2.056.324-2.851.866V6.049h13.35zm-.258 5.248c-.077-.005-.155-.012-.234-.012h-4.971c.438-.838 1.437-1.426 2.598-1.426 1.168 0 2.173.593 2.607 1.438zm-7.643-.012H5.812c-.081 0-.159.007-.238.012.434-.844 1.438-1.438 2.606-1.438 1.163 0 2.163.588 2.6 1.426zM3.906 16.04v-.943c0-1.051.855-1.905 1.906-1.905h12.376c1.051 0 1.905.854 1.905 1.905v.943H3.906z">
+                    </path>
+                  </svg>
+                </div>
+                <!-- </div> -->
+                <div class="col-8">
+                  <div class="searchTxt">
+                    <div (click)="getSearchHotels(searchInput.value)" routerLink="/hotels" class="txt">
+                      {{ searchInput.value }} Hotels</div>
+                  </div>
+                </div>
+              </a>
+              <!-- </div> -->
+              <hr />
+              <!-- <div class="row"> -->
+              <a class="searchLink m-0 pl-3">
+                <!-- <div class="col-4"> -->
+                <div class="searchSt">
+                  <svg _ngcontent-acv-c174="" viewBox="0 0 24 24" width="2em" height="2em">
+                    <path _ngcontent-acv-c174=""
+                      d="M18.753 21.459l-5.502-5.504-2.85 2.851-1.663-1.662-4.315 4.315-1.343-1.344 4.316-4.316-4.004-4.003A4.718 4.718 0 012 8.438c0-1.269.494-2.461 1.392-3.358l.834-.835 7.362 7.362.866-.866c-1.099-1.719-.777-3.972.912-5.661l2.538-2.538 1.343 1.344-2.538 2.537c-.785.787-1.254 1.903-.852 2.916l4.423-4.422 1.343 1.344-4.429 4.428c.31.13.64.188.977.164.646-.043 1.299-.364 1.838-.904a630.937 630.937 0 002.642-2.653L22 8.631s-1.241 1.255-2.647 2.66c-.865.865-1.951 1.383-3.057 1.456a4.027 4.027 0 01-2.501-.66l-.864.862 7.166 7.166-1.344 1.344zM4.291 6.995A2.835 2.835 0 003.9 8.438c0 .762.296 1.478.835 2.015l5.666 5.667 1.506-1.507-7.616-7.618z">
+                    </path>
+                  </svg>
+                </div>
+                <!-- </div> -->
+                <div class="col-8">
+                  <div class="searchTxt">
+                    <div class="txt">{{ searchInput.value }} Restaurants</div>
+                  </div>
+                </div>
+              </a>
+              <!-- </div> -->
+              <hr />
+              <a class="searchLink">
+                <div class="searchSt">
+                  <img class="ship-img"
+                    src="https://static.tacdn.com/img2/branding/homepage/messaging/cruise_ship.svg" />
+                </div>
+                <div class="searchTxt">
+                  <div class="txt">{{ searchInput.value }} Cruises</div>
+                </div>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Section Separator -->
+<!-- <div style="margin-bottom: 42px;text-align: center;">
+  <h2 class="h" style="font-size: 1.5em;font-weight: bold;">
+      Keep Planning
+  </h2>
+</div> -->
+<hr class="mx-4" />
+<h1 class="mt-2 ml-4 font-weight-bold">Keep Planning</h1>
+
+<!-- Buttons -->
+<app-button [search]="search"></app-button>
+
+<!-- Add container 1 -->
+<div class="container" style="margin-top: 40px; margin-bottom: 50px">
+  <div class="row">
+    <div class="col-5" style="
+        background-color: #ff5d5d;
+        padding-top: 70px;
+        padding-right: 0px;
+        border-radius: 12px 0 0 12px;
+      ">
+      <span style="
+          display: inline;
+          font-size: 36px;
+          line-height: 30px;
+          font-family: san serif;
+        ">
+        Start saving your travel
+      </span>
+      <span class="nav-item d-none d-lg-inline pl-2">
+        <a href="" class="nav-link font-weight-bold creatButt"> Creat Trip </a>
+      </span>
+    </div>
+    <div class="col-6" style="padding-left: 0px; margin-left: 0">
+      <img class="ad" src="../../../assets/Image sources/image_trips_card_medium.png"
+        style="border-radius: 0 12px 12px 0" height="250" />
+    </div>
+  </div>
+</div>
+
+<!-- Places -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm col-xs-12 pt-3">
+      <hr />
+      <p style="font-weight: bold; font-size: 20px">You might like these</p>
+
+      <div id="carouselExampleControls" class="carousel slide" data-interval="false" data-ride="carousel"
+        data-pause="hover">
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <div class="row row-equal m-t-0 p-4">
+              <!-- <div class="col-sm-3 p-4" *ngFor="let item of cards.slice(0, 4)">
+                <app-card [home]="item"></app-card>
+              </div> -->
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row row-equal m-t-0 p-4">
+              <!-- <div class="col-sm-3 p-4" *ngFor="let item of cards.slice(5, 9)">
+                <app-card [home]="item"></app-card>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" style="width: 60px" href="#carouselExampleControls" role="button"
+          data-slide="prev">
+          <span class="carousel-control-prev-icon" style="background-color: #000000; border-radius: 50%; height: 50px"
+            aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next" style="width: 50px" href="#carouselExampleControls" role="button"
+          data-slide="next">
+          <span class="carousel-control-next-icon" style="background-color: #000000; border-radius: 50%; height: 50px"
+            aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Ad 2 Section  -->
+<div class="container">
+  <div class="row">
+    <div class="col-5" style="background-color: #faf1ed; padding-right: 0px">
+      <span style="
+          display: inline;
+          font-size: 36px;
+          line-height: 45px;
+          font-family: sans-serif;
+        ">
+        "Don't go it alone."<br />
+
+        "Hire an expert"
+        <a href="../../Cruise&Top20/top25.html" class="nav-link d-none d-lg-block pl-2 font-weight-bold creatButt">Learn
+          More
+        </a>
+      </span>
+    </div>
+    <div class="col-6" style="padding-left: 0px">
+      <img class="ad1" src="../../../assets/Image sources/confidence.jpg" />
+    </div>
+  </div>
+</div>
+
+<!-- More to Explore section -->
+<div class="container-fluid" style="
+    margin-top: 60px;
+    margin-bottom: 60px;
+    height: 650px;
+    background-color: #faf1ed;
+  ">
+  <div>
+    <h3 style="text-align: center; margin-bottom: 40px">
+      <span style="
+          font-weight: bold;
+          color: white;
+          font-size: 25px;
+          background-color: #000000;
+          margin-bottom: 40px;
+        ">More to Explore</span>
+    </h3>
+  </div>
+  <div class="row">
+    <div class="col-1"></div>
+    <div *ngFor="let item of headlines" class="col-3">
+      <div class="card" style="height: 450px">
+        <a href="#">
+          <div class="iconoverimg">
+            <img class="card-img-top" height="300px" [src]="item.imagesUrls" />
+            <div class="style-like bg-white mt-3 rounded-circle d-flex justify-content-center align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                class="bi bi-suit-heart-fill heart-color" viewBox="0 0 16 16">
+                <path
+                  d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
+              </svg>
+            </div>
+          </div>
+        </a>
+        <div class="card-body">
+          <h4 class="card-title f">From Tripadvisor</h4>
+          <a href="" class="f" style="color: #000000">
+            <p class="card-text">{{ item.title }}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Dream Destination -->
+<!-- <div style="margin-bottom: 42px;text-align: center;">
+  <h2 class="h" style="font-size: 1.5em;font-weight: bold;">
+      Dream Your Next Trip
+  </h2>
+</div> -->
+<hr class="mx-4" />
+<h1 class="mt-2 ml-4 font-weight-bold">Dream Your Next Trip</h1>
+
+<div class="container">
+  <div class="col-sm col-xs-12 pt-3">
+    <p style="font-weight: bold; font-size: 20px">
+      Destinations travelers love
+    </p>
+    <div class="row row-equal m-t-0 p-4">
+      <div *ngFor="let item of top" class="col-sm-3 p-0">
+        <div class="card" style="width: 250px; border: none">
+          <div class="iconoverimg">
+            <img class="card-img-top" role="button" [src]="item.imagesUrls" alt="Card image"
+              style="width: 100%; height: 250px" />
+
+            <div class="style-like bg-white mt-3 rounded-circle d-flex justify-content-center align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                class="bi bi-suit-heart-fill heart-color" viewBox="0 0 16 16">
+                <path
+                  d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
+              </svg>
+            </div>
+          </div>
+          <div class="card-body p-1">
+            <a href="" style="color: black">
+              <h6 class="card-title">{{ item.location }}</h6>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--  <div class="row">
+<div class="col-2"></div>
+<div class="col-8">
+<div>
+  <div *ngFor="let item of slides; let i = index" style="width:1100px">
+    <div class="col-md-4" [ngClass]="{'d-none d-md-block': cardIndex !== 0}"
+         *ngFor="let card of item; let cardIndex = index">
+      <div class="card" class="my-1">
+        <img  [src]="card.imagesUrls" height="50px" alt="Card image cap">
+      </div>
+       <h1>{{card.title}}</h1>
+    </div>
+  </div>
+</div>
+</div>
+<div class="col-2"></div>
+</div> -->
+
+<!-- Winners footer -->
+<div class="container-fluid _1iYwzxn3">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-3">
+      <div class="_1anKb-nl">
+        <div class="_22L-pCeu">
+          <div class="HeNejKG5">
+            <img src="https://static.tacdn.com/img2/travelers_choice/TC_logomark_solid_cream.svg" alt="" />
+            <h2 class="_2KXOeTO5">Travelers' Choice Best of the Best</h2>
+
+            <a href="" class="nav-link font-weight-bold creatButt">
+              See the winners
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <span class="nav-item d-none d-lg-inline pl-2">
+        <img src="../../../assets/Image sources/winners.jpeg" />
+      </span>
+    </div>
+  </div>
+</div>

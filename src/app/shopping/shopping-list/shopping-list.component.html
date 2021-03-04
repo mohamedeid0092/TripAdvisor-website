@@ -1,0 +1,26 @@
+<div class="card border-0 justify-content-center c1" style="width:100%;">
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="{{shopping.imagesUrl}}" class="card-img-top ml-3 mt-3" style="height:140px">
+            <div class="style-like bg-white mt-3 rounded-circle d-flex justify-content-center align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-suit-heart-fill heart-color" viewBox="0 0 16 16">
+                 <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
+                </svg>
+            </div>
+        </div>
+        <div class="col-sm-6 text-black-50 mt-3" >
+            <h6><a href="#" class="text-dark ">{{shopping.data.name}}</a></h6>
+            <P>{{shopping.city}}</P>
+            <pre  class="ml-2"><span class="dot mr-1" *ngFor="let item of [].constructor(shopping.rating); let i =index"></span></pre>
+            
+            <p>#2 of 38 <a href="#" class="text-black-50">Shopping in {{shopping.city}}</a ></p>
+                <p>{{shopping.data.description}}</p>
+                <!-- <p>“The store is wall to wall beauty, everything is exquisitely and perfectly hand-crafted, absolutely gorgeous, so very true to the spirit of the Ancient world.”</p> -->
+                <a href="#" class="text-dark"><p> Learn more</p></a>
+        </div>
+        <div class="col-sm-3 justify-content-center">
+            <button type="button" class="btn btn-dark  mt-3 mr-4 pl-2 " *ngIf="shopping.experiance">See {{shopping.experiance}} Experiances</button>
+        </div>
+    </div>
+</div>
+<hr>

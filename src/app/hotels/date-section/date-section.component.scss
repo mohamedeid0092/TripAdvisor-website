@@ -1,0 +1,18 @@
+$iFontSize : 1.1rem;
+
+button {
+  font-size: x-small;
+}
+i{
+    font-size: $iFontSize;
+}
+.row {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+[class*="col-"] {
+  padding: 0px;
+  margin: 0px;
+}

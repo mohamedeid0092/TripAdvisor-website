@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+        <script src="myscript.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <button class="navbar-toggler float-left" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
+                <span class="navbar-toggler-icon "></span>
+              </button>
+            <a href="#" class="navbar-brand ">
+                <img src="images/logo.jpg" class="d-lg-inline-block d-none" width="200" height="120">
+                
+            </a>
+            <a href="#" class="navbar-brand mx-auto d-inline-block d-lg-none">
+                <img src="images/logo.jpg"  width="200" height="120">
+                
+            </a>
+            <li class="nav-item d-inline-block d-lg-none">
+                <a class="nav-link float-right text-body" href="#"><i class="fas fa-search fa-lg"></i></a>
+                </li>
+           
+           
+           
+           <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            
+            <li class="nav-item d-none d-lg-block pl-2">
+                <div class="input-group md-form form-sm form-1 ">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text bg-transparent border-solid rounded-lg-left" id="basic-text1"><i class="fas fa-search fa-lg text-black"
+                          aria-hidden="true"></i></span>
+                    </div>
+                    <input class="form-control py-4 pl-5 pr-5 border-left-0 border-solid rounded-lg-right" type="text" aria-label="Search">
+                  </div>
+                 
+            </li>
+          
+            
+
+            
+            <li class="nav-item d-lg-none">
+              <a class="nav-link  text-body display-5 font-weight-bold" href="#" >
+                Alerts
+               </a> 
+        </li> 
+        <li class="nav-item d-lg-none">
+            <a class="nav-link  text-body display-5 font-weight-bold" href="#" >
+                Trips
+               </a> 
+        </li>
+        <li class="nav-item d-lg-none">
+            <a class="nav-link text-body display-5 font-weight-bold" href="#" >
+                Bookings
+               </a> 
+        </li>
+        <li class="nav-item d-lg-none">
+            <a class="nav-link  text-body display-5 font-weight-bold" href="#" >
+              Tripadvisor Plus
+               </a> 
+        </li>
+        <li class="nav-item d-lg-none">
+            <a class="nav-link  text-body display-5 font-weight-bold" href="#" >
+              Insurance
+               </a> 
+        </li>
+            </ul>
+            <div class="collapse navbar-collapse justify-content-end">
+            <span class="nav-item d-none d-lg-inline navpost">
+               <a href="#" class="nav-link  font-weight-bold item  "> <i class="fas fa-plus-circle post-icon"> </i> Post </a> 
+               
+              </span>
+              <span class="nav-item d-none d-lg-inline pl-2">
+                <a href="#" class="nav-link  font-weight-bold  item  "> <i class="far fa-bell post-icon"> </i> Alerts </a> 
+                
+               </span>
+               <span class="nav-item d-none d-lg-inline pl-2 ">
+                <a href="#" class="nav-link  font-weight-bold  item  "> <i class="far fa-heart post-icon"> </i> Trips </a> 
+                
+               </span>
+               <span class="nav-item d-none d-lg-inline pl-2 ">
+                <a href="#" class="nav-link  font-weight-bold  signin  ">  Sign in </a> 
+                
+               </span>
+               </div>
+        </div>
+          </nav>
+          <nav class="navbar  navbar-expand-sm p-1 bg-white border-top border-bottom d-none d-lg-block ">
+            <ul class="navbar-nav p-0  borderr ">
+              <li class="nav-item dropdown myLinkedDropdown ">
+                <a class="nav-link  seconditem" href="/link-i-want-clickable">Hurghada</a>
+                <div class="dropdown-menu dropdown-menu-wide shadow">
+                    
+                    <a href="/url1" id="customFilterPreset1" class="dropdown-item seconditem" >Hurghada Tourism</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Hurghada Hotels</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Hurghada Bed and Breakfast</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Hurghada Vacation Rentals </a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Hurghada Vacation Packages</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Flights to Hurghada</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Hurghada Restaurants</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Things to Do in Hurghada</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem">Hurghada Travel Forum</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem">Hurghada photos</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem">Hurghada Map</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem">Hurghada Travel Guide</a>
+                 
+              </div>
+              </li>
+              <li class="nav-item dropdown myLinkedDropdown">
+                <a class="nav-link  seconditem" href="/link-i-want-clickable">Hotels </a>
+                <div class="dropdown-menu dropdown-menu-wide shadow">
+                    
+                      <a href="/url1" id="customFilterPreset1" class="dropdown-item seconditem" >All Hurghada Hotels</a>
+                      <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Hurghada Hotel Deals</a>
+                      <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Last Minute Hotels in Hurghada</a>
+                      <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >By Hotel Type</a>
+                      <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >By Hotel Class</a>
+                      <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >By Hotel Brand</a>
+                      <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Popular Amenities</a>
+                      <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Popular Hurghada Categories</a>
+                      <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem">Near Landmarks</a>
+                      
+                   
+                </div>
+              </li>
+            
+              <li class="nav-item">
+                <a class="nav-link seconditem" href="#">Things to do</a>
+              </li>
+              <li class="nav-item dropdown myLinkedDropdown">
+                <a class="nav-link active text-dark font-weight-bolder restaurants" href="#">Restaurants</a>
+                <div class="dropdown-menu dropdown-menu-wide shadow">
+                    
+                    <a href="/url1" id="customFilterPreset1" class="dropdown-item seconditem" >All Hurghada Restaurants</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Popular Types of Food</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Popular Dishes</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Popular Restaurants Categories</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Near Hotels</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Near Landmarks</a>  
+              </div>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link seconditem" href="#">Flights</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link seconditem" href="#">Vacation Rentals</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link seconditem" href="#">Shopping</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link seconditem" href="#">Vacation Packages</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link seconditem" href="#">Cruises</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link seconditem" href="#">Rental cars</a>
+              </li>
+              <li class="nav-item dropdown myLinkedDropdown pl-3">
+                <a class="nav-link seconditem " href="#"><i class="fas fa-ellipsis-h fa-lg"></i></a>
+                <div class="dropdown-menu dropdown-menu-wide shadow">
+                    
+                    <a href="/url1" id="customFilterPreset1" class="dropdown-item seconditem" >Travel Forum</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Airlines</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Best of 2020</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Road Trips</a>
+                    <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Help Center</a>
+              </div>
+              </li>
+            </ul>
+          </nav>
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-sm-12 p-3 pt-4">
+                    <p class="pre d-lg-inline-block d-none">   <a class="previous-pages">Africa </a> &gt; <a class="previous-pages">Egypt</a> &gt;<a class="previous-pages"> Red Sea and Sinai </a>&gt; <a class="previous-pages">Hurghada</a> &gt; Hurghada Restaurants</p>
+                    <p class="pre d-lg-inline-block d-none float-right">Best Restaurants in Hurghada, Red Sea and Sinai</p> 
+                    <br>
+<h1 class="center ">Restaurants in Hurghada</h1>
+
+        <br>
+        <hr class="d-block d-lg-none ">
+        <div class="d-flex d-lg-none  justify-content-center">
+            
+<h3 data-toggle="modal" data-target="#myfilter" role="button"><i class="fas fa-tasks"></i> Filter</h3>
+</div>
+    <hr class="d-block d-lg-none ">
+      <!-- The Modal -->
+  <div class="modal fade" id="myfilter">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h6 class="modal-title" role="button">Reset</h6>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <h5 class="modal-title center">Filters</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="row">
+              <div class=col-sm-12>
+                  <h4>Establishment Type</h4>
+                  <a href="#" class="small text-body float-right">See all</a>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-6 pb-3">
+                <button type="button" class="btn btn-outline-dark font-weight-bold">Restaurants</button><br><br>
+                <button type="button" class="btn btn-outline-dark font-weight-bold">Dessert</button>
+              </div>
+              <div class="col-sm-6">
+                <button type="button" class="btn btn-outline-dark font-weight-bold">Quick Bites</button><br><br>
+                <button type="button" class="btn btn-outline-dark font-weight-bold">Coffee & Tea</button>
+              </div>
+          </div><br>
+          <div class="row">
+            <div class=col-sm-12>
+                <h4>Restaurant features</h4>
+                <a href="#" class="small text-body float-right">See all</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 pb-3">
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Delivery</button><br><br>
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Reservations</button>
+            </div>
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Takeout</button><br><br>
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Table Service</button>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class=col-sm-12>
+                <h4>Meals</h4>
+                <a href="#" class="small text-body float-right">See all</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 pb-3">
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Breakfast</button><br><br>
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Lunch</button>
+            </div>
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Brunch</button><br><br>
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Dinner</button>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class=col-sm-12>
+                <h4>Price</h4>
+                <a href="#" class="small text-body float-right">See all</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 pb-3">
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Cheap Eats</button><br><br>
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Mid-range</button>
+            </div>
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Fine Dining</button>
+             
+            </div>
+        </div><br>
+        <div class="row">
+            <div class=col-sm-12>
+                <h4>Cuisine</h4>
+                <a href="#" class="small text-body float-right">See all</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 pb-3">
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Mediterranean</button><br><br>
+              <button type="button" class="btn btn-outline-dark font-weight-bold">International</button>
+            </div>
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-outline-dark font-weight-bold">European</button><br><br>
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Italian</button>
+             
+            </div>
+        </div><br>
+        <div class="row">
+            <div class=col-sm-12>
+                <h4>Dietary Restrictions</h4>
+                <a href="#" class="small text-body float-right">See all</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 pb-3">
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Vegetarian Friendly</button><br><br>
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Vegan Options</button>
+            </div>
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-outline-dark font-weight-bold">European</button><br><br>
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Gluten Free Options</button>
+             
+            </div>
+        </div><br>
+        <div class="row">
+            <div class=col-sm-12>
+                <h4>Good for</h4>
+                <a href="#" class="small text-body float-right">See all</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 pb-3">
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Families with children</button><br><br>
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Kids</button>
+            </div>
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Large groups</button><br><br>
+              <button type="button" class="btn btn-outline-dark font-weight-bold">Romantic</button>
+             
+            </div>
+        </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark text-white font-weight-bold mx-auto" data-dismiss="modal">Apply</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+                  </div>
+              </div>
+              
+          </div>
+          <div class="container-fluid ">
+              <div class="row pl-4 pt-3 pb-3 bg-light">
+                  <div class="col-sm-3 pt-2 pr-2 pb-2 shadow d-lg-inline-block d-none rounded-lg bg-white ">
+<h5>Establishment Type</h5>
+<span id="less">
+<div class="form-check check pb-2 pt-2">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" value="">&nbsp;Restaurants
+    </label>
+  </div>
+  <div class="form-check check pb-2">
+    <label class="form-check-label ">
+      <input type="checkbox" class="form-check-input " value="">&nbsp;Quick Bites
+    </label>
+  </div>
+  <div class="form-check check pb-2">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" value="">&nbsp;Dessert
+    </label>
+  </div>
+  <div class="form-check check pb-2">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" value="">&nbsp;Coffee & Tea
+    </label>
+  </div>
+</span>
+<span id="more">
+  <div class="form-check check pb-2">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" value="">&nbsp;Bakeries
+    </label>
+  </div>
+  <div class="form-check check pb-2">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" value="">&nbsp;Bars & Pubs
+    </label>
+  </div>
+  <div class="form-check check pb-2">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" value="">&nbsp;Delivery Only
+    </label>
+  </div>
+  </span>
+  <a id="show" onclick="toggleText();" class="font-weight-bold text-body small dropdown-toggle" href="javascript:void(0);">Show More</a>
+  <hr>
+  <h5>Restaurant features</h5>
+  <span id="less2">
+    <div class="form-check check pb-2 pt-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Delivery
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label ">
+          <input type="checkbox" class="form-check-input " value="">&nbsp;Takeout
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Reservations
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Table Service
+        </label>
+      </div>
+    </span>
+    <span id="more2">
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Accepts Credit Cards
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Beach
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Buffet
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Dog Friendly
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Family style
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Free Wifi
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Live Music
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Outdoor Seating
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Parking Available
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Private Dining
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Serves Alcohol
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Television
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Wheelchair Accessible
+        </label>
+      </div>
+      </span>
+      <a id="show2" onclick="toggleText2();" class="font-weight-bold text-body small dropdown-toggle" href="javascript:void(0);">Show More</a>
+      <hr>
+      <h5>Meals</h5>
+      <div class="form-check check pb-2 pt-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Breakfast
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Brunch
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Lunch
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Dinner
+        </label>
+      </div>
+      <hr>
+      <h5>Price</h5>
+      <div class="form-check check pb-2 pt-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Cheap Eats
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Mid-range
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Fine Dining
+        </label>
+      </div>
+      <hr>
+      <h5>Cuisine</h5>
+      <div class="form-check check pb-2 pt-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Mediterranean
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;European
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;International
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Italian
+        </label>
+      </div>
+      <a id="show3" class="font-weight-bold text-body small dropdown-toggle" role="button" data-toggle="modal" data-target="#myModal">Show More</a>
+        <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+        <div class="modal-header">
+          <h4 class="modal-title">Cuisine</h4>
+         
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+    </div>
+</div>
+     <!-- Modal body -->
+     <div class="modal-body">
+<div class="row">
+    <div class="col-sm-6">
+   
+            <div class="form-check check pb-2 pt-2">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">&nbsp;African
+                </label>
+              </div>
+              <div class="form-check check pb-2">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">&nbsp;American
+                </label>
+              </div>
+              <div class="form-check check pb-2">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">&nbsp;Arabic
+                </label>
+              </div>
+              <div class="form-check check pb-2">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">&nbsp;Asian
+                </label>
+              </div>
+              <div class="form-check check pb-2">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">&nbsp;Bar
+                </label>
+              </div>
+              <div class="form-check check pb-2">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">&nbsp;Barbecue
+                </label>
+              </div>
+              <div class="form-check check pb-2">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">&nbsp;Beer restaurants
+                </label>
+              </div>
+              <div class="form-check check pb-2">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">&nbsp;Brew Pub
+                </label>
+              </div>
+              <div class="form-check check pb-2">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">&nbsp;British
+                </label>
+              </div>
+              <div class="form-check check pb-2">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">&nbsp;Cafe
+                </label>
+              </div>
+              <div class="form-check check pb-2">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">&nbsp;Caribbean
+                </label>
+              </div>
+        
+        
+        </div>
+        <div class="col-sm-6">
+                <div class="form-check check pb-2 pt-2">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">&nbsp;Healthy
+                    </label>
+                  </div>
+                  <div class="form-check check pb-2">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">&nbsp;Indian
+                    </label>
+                  </div>
+                  <div class="form-check check pb-2">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">&nbsp;International
+                    </label>
+                  </div>
+                  <div class="form-check check pb-2">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">&nbsp;Irish
+                    </label>
+                  </div>
+                  <div class="form-check check pb-2">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">&nbsp;Italian
+                    </label>
+                  </div>
+                  <div class="form-check check pb-2">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">&nbsp;Japanese
+                    </label>
+                  </div>
+                  <div class="form-check check pb-2">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">&nbsp;Japanese Fusion
+                    </label>
+                  </div>
+                  <div class="form-check check pb-2">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">&nbsp;Latin
+                    </label>
+                  </div>
+                  <div class="form-check check pb-2">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">&nbsp;Lazio
+                    </label>
+                  </div>
+                  <div class="form-check check pb-2">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">&nbsp;Lebanese
+                    </label>
+                  </div>
+                  <div class="form-check check pb-2">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">&nbsp;Mediterranean
+                    </label>
+                  </div>
+            
+        </div>
+        </div>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark text-white shadow font-weight-bold pr-5 pl-5" data-dismiss="modal" style="font-size: 15px;">Apply</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  </div>
+  <hr>
+  <h5>Dishes</h5>
+  <div class="form-check check pb-2 pt-2">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" value="">&nbsp;Salad
+    </label>
+  </div>
+  <div class="form-check check pb-2">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" value="">&nbsp;Beef
+    </label>
+  </div>
+  <div class="form-check check pb-2">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" value="">&nbsp;Fish
+    </label>
+  </div>
+  <div class="form-check check pb-2">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" value="">&nbsp;Pesto
+    </label>
+  </div>
+  <a id="show4" class="font-weight-bold text-body small dropdown-toggle" role="button" data-toggle="modal" data-target="#myModal2">Show More</a>
+  <!-- The Modal -->
+<div class="modal fade" id="myModal2">
+<div class="modal-dialog modal-dialog-scrollable">
+<div class="modal-content">
+
+  <!-- Modal Header -->
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-12">
+  <div class="modal-header">
+    <h4 class="modal-title">Dishes</h4>
+   
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+  </div>
+</div>
+</div>
+<!-- Modal body -->
+<div class="modal-body">
+<div class="row">
+<div class="col-sm-6">
+
+      <div class="form-check check pb-2 pt-2">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">&nbsp;Apple pie
+          </label>
+        </div>
+        <div class="form-check check pb-2">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">&nbsp;Bagels
+          </label>
+        </div>
+        <div class="form-check check pb-2">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">&nbsp;Baguette
+          </label>
+        </div>
+        <div class="form-check check pb-2">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">&nbsp;Beef
+          </label>
+        </div>
+        <div class="form-check check pb-2">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">&nbsp;Bolognese
+          </label>
+        </div>
+        <div class="form-check check pb-2">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">&nbsp;Bruschette
+          </label>
+        </div>
+        <div class="form-check check pb-2">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">&nbsp;Burger
+          </label>
+        </div>
+        <div class="form-check check pb-2">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">&nbsp;Cakes
+          </label>
+        </div>
+        <div class="form-check check pb-2">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">&nbsp;Calamari
+          </label>
+        </div>
+        <div class="form-check check pb-2">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">&nbsp;Carbonara
+          </label>
+        </div>
+        <div class="form-check check pb-2">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">&nbsp;Ceviche
+          </label>
+        </div>
+  
+  
+  </div>
+  <div class="col-sm-6">
+          <div class="form-check check pb-2 pt-2">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">&nbsp;Juice & Smoothies
+              </label>
+            </div>
+            <div class="form-check check pb-2">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">&nbsp;Kabobs
+              </label>
+            </div>
+            <div class="form-check check pb-2">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">&nbsp;Lamb
+              </label>
+            </div>
+            <div class="form-check check pb-2">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">&nbsp;Lamb chops
+              </label>
+            </div>
+            <div class="form-check check pb-2">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">&nbsp;Lasagne
+              </label>
+            </div>
+            <div class="form-check check pb-2">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">&nbsp;Lobster
+              </label>
+            </div>
+            <div class="form-check check pb-2">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">&nbsp;Meatballs
+              </label>
+            </div>
+            <div class="form-check check pb-2">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">&nbsp;Moussaka
+              </label>
+            </div>
+            <div class="form-check check pb-2">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">&nbsp;Mussels
+              </label>
+            </div>
+            <div class="form-check check pb-2">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">&nbsp;Nachos
+              </label>
+            </div>
+            <div class="form-check check pb-2">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">&nbsp;Noodle
+              </label>
+            </div>
+      
+  </div>
+  </div>
+  </div>
+  <!-- Modal footer -->
+  <div class="modal-footer">
+    <button type="button" class="btn btn-dark text-white shadow font-weight-bold pr-5 pl-5" data-dismiss="modal" style="font-size: 15px;">Apply</button>
+  </div>
+  
+</div>
+</div>
+</div>
+</div>
+<hr>
+<h5>Dietary Restrictions</h5>
+<div class="form-check check pb-2 pt-2">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" value="">&nbsp;Vegetarian Friendly
+    </label>
+  </div>
+  <div class="form-check check pb-2">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" value="">&nbsp;Vegan Options
+    </label>
+  </div>
+  <div class="form-check check pb-2">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" value="">&nbsp;Halal
+    </label>
+  </div>
+  <div class="form-check check pb-2">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" value="">&nbsp;Gluten Free Options
+    </label>
+  </div>
+  <hr>
+  <h5>Good for</h5>
+  <span id="less3">
+    <div class="form-check check pb-2 pt-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Families with children
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label ">
+          <input type="checkbox" class="form-check-input " value="">&nbsp;Large groups
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Kids
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Romantic
+        </label>
+      </div>
+    </span>
+    <span id="more3">
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Bar scene
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Business meetings
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Local cuisine
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Scenic view
+        </label>
+      </div>
+      <div class="form-check check pb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">&nbsp;Special occasions
+        </label>
+      </div>
+      </span>
+      <a id="showw" onclick="toggleText3();" class="font-weight-bold text-body small dropdown-toggle" href="javascript:void(0);">Show More</a>
+                  </div> 
+                  <div class="col-xs-9 col-lg-9 pl-4">
+
+    <div class="row ">
+
+   <div class="col-sm col-xs-12 pt-3">
+    <h3>Delivery Available <a class="float-right text-body" role="button" style="font-size: 15px;">See all</a></h3>
+        
+            <div id="carouselExampleControls" class="carousel slide col-xs-12" data-interval="false" data-ride="carousel" data-pause="hover">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                    <div class="row row-equal m-t-0 p-4 ">
+                        <div class="col-sm-3 p-0">
+                          <!--card1-->
+                            <div class="card" style="width:215px ">
+                                <div class="iconoverimg">
+                                <img class="card-img-top card-img-top-250" src="images/la playa.jpg" alt="Card image" style="width:100%;height: 150px;">
+                                <div class="badge badge-light rounded-circle p-2 icon ">
+                                    <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                                </div>
+                                </div>
+                                <div class="card-body p-1">
+                                    <h6 class="card-title">La Playa <br>
+                                      <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 85 reviews
+                                  </h6>
+                                  <p class="card-text text-secondary small">International, Mediterranean</p>
+                                  <button type="button" class="btn btn-warning font-weight-bold  btncard">Order Online</button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-sm-3 p-0">
+                            <div class="card" style="width:215px ">
+                                <div class="iconoverimg">
+                                <img class="card-img-top card-img-top-250" role="button" src="images/Pasta e Basta.jpg" alt="Card image" style="width:100%; height: 150px;">
+                                <div class="badge badge-light rounded-circle p-2 icon ">
+                                    <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                                </div>
+                                </div>
+                                <div class="card-body p-1">
+                                    <h6 class="card-title">Pasta e Basta <br>
+                                      <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 344 reviews
+                                  </h6>
+                                  <p class="card-text text-secondary small">Italian, Pizza, Mediterranean</p>
+                                  <button type="button" class="btn btn-warning font-weight-bold small btncard">Order Online</button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-sm-3 p-0">
+                            <div class="card" style="width:215px ">
+                                <div class="iconoverimg">
+                                    <img class="card-img-top card-img-top-250" role="button" src="images/The Grill.jpg" alt="Card image" style="width:100%; height: 150px;">
+                                    <div class="badge badge-light rounded-circle p-2 icon ">
+                                        <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                                    </div>
+                                    </div>
+                                <div class="card-body p-1">
+                                    <h6 class="card-title">The Grill <br>
+                                      <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 444 reviews
+                                  </h6>
+                                  <p class="card-text text-secondary small">Mediterranean, Barbeque </p>
+                                  <a href="#" class="btn btn-warning font-weight-bold small btncard">Order Online</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-sm-3 p-0">
+                            <div class="card" style="width:215px ">
+                                <div class="iconoverimg">
+                                    <img class="card-img-top card-img-top-250" role="button" src="images/Star Fish Restaurant.jpg" alt="Card image" style="width:100%; height: 150px;">
+                                    <div class="badge badge-light rounded-circle p-2 icon ">
+                                        <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                                    </div>
+                                    </div>
+                                    <div class="card-body p-1">
+                                        <h6 class="card-title">Star Fish Restaurant <br>
+                                          <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="far fa-circle fa-sm text-success"> </i> 933 reviews
+                                      </h6>
+                                      <p class="card-text text-secondary small">Mediterranean, Seafood </p>
+                                      <a href="#" class="btn btn-warning font-weight-bold small btncard">Order Online</a>
+                                    </div>
+                              </div>
+                        </div>
+                        </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row row-equal m-t-0 p-3">
+                        <div class="col-sm-3 p-0">
+                            <div class="card " style="width:215px ">
+                                <div class="iconoverimg">
+                                    <img class="card-img-top" role="button" src="images/Zia Amelia.jpg" alt="images/Card image" style="width:100%; height: 150px;">
+                                    <div class="badge badge-light rounded-circle p-2 icon ">
+                                        <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                                    </div>
+                                    </div>
+                                <div class="card-body p-1">
+                                    <h6 class="card-title">Zia Amelia <br>
+                                      <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 1,014 reviews
+                                  </h6>
+                                  <p class="card-text text-secondary small">Italian, Pizza, Mediterranean</p>
+                                  <a href="#" class="btn btn-warning font-weight-bold small btncard">Order Online</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-sm-3 p-0">
+                            <div class="card " style="width:215px ">
+                                <div class="iconoverimg">
+                                    <img class="card-img-top" role="button" src="images/El Halaka.jpg" alt="images/Card image" style="width:100%; height: 150px;">
+                                    <div class="badge badge-light rounded-circle p-2 icon ">
+                                        <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                                    </div>
+                                    </div>
+                                    <div class="card-body p-1">
+                                        <h6 class="card-title">El Halaka <br>
+                                          <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 1,014 reviews
+                                      </h6>
+                                      <p class="card-text text-secondary small">Seafood, Soups</p>
+                                      <a href="#" class="btn btn-warning font-weight-bold small btncard">Order Online</a>
+                                    </div>
+                              </div>
+                        </div>
+<div class="col-sm-3 p-0">
+    <div class="card " style="width:215px ">
+        <div class="iconoverimg">
+            <img class="card-img-top" role="button" src="images/El Dar Darak Restaurant.jpg" alt="Card image" style="width:100%; height: 150px;">
+            <div class="badge badge-light rounded-circle p-2 icon ">
+                <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+            </div>
+            </div>
+            <div class="card-body p-1">
+                <h6 class="card-title">El Dar Darak<br>
+                  <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 149 reviews
+              </h6>
+              <p class="card-text text-secondary small">Barbecue, Middle Eastern</p>
+              <a href="#" class="btn btn-warning font-weight-bold small btncard">Order Online</a>
+            </div>
+      </div>
+</div>
+<div class="col-sm-3 p-0">
+<div class="card" style="width:215px ">
+    <div class="iconoverimg">
+      <img class="card-img-top" role="button" src="images/Karibu Bar & Restaurant.jpg" alt="Card image" style="width:100%;height: 150px;">
+      <div class="badge badge-light rounded-circle p-2 icon ">
+          <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+      </div>
+    </div>
+      <div class="card-body p-1">
+        <h6 class="card-title">Karibu Bar & Restaurant <br>
+          <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 85 reviews
+      </h6>
+        
+        <p class="card-text text-secondary small">International, Bar, American</p>
+        <a href="#" class="btn btn-warning font-weight-bold small btncard">Order Online</a>
+      </div>
+    </div>
+    </div>
+                        </div>
+                  </div>
+                 
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+        </div>
+    
+
+</div>
+   <div class="row">
+       <div class="col-12 col-xs-12 pt-3">
+        <h3>Outdoor Seating Available<a class="float-right text-body" role="button" style="font-size: 15px;">See all</a></h3>
+        <div id="carouselExampleControls2" class="carousel slide col-xs-12" data-interval="false" data-ride="carousel" data-pause="hover">
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <div class="row row-equal m-t-0 p-3">
+                    <div class=" col-sm-3 p-0">
+                        <div class="card " style="width:215px ">
+                            <div class="iconoverimg">
+                              <img class="card-img-top" role="button" src="images/Sofra.jpg" alt="Card image" style="width:100%;height: 164px;">
+                              <div class="badge badge-light rounded-circle p-2 icon ">
+                                  <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                              </div>
+                            </div>
+                              <div class="card-body p-1">
+                                <h6 class="card-title">Sofra <br><br>
+                                  <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 843 reviews
+                              </h6>
+                                
+                                <p class="card-text text-secondary small">Middle Eastern, Egyptian</p>
+                                <a href="#" class="btn btn-warning font-weight-bold small btncard">Order Online</a>
+                              </div>
+                            </div>
+                    </div>
+                    <div class=" col-sm-3 p-0">
+                        <div class="card pb-1" style="width:215px ">
+                            <div class="iconoverimg">
+                            <img class="card-img-top card-img-top-250" src="images/Nino's Restaurant.jpg" alt="Card image" style="width:100%;height: 164px;">
+                            <div class="badge badge-light rounded-circle p-2 icon ">
+                                <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                            </div>
+                            </div>
+                            <div class="card-body d-relative p-1 mb-0">
+                                <h6 class="card-title">Nino's Restaurant <br><br>
+                                  <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 965 reviews
+                              </h6>
+                              <p class="card-text text-secondary small">Italian, Pizza, Mediterranean</p>
+                              <a href="#" class="btn btn-warning font-weight-bold small btncard">Order Online</a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class=" col-sm-3 p-0">
+                        <div class="card" style="width:215px ">
+                            <div class="iconoverimg">
+                            <img class="card-img-top" role="button" src="images/makai.jpg" alt="Card image" style="width:100%;height: 164px;">
+                            <div class="badge badge-light rounded-circle p-2 icon ">
+                                <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                            </div>
+                            </div>
+                            <div class="card-body d-relative p-1">
+                                <h6 class="card-title">Makai Tukai <br><br>
+                                  <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 922 reviews
+                              </h6>
+                              <p class="card-text text-secondary small">Chinese, Sushi, Asian</p>
+                              <a href="#" class="btn btn-warning font-weight-bold small btncard">Order Online</a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class=" col-sm-3 p-0">
+                        <div class="card" style="width:215px ">
+                            <div class="iconoverimg">
+                                <img class="card-img-top" role="button" src="images/The Grill.jpg" alt="Card image" style="width:100%; height: 164px;">
+                                <div class="badge badge-light rounded-circle p-2 icon ">
+                                    <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                                </div>
+                                </div>
+                            <div class="card-body p-1">
+                                <h6 class="card-title">The Grill Restaurant <br><br>
+                                  <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 444 reviews
+                              </h6>
+                              <p class="card-text text-secondary small">Mediterranean, Barbeque </p>
+                              <a href="#" class="btn btn-warning font-weight-bold small btncard">Order Online</a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row row-equal m-t-0 p-3">
+                    <div class="col-sm-12 p-0">
+                        <div class="card" style="width:230px ">
+                            <div class="iconoverimg">
+                            <img class="card-img-top" role="button" src="images/makai-tukai 2.jpg" alt="Card image" style="width:100%; height: 164px;">
+                            <div class="badge badge-light rounded-circle p-2 icon ">
+                                <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                            </div>
+                            </div>
+                            <div class="card-body p-1">
+                                <h6 class="card-title">Makai Tukai Restaurant <br>
+                                  <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 555 reviews
+                              </h6>
+                              <p class="card-text text-secondary small">Chinese, Sushi, Asian</p>
+                              <a href="#" class="btn btn-warning font-weight-bold small btncard">Order Online</a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+              </div>
+             
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+       </div>
+   </div> 
+<div class="row">
+    <div class="col-12 col-sm-12 pt-3">
+        <h3>Browse Hurghada by Food<a class="float-right text-body" role="button" style="font-size: 15px;">See all</a></h3>
+        <div id="carouselExampleControls3" class="carousel slide" data-interval="false" data-ride="carousel" data-pause="hover">
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <div class="row row-equal m-t-0 p-3">
+                    <div class="col-sm-3 p-0">
+                        <div class="card " style="width:170px ">
+                            <img class="card-img-top" role="button" src="images/seafood.jpg" alt="Card image" style="width:100%">
+                            <div class="card-body p-1">
+                              <h6 class="card-title">Seafood  
+                            </h6>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-sm-3 p-0">
+                        <div class="card " style="width:170px ">
+                            <img class="card-img-top" role="button" src="images/cafe.jpg" alt="Card image" style="width:100%">
+                            <div class="card-body p-1">
+                              <h6 class="card-title">Cafe 
+                            </h6>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-sm-3 p-0">
+                        <div class="card " style="width:170px ">
+                            <img class="card-img-top" role="button" src="images/barbecue.jpeg" alt="Card image" style="width:100%">
+                            <div class="card-body p-1">
+                              <h6 class="card-title">Barbecue 
+                            </h6>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-sm-3 p-0">
+                        <div class="card " style="width:170px ">
+                            <img class="card-img-top" role="button" src="images/pizza.jpg" alt="Card image" style="width:100%;height: 115px;">
+                            <div class="card-body p-1">
+                              <h6 class="card-title">Pizza
+                            </h6>
+                            </div>
+                          </div>
+                    </div>
+                    </div>
+              </div>
+              <div class="carousel-item">
+               <div class="row row-equal m-t-0 p-3">
+                <div class="col-sm-12 p-0">
+                    <div class="card " style="width:180px ">
+                        <img class="card-img-top" role="button" src="images/sushi.jpg" alt="Card image" style="width:100%;height: 115px;">
+                        <div class="card-body p-1">
+                          <h6 class="card-title">Sushi
+                        </h6>
+                        </div>
+                      </div>
+                </div>
+                
+               </div>
+              </div>
+              
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls3" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls3" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-sm-12 pt-3">
+        <h3>Fine Dining<a class="float-right text-body" role="button" style="font-size: 15px;">See all</a></h3>
+        <div id="carouselExampleControls4" class="carousel slide" data-interval="false" data-ride="carousel" data-pause="hover">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+               <div class="row row-equal m-t-0 p-3">
+                   <div class="col-sm-3 p-0">
+                    <div class="card " style="width:215px ">
+                        <div class="iconoverimg">
+                            <img class="card-img-top" role="button" src="images/Sofra Middle Eastern Cuisine.jpg" alt="Card image" style="width:100%; height: 150px;">
+                            <div class="badge badge-light rounded-circle p-2 icon ">
+                                <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                            </div>
+                            </div>
+                        <div class="card-body p-1">
+                            <h6 class="card-title">Sofra Middle Eastern Cuisine  <br>
+                              <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 1,014 reviews
+                          </h6>
+                          <p class="card-text text-secondary small">Lebanese, Middle Eastern</p>
+                        </div>
+                      </div>
+                   </div>
+                   <div class="col-sm-3 p-0">
+                    <div class="card " style="width:215px ">
+                        <div class="iconoverimg">
+                            <img class="card-img-top" role="button" src="images/Alex Beach Club & Restaurant.jpg" alt="Card image" style="width:100%; height: 150px;">
+                            <div class="badge badge-light rounded-circle p-2 icon ">
+                                <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                            </div>
+                            </div>
+                        <div class="card-body p-1">
+                            <h6 class="card-title">Alex Beach Club & Restaurant <br>
+                              <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 323 reviews
+                          </h6>
+                          <p class="card-text text-secondary small">Lebanese, Middle Eastern</p>
+                          
+                        </div>
+                      </div>
+                   </div>
+                   <div class="col-sm-3 p-0">
+                    <div class="card " style="width:215px ">
+                        <div class="iconoverimg">
+                            <img class="card-img-top" role="button" src="images/Gaucho Steakhouse.jpg" alt="Card image" style="width:100%; height: 150px;">
+                            <div class="badge badge-light rounded-circle p-2 icon ">
+                                <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                            </div>
+                            </div>
+                        <div class="card-body p-1">
+                            <h6 class="card-title">Gaucho Steakhouse <br><br>
+
+                              <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 151 reviews
+                          </h6>
+                          <p class="card-text text-secondary small">European, Steakhouse</p>
+                       
+                        </div>
+                      </div>
+                   </div>
+                   <div class="col-sm-3 p-0">
+                   <div class="card " style="width:215px ">
+                    <div class="iconoverimg">
+                        <img class="card-img-top" role="button" src="images/The Smokery El Gouna Yacht.jpg" alt="Card image" style="width:100%; height: 150px;">
+                        <div class="badge badge-light rounded-circle p-2 icon ">
+                            <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                        </div>
+                        </div>
+                    <div class="card-body p-1">
+                        <h6 class="card-title">The Smokery El Gouna Yacht<br>
+                          <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 99 reviews
+                      </h6>
+                      <p class="card-text text-secondary small">European, Mediterranean</p>
+                      
+                    </div>
+                  </div>
+                  </div>
+               </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row row-equal m-t-0 p-3">
+                    <div class="col-sm-4 p-0">
+                        <div class="card " style="width:215px ">
+                            <div class="iconoverimg">
+                                <img class="card-img-top" role="button" src="images/La Rotisserie.jpg" alt="Card image" style="width:100%; height: 150px;">
+                                <div class="badge badge-light rounded-circle p-2 icon ">
+                                    <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                                </div>
+                                </div>
+                            <div class="card-body p-1">
+                                <h6 class="card-title">La Rotisserie<br>
+                                  <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 44 reviews
+                              </h6>
+                              <p class="card-text text-secondary small">Mediterranean</p>
+                              
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-sm-4 p-0">
+                        <div class="card " style="width:215px ">
+                            <div class="iconoverimg">
+                                <img class="card-img-top" role="button" src="images/Chez Chantal.jpg" alt="Card image" style="width:100%; height: 150px;">
+                                <div class="badge badge-light rounded-circle p-2 icon ">
+                                    <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                                </div>
+                                </div>
+                            <div class="card-body p-1">
+                                <h6 class="card-title">Chez Chantal<br>
+                                  <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="far fa-circle fa-sm text-success"> </i> 223 reviews
+                              </h6>
+                              <p class="card-text text-secondary small">European</p>
+                              
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-sm-4 p-0">
+                        <div class="card " style="width:215px ">
+                            <div class="iconoverimg">
+                                <img class="card-img-top" role="button" src="images/Gang.jpg" alt="Card image" style="width:100%; height: 150px;">
+                                <div class="badge badge-light rounded-circle p-2 icon ">
+                                    <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                                </div>
+                                </div>
+                            <div class="card-body p-1">
+                                <h6 class="card-title">Gang<br>
+                                  <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 7 reviews
+                              </h6>
+                              <p class="card-text text-secondary small">Steakhouse, Cafe, Fastfood</p>
+                              
+                            </div>
+                          </div>
+                    </div>
+                    </div>
+              </div>
+              
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls4" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls4" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 pt-3 ">
+<h4>Top Restaurants in Hurghada</h4>
+    <form class="form-inline float-right">
+       <p class="text-dark" style="font-size: 15px; text-decoration: none;">Sort by: <input class="form-control " type="text" placeholder="Search" aria-label="Search"></p>
+      </form>
+<br>
+<h6> <b>375</b> results match your filters <b role="button">Clear all filters</b></h6> <br>
+<button type="button" class="close float-left bg-white text-dark" style="font-size: 17px; font-weight: bold;"  aria-label="Close"> 
+    Restaurants
+    <span aria-hidden="true" style="color: black;">&times;</span>
+  </button>
+    </div>
+</div> <br>
+<div class="container">
+    <div class="row bg-white">
+        <div class="col-xs-4 col-sm-4 mycar">
+            <div id="demo" class="carousel slide" data-ride="carousel" data-interval="false" data-pause="hover" style="width: 300px;">
+                <ul class="carousel-indicators">
+                  <li data-target="#demo" data-slide-to="0" class="active"></li>
+                  <li data-target="#demo" data-slide-to="1"></li>
+                  <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+                
+                <div class="carousel-inner rounded-lg" >
+                    <div class="iconoverimg">
+                  <div class="carousel-item active">
+                    
+                    <img src="images/Sofra.jpg" class="myimg" alt="Los Angeles" width="300" height="100">
+                       
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/sofra2.jpg" class="myimg" alt="Chicago" width="300" height="100">
+                       
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/sofra3.jpg" class="myimg" alt="New York" width="300" height="100">
+                      
+                  </div>
+                  <div class="badge badge-light rounded-circle p-2 icon ">
+                    <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                </div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#demo" data-slide="prev" >
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next" >
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+        </div>
+        <div class="col-xs-8 col-sm-8 pt-1">
+           <h4>&nbsp; 1. Sofra</h4>
+           &nbsp; <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 843 reviews
+           <p class="text-secondary">  &nbsp; Middle Eastern, Egyptian</p>
+           <hr>
+           <p class="text-secondary">&nbsp;&nbsp;<i class="fas fa-quote-right text-body"></i> "Very nice <b>stuff</b>."</p>
+           <p class="text-secondary">&nbsp;&nbsp;<i class="fas fa-quote-right text-body"></i> "Good food, friendly <b>stuff</b>."</p>
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="container ">
+    <div class="row bg-white">
+        <div class="col-xs-4 col-sm-4 mycar">
+            <div id="nino" class="carousel slide" data-ride="carousel" data-interval="false" data-pause="hover" style="width: 300px;">
+                <ul class="carousel-indicators">
+                  <li data-target="#demo" data-slide-to="0" class="active"></li>
+                  <li data-target="#demo" data-slide-to="1"></li>
+                  <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+                
+                <div class="carousel-inner rounded-lg" >
+                    <div class="iconoverimg">
+                  <div class="carousel-item active">
+                    
+                    <img src="images/nino2.jpg" class="myimg" alt="Los Angeles" width="300" height="100">
+                       
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/nino.jpg" class="myimg" alt="Chicago" width="300" height="100">
+                       
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/nino3.jpg" class="myimg" alt="New York" width="300" height="100">
+                      
+                  </div>
+                  <div class="badge badge-light rounded-circle p-2 icon ">
+                    <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                </div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#nino" data-slide="prev" >
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#nino" data-slide="next" >
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+        </div>
+        <div class="col-xs-8 col-sm-8 pt-1">
+           <h4>&nbsp; 2. Nino's Restaurant</h4>
+           &nbsp; <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 965 reviews
+        
+           <p class="text-secondary">  &nbsp; Italian, Pizza</p>
+          <hr>
+           <p class="text-secondary">&nbsp;&nbsp;<i class="fas fa-quote-right text-body"></i> “Great food”</p>
+           <p class="text-secondary">&nbsp;&nbsp;<i class="fas fa-quote-right text-body"></i> “Adrian and karen”</p>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row bg-white">
+        <div class="col-xs-4 col-sm-4 mycar">
+            <div id="makai" class="carousel slide" data-ride="carousel" data-interval="false" data-pause="hover" style="width: 300px;">
+                <ul class="carousel-indicators">
+                  <li data-target="#makai" data-slide-to="0" class="active"></li>
+                  <li data-target="#makai" data-slide-to="1"></li>
+                  <li data-target="#makai" data-slide-to="2"></li>
+                </ul>
+                
+                <div class="carousel-inner rounded-lg" >
+                    <div class="iconoverimg">
+                  <div class="carousel-item active">
+                    
+                    <img src="images/makai.jpg" class="myimg" alt="Los Angeles" width="300" height="100">
+                       
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/makai-tukai 2.jpg" class="myimg" alt="Chicago" width="300" height="100">
+                       
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/makai3.jpg" class="myimg" alt="New York" width="300" height="100">
+                      
+                  </div>
+                  <div class="badge badge-light rounded-circle p-2 icon ">
+                    <i class="fa fa-heart  fa-lg myicon" role="button"></i>
+                </div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#makai" data-slide="prev" >
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#makai" data-slide="next" >
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+        </div>
+        <div class="col-xs-8 col-sm-8 pt-1">
+           <h4>&nbsp; 3. Makai Tukai</h4>
+           &nbsp; <i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"></i><i class="fas fa-circle fa-sm text-success"> </i> 922 reviews
+           <p class="text-secondary">  &nbsp; Chinese, Sushi</p>
+           <hr>
+           <p class="text-secondary">&nbsp;&nbsp;<i class="fas fa-quote-right text-body"></i> “Tasty”</p>
+           <p class="text-secondary">&nbsp;&nbsp;<i class="fas fa-quote-right text-body"></i> “A friendly authentic Asian restaurant.”</p>
+        </div>
+    </div>
+</div>
+</div><!--aflt el div col-9 -->
+</div>
+          </div>
+            
+       </div>
+    </body>
+</html>

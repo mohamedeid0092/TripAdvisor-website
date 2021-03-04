@@ -1,0 +1,36 @@
+ 
+   <!-- 4th section -->
+   <div class="container ml-2 mt-3">
+    <div class="row">
+      <div class="col-12">
+      <h2 style="font-weight: normal;font-size: 20px;margin-bottom: 20px;">Your recent searches</h2>
+    </div>
+    </div>
+  </div>
+
+ <!-- Buttons -->
+ <div class="container">
+    <div class="row">
+      <div class="col-12">
+
+        <div *ngFor="let tag of search" class="d-inline-block">
+        <a href=""> <button type="button" class="btn btn-outline-dark btn-dark2">
+          <svg viewBox="0 0 24 24" width="1em" height="1em" class="_2HBN-k68 _2JndpOur">
+            <path
+              d="M12 2C7.745 2 4.27 5.475 4.27 9.73c0 4.539 4.538 9.056 6.97 11.487L12 22l.759-.761c2.432-2.453 6.971-6.97 6.971-11.509C19.73 5.475 16.256 2 12 2zm.008 17.156C9.72 16.843 6.271 13.102 6.271 9.73A5.736 5.736 0 0112 4c3.16 0 5.73 2.571 5.73 5.73 0 3.359-3.455 7.117-5.722 9.426z">
+            </path>
+            <path
+              d="M12 5.987c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5-1.57-3.5-3.5-3.5zm0 5c-.827 0-1.5-.673-1.5-1.5s.673-1.5 1.5-1.5 1.5.673 1.5 1.5-.673 1.5-1.5 1.5z">
+            </path>
+          </svg>
+           {{tag}}
+          </button>
+        </a>
+      </div>
+
+
+
+      </div>
+    </div>
+  </div>
+  

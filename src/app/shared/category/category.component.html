@@ -1,0 +1,116 @@
+<div class="bg-white p-3 category">
+  <div>
+    <h2 class="d-inline-block mb-3">
+      <h2>COVID-19 <i class="fas fa-info-circle"></i></h2>
+    </h2>
+    <img class="_3mqrboMx float-right" src="https://static.tacdn.com/img2/icons/illustration-handwash.svg" />
+
+    <!-- <form class="mb-4">
+      <div class="custom-checkbox">
+        <div class="form-check">
+          <label>
+            <input type="checkbox" name={{categories.safety.name}} id={{categories.safety._id}} />
+            <span class="label-text"><span class="check-label-font">
+                {{categories.safety.name}}</span></span>
+          </label>
+        </div>
+      </div>
+    </form> -->
+  </div>
+  <!-- <hr /> -->
+  <div>
+    <h2 class="d-inline-block mb-3">Deals</h2>
+    <form class="mb-4">
+      <div class="custom-checkbox" *ngFor='let deal of categories.deals'>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" alt='deals' name={{deal.name}} id={{deal._id}} (change)='Filter($event)' />
+            <span class="label-text"><span class="check-label-font">
+                {{deal.name}} <i class="fas fa-info-circle"></i></span></span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr />
+
+  <div>
+    <h2 class="d-inline-block mb-3">Popular </h2>
+
+    <form class="mb-4">
+      <div class="custom-checkbox" *ngFor='let popular of categories.popular'>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" alt='popular' name={{popular.name}} id={{popular._id}} (change)='Filter($event)' />
+            <span class="label-text"><span class="check-label-font">{{popular.name}}</span></span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr />
+
+  <div>
+    <h2 class="d-inline-block mb-3">Distance </h2><br>
+
+    <form class="mb-4">
+      <div class="custom-checkbox" *ngFor='let distance of categories.distance'>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" alt='distance' name={{distance.name}} id={{distance._id}}
+              (change)='FilterDistance($event)' />
+            <span class="label-text"><span class="check-label-font"> {{distance.name}}</span></span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr />
+
+
+  <div>
+    <h2 class="d-inline-block mb-3">Amenities </h2>
+
+    <form class="mb-4">
+      <div class="custom-checkbox" *ngFor='let option of categories.amenities'>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" alt='aminities' name={{option.name}} id={{option._id}} (change)='Filter($event)' />
+            <span class="label-text"><span class="check-label-font">{{option.name}}</span></span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <hr />
+  <div>
+    <h2 class="d-inline-block mb-3">Hotel Class </h2>
+
+    <form class="mb-4">
+      <div class="custom-checkbox" *ngFor='let class of categories.hotelClass'>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" name={{class.name}} id={{class._id}} (change)='Filter($event)' />
+            <span class="label-text"><span class="check-label-font">{{class.name}}</span></span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr />
+  <div>
+    <h2 class="d-inline-block mb-3">Language Spoken</h2>
+
+    <form class="mb-4">
+      <div class="custom-checkbox" *ngFor='let lang of categories.languageSpoken'>
+        <div class="form-check">
+          <label>
+            <input type="checkbox" name={{lang.name}} id={{lang._id}} (change)='Filter($event)' />
+            <span class="label-text"><span class="check-label-font">{{lang.name}}</span></span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

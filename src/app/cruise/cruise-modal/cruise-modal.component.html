@@ -1,0 +1,129 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-body ">
+        <div class="row">
+          <div class="col-md-5">
+            <div id="myCarousel" class="carousel slide h-100 style-slider" data-ride="carousel">
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner h-100">
+          
+                  <div *ngFor="let img of cruise.images;let i= index ;let isFirst=first" [ngClass]="{active:isFirst}"
+                    class="carousel-item h-100">
+                    <img id={{i}} src={{img}} class="h-100">
+                  </div>
+                </div>
+          
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+          </div>
+          <div class="col-md-7 pl-2 pb-2 text-left">
+            <h2 class='text-danger'>{{cruise.shipName}}</h2>
+            <div>
+              <span class="font-weight-bold">Price : </span>
+              <span class='text-success'>{{cruise.price}} EGP</span>
+            </div>
+            <div>
+                <span class="font-weight-bold pb-2">Sailing Date : </span>
+                <span class='text-success'>{{cruise.sailingDate}} EGP</span>
+            </div>
+
+            <span class="font-weight-bold pb-2">Activities : </span><br>
+            <div class='row'>
+              <div class='d-inline col-6'>
+                <span *ngFor='let act of cruise.activities.slice(0,(cruise.activities.length/2)+1)'>
+                  <span><i class="fas fa-check  pl-3 pr-2"></i><span class='text-primary amnt'>
+                      {{act}}</span></span><br>
+                </span>
+              </div>
+
+              <div class='d-inline col-6'>
+                <span *ngFor='let act of cruise.activities.slice((cruise.activities.length/2)+1,cruise.activities
+                .length)'>
+                  <span><i class="fas fa-check pr-2"></i><span class='text-primary amnt pr-3'>
+                      {{act}}</span></span><br>
+                </span>
+              </div>
+            </div>
+
+            <span class="font-weight-bold pb-2">Entertainment : </span><br>
+            <div class='row'>
+              <div class='d-inline col-6'>
+                <span *ngFor='let ent of cruise.entertainment.slice(0,(cruise.entertainment.length/2)+1)'>
+                  <span><i class="fas fa-check  pl-3 pr-2"></i><span class='text-primary amnt'>
+                      {{ent}}</span></span><br>
+                </span>
+              </div>
+
+              <div class='d-inline col-6'>
+                <span *ngFor='let ent of cruise.entertainment.slice((cruise.entertainment.length/2)+1,cruise.entertainment
+                .length)'>
+                  <span><i class="fas fa-check pr-2"></i><span class='text-primary amnt pr-3'>
+                      {{ent}}</span></span><br>
+                </span>
+              </div>
+            </div>
+
+            <span class="font-weight-bold pb-2">Dining : </span><br>
+            <div class='row'>
+              <div class='d-inline col-6'>
+                <span *ngFor='let din of cruise.dining.slice(0,(cruise.dining.length/2)+1)'>
+                  <span><i class="fas fa-check  pl-3 pr-2"></i><span class='text-primary amnt'>
+                      {{din}}</span></span><br>
+                </span>
+              </div>
+
+              <div class='d-inline col-6'>
+                <span *ngFor='let din of cruise.dining.slice((cruise.dining.length/2)+1,cruise.dining
+                .length)'>
+                  <span><i class="fas fa-check pr-2"></i><span class='text-primary amnt pr-3'>
+                      {{din}}</span></span><br>
+                </span>
+              </div>
+            </div>
+            <div>
+                <span class="font-weight-bold">Passengers : Crew </span>
+                <span class='text-success'>{{cruise.travelers[0].passengers}} : {{cruise.travelers[0].crew}}</span>
+            </div>
+            <div>
+                <span class="font-weight-bold">Company Line : </span>
+                <span class='text-success'>{{cruise.shipInfo[0].company_line}}</span>
+            </div>
+            <div>
+                <span class="font-weight-bold">Cruise Ship : </span>
+                <span class='text-success'>{{cruise.shipInfo[0].criuse_ship}}</span>
+            </div>
+            <div>
+                <span class="font-weight-bold">Launched :</span>
+                <span class='text-success'>{{cruise.shipInfo[0].launched}}</span>
+            </div>
+            </div>
+
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="mr-3 float-end btn btn-warning button-raduis text-center" data-toggle="modal"
+          data-target="#booking" (click)='bookNow()'>
+          Book Now
+        </button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+      <app-cruise-booking></app-cruise-booking>
+
+
+    </div>
+  </div>
+</div>
+

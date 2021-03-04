@@ -1,0 +1,87 @@
+<div class="modal fade" id="booking" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="booking-form">
+            <div class="form-header">
+              <h1>reserve Now</h1>
+            </div>
+            <form #bookForm="ngForm">
+              <div class="row">
+                <div class="col-md-5 mr-5 pl-0">
+                  <div class="form-group">
+                    <mat-form-field class="text-decoration">
+                      <input class="text-decoration pr-3" required alt="checkIn" name="checkIn" ngModel
+                        (dateInput)="inputEvent($event)" matInput [matDatepicker]="checkIn" placeholder="Check In">
+                      <mat-datepicker-toggle matSuffix [for]="checkIn" class="text-decoration"></mat-datepicker-toggle>
+                      <mat-datepicker #checkIn class="text-decoration"></mat-datepicker>
+                    </mat-form-field>
+                    <!-- <input class="form-control" type="date" required> <span class="form-label">Check In</span> -->
+                  </div>
+                </div>
+                <!-- <div class="col-md-2"></div> -->
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <mat-form-field class="text-decoration">
+                      <input class="text-decoration pr-3" required alt="checkOut" name="checkOut" ngModel
+                        (dateInput)="inputEvent($event)" matInput [matDatepicker]="checkOut" placeholder="Check Out">
+                      <mat-datepicker-toggle matSuffix [for]="checkOut" class="text-decoration "></mat-datepicker-toggle>
+                      <mat-datepicker #checkOut class="text-decoration "></mat-datepicker>
+                    </mat-form-field>
+                    <!-- <input class="form-control" type="date" required> <span class="form-label">Check out</span> -->
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group"> <input class="form-control" required type="number" min="1" #rooms
+                      placeholder="rooms" name="rooms" ngModel (change)="takeroomsNum(rooms.value)">
+  
+                    <span class="select-arrow"></span> <span class="form-label">Rooms</span> </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input class="form-control" type="number" required placeholder="adults" min="1" name="adults" ngModel>
+                    <span class="select-arrow"></span>
+                    <span class="form-label">Adults</span> </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input class="form-control" type="number" required placeholder="children" min="0" name="children"
+                      ngModel>
+                    <span class="select-arrow"></span>
+                    <span class="form-label">Children</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group"> <input class="form-control" required type="email"
+                      placeholder="Enter your Email" name="email" ngModel>
+                    <span class="form-label">Email</span> </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group"> <input class="form-control" required type="tel" placeholder="Enter your Phone"
+                      name="Phone" ngModel>
+                    <span class="form-label">Phone</span> </div>
+                </div>
+                <div class="row mx-auto">
+                  <div class="center self-center d-flex text-light">
+                    <h1>Total Price : {{calcPrice()}}</h1>
+                  </div>
+                </div>
+              </div> 
+              <div class="form-btn"> <button [disabled]="bookForm.form.invalid" (click)="book(bookForm.value)"
+                  class="submit-btn">Book Now</button> </div>
+  
+              <div class="mt-3" *ngIf="display">
+                <app-payment></app-payment>
+              </div>
+  
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

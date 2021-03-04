@@ -1,0 +1,33 @@
+<app-date-section></app-date-section>
+
+<div class="row">
+  <div class="col-3 mt-5 display">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-10 border">
+        <app-category></app-category>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-9 pr-3 pl-3 mt-5">
+    <div class="row">
+      <div class="col-11 col-sm-12 col-xs-12">
+        <app-hotel *ngFor='let hotel of getHotelsSlice()' [hotel]='hotel'></app-hotel>
+
+        <div class="bg-white border row mb-4 d-fex justify-content-center align-items-center p-2 ">
+          <div *ngFor='let page of pageNumbers; let i = index' class="mr-2 btn-success btn" (click)="currentPage=i"
+            [ngClass]="{'active': i==currentPage}">
+            {{page}}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-1-change display"></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row pb-5 pt-2">
+</div>

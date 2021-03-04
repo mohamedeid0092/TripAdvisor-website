@@ -1,0 +1,205 @@
+<div class="row">
+  <div class="row w-100 m-0">
+    <div class="col-12 bg-white">
+      <br />
+      <h1 class="center">Restaurants in Hurghada</h1>
+      <br />
+    </div>
+  </div>
+
+
+  <div class="col-4 mt-3 display">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-10 ">
+        <app-resturant-category></app-resturant-category>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-8 pr-3 pl-3 mt-3">
+    <!-- <div class="row">
+      <div class="col-sm col-xs-12 pt-3">
+        <h3>
+          Delivery Available
+        </h3>
+
+        <div id="carouselExampleControls" class="carousel slide col-xs-12" data-interval="false" data-ride="carousel"
+          data-pause="hover">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <div class="row row-equal m-t-0 p-4">
+                <div class="col-sm-3 p-0">
+                  <app-restaurant-item *ngFor='let rest of getResturantsSlice()' [resturant]='rest'>
+                  </app-restaurant-item>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row row-equal m-t-0 p-3">
+                <div class="col-sm-3 p-0">
+                  <app-restaurant-item></app-restaurant-item>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-xs-12 pt-3">
+        <h3>
+          Outdoor Seating Available
+        </h3>
+        <div id="carouselExampleControls2" class="carousel slide col-xs-12" data-interval="false" data-ride="carousel"
+          data-pause="hover">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <div class="row row-equal m-t-0 p-3">
+                <div class="col-sm-3 p-0">
+                  <app-restaurant-item></app-restaurant-item>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row row-equal m-t-0 p-3">
+                <div class="col-sm-12 p-0">
+                  <app-restaurant-item></app-restaurant-item>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-12 pt-3">
+        <h3>
+          Browse by Food
+        </h3>
+        <div id="carouselExampleControls3" class="carousel slide" data-interval="false" data-ride="carousel"
+          data-pause="hover">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <div class="row row-equal m-t-0 p-3">
+                <div class="col-sm-3 p-0">
+                  <div class="card" style="width: 170px">
+                    <img class="card-img-top" role="button" alt="Card image" style="width: 100%" />
+                    <div class="card-body p-1">
+                      <h6 class="card-title">browses.name</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row row-equal m-t-0 p-3">
+                <div class="col-sm-3 p-0">
+                  <div class="card" style="width: 180px">
+                    <img class="card-img-top" role="button" alt="Card image" style="width: 100%; height: 115px" />
+                    <div class="card-body p-1">
+                      <h6 class="card-title">browses.name</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls3" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls3" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-12 pt-3">
+        <h3>
+          Fine Dining
+        </h3>
+        <div id="carouselExampleControls4" class="carousel slide" data-interval="false" data-ride="carousel"
+          data-pause="hover">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row row-equal m-t-0 p-3">
+                <div class="col-sm-3 p-0">
+                  <app-restaurant-item></app-restaurant-item>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row row-equal m-t-0 p-3">
+                <div class="col-sm-4 p-0">
+                  <app-restaurant-item></app-restaurant-item>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls4" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls4" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="row">
+      <div class="col-sm-12 pt-3">
+        <h4>Top Restaurants</h4>
+        <form class="form-inline float-right">
+          <p class="text-dark" style="font-size: 15px; text-decoration: none">
+            Search :
+            <input #searchInput class="form-control" type="text" placeholder="Search.." aria-label="Search"
+              (input)="onSearchHandler(searchInput)" type="text" />
+          </p>
+        </form>
+        <!-- <br /> -->
+        <!-- <h6>
+          <b>375</b> results match your filters
+          <b role="button">Clear all filters</b>
+        </h6>
+        <br />
+        <button type="button" class="close float-left bg-white text-dark" style="font-size: 17px; font-weight: bold"
+          aria-label="Close">
+          establishes.name
+          <span aria-hidden="true" style="color: black">&times;</span>
+        </button> -->
+      </div>
+    </div>
+    <br />
+    <app-top-restaurant *ngFor='let rest of getResturantsSlice()' [resturant]='rest'></app-top-restaurant>
+
+    <div class="bg-white border row mb-4 d-fex justify-content-center align-items-center p-2 ">
+      <div *ngFor='let page of pageNumbers; let i = index' class="mr-2 btn-success btn" (click)="currentPage=i"
+        [ngClass]="{'active': i==currentPage}">
+        {{page}}
+      </div>
+    </div>
+  </div>
+</div>
