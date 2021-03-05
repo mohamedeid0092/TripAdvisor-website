@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
 import { Hotel } from 'src/app/_model/hotels/hotel';
+import { LocalizationService } from 'src/app/_services/general/localization.service';
 import { HotelService } from 'src/app/_services/hotels/hotel.service';
 import { HotelCategoryService } from './../../_services/hotels/hotel-category.service';
-import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-hotel',
   templateUrl: './hotel.component.html',
@@ -24,7 +26,9 @@ export class HotelComponent implements OnInit {
     private hotelService: HotelService,
     private HotelCategoryService: HotelCategoryService,
     config: NgbModalConfig,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private localizationService: LocalizationService,
+    public translate: TranslateService,
   ) {
     config.backdrop = 'static';
     config.keyboard = false;
@@ -118,7 +122,7 @@ export class HotelComponent implements OnInit {
     this.hotelService.viewDetails.emit(this.hotel);
     this.able = true;
   }
-  showState(){
+  showState() {
     return this.able;
   }
 }

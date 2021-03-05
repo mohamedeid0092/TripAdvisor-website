@@ -2,7 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Hotel } from 'src/app/_model/hotels/hotel';
 import { HotelCategoryService } from './../../_services/hotels/hotel-category.service';
 import { HotelService } from 'src/app/_services/hotels/hotel.service';
-import { CommonModule } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
+import { LocalizationService } from 'src/app/_services/general/localization.service';
+
 @Component({
   selector: 'app-box-model',
   templateUrl: './box-model.component.html',
@@ -113,8 +115,9 @@ export class BoxModelComponent implements OnInit {
   longitude: number = 0;
   constructor(
     private HotelCategoryService: HotelCategoryService,
-    private HotelService: HotelService
-  ) {}
+    private HotelService: HotelService,
+    private localizationService: LocalizationService, public translate: TranslateService
+  ) { }
 
   ngOnInit(): void {
     this.bestDeal();
@@ -126,8 +129,8 @@ export class BoxModelComponent implements OnInit {
         this.latitude = this.hotel.map.latitude;
         this.longitude = this.hotel.map.longitude;
       },
-      (error) => {},
-      (completed) => {}
+      (error) => { },
+      (completed) => { }
     );
   }
 

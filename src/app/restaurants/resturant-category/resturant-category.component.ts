@@ -1,24 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { AllCategory } from 'src/app/_model/resturant/AllCategory';
+import { LocalizationService } from 'src/app/_services/general/localization.service';
 import { ResturantCategoryService } from 'src/app/_services/resturants/resturant-category.service';
 import { ResturantFilteringService } from 'src/app/_services/resturants/resturant-filtering.service';
 import { ResturantService } from 'src/app/_services/resturants/resturant.service';
 import { flattenDiagnosticMessageText } from 'typescript';
-import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-resturant-category',
   templateUrl: './resturant-category.component.html',
-  styleUrls: ['./resturant-category.component.scss'],
+  styleUrls: ['./resturant-category.component.scss']
 })
 export class ResturantCategoryComponent implements OnInit {
+
   categories: AllCategory;
   slicedCategory: AllCategory;
 
-  constructor(
-    private ResturantCategoryService: ResturantCategoryService,
+  constructor(private ResturantCategoryService: ResturantCategoryService,
     private ResturantService: ResturantService,
-    private ResturantFilteringService: ResturantFilteringService
-  ) {
+    private ResturantFilteringService: ResturantFilteringService, private localizationService: LocalizationService, public translate: TranslateService) {
+
     this.ResturantCategoryService.getAllCategories().subscribe(
       (resp) => {
         Object.values(resp).map((res) => {
@@ -30,7 +32,7 @@ export class ResturantCategoryComponent implements OnInit {
       (error) => {
         console.log(error);
       },
-      () => {}
+      () => { }
     );
   }
 
@@ -46,7 +48,7 @@ export class ResturantCategoryComponent implements OnInit {
       (error) => {
         console.log(error);
       },
-      () => {}
+      () => { }
     );
   }
 
@@ -59,21 +61,25 @@ export class ResturantCategoryComponent implements OnInit {
   getMore(e) {
     if (e.target.id == 'cuisine') {
       this.moreCuisine = !this.moreCuisine;
-    } else if (e.target.id == 'dishes') {
+    }
+    else if (e.target.id == 'dishes') {
       this.moreDishes = !this.moreDishes;
     }
+
   }
   sliceCuisine() {
     if (this.moreCuisine) {
       return this.categories.cuisine.slice(0, this.categories.cuisine.length);
-    } else {
+    }
+    else {
       return this.categories.cuisine.slice(0, 7);
     }
   }
   sliceDishes() {
     if (this.moreDishes) {
       return this.categories.dishes.slice(0, this.categories.dishes.length);
-    } else {
+    }
+    else {
       return this.categories.dishes.slice(0, 7);
     }
   }

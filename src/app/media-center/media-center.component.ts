@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
+import { LocalizationService } from '../_services/general/localization.service';
+
 @Component({
   selector: 'app-media-center',
   templateUrl: './media-center.component.html',
@@ -7,7 +9,8 @@ import { CommonModule } from '@angular/common';
 })
 export class MediaCenterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private localizationService: LocalizationService,
+    public translate: TranslateService,) { }
 
   ngOnInit(): void {
   }

@@ -1,7 +1,7 @@
 import { ElementRef } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 declare var paypal;
 
 @Component({

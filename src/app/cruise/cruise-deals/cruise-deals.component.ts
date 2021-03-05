@@ -5,7 +5,9 @@ import { Cruise } from '../../_model/criuses/cruise';
 // import { CruiseService } from '../_services/cruise.service';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { CruiseService } from 'src/app/_services/cruise/cruise.service';
-import { CommonModule } from '@angular/common';
+import { LocalizationService } from 'src/app/_services/general/localization.service';
+import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-cruise-deals',
   templateUrl: './cruise-deals.component.html',
@@ -19,10 +21,10 @@ export class CruiseDealsComponent implements OnInit {
 
   constructor(
     private modalService: NgbModal,
-    private cruiseService: CruiseService
-  ) {}
+    private cruiseService: CruiseService, private localizationService: LocalizationService, public translate: TranslateService
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   open(content) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' });
@@ -38,13 +40,13 @@ export class CruiseDealsComponent implements OnInit {
   //   this.cruiseService.viewDetails.emit(this.cruise);
   //   this.able = true;
   // }
-
-  cruiseModal() {
-    // console.log(this.cruise);
-    this.cruiseService.BoxModal.emit(this.cruise);
-    this.able = true;
-  }
   showState() {
     return this.able;
+  }
+  cruiseModal() {
+    // console.log(this.cruise);
+    this.openModal = true;
+    this.cruiseService.BoxModal.emit(this.cruise);
+    this.able = true;
   }
 }

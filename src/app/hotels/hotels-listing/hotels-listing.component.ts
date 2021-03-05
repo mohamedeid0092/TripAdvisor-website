@@ -3,8 +3,7 @@ import { Hotel } from 'src/app/_model/hotels/hotel';
 import { HotelService } from 'src/app/_services/hotels/hotel.service';
 import { resolveTypeReferenceDirective } from 'typescript';
 import { HotelsFilteringService } from './../../_services/hotels/hotels-filtering.service';
-import { CommonModule } from '@angular/common';
-import { HomeService } from './../../_services/home/home.service';
+
 @Component({
   selector: 'app-hotels-listing',
   templateUrl: './hotels-listing.component.html',
@@ -15,12 +14,10 @@ export class HotelsListingComponent implements OnInit, OnChanges {
   pageNumbers: number[] = [];
   pageSize: number = 2;
   currentPage: number = 0;
-  hotelsId: string[] = [];
 
   constructor(
     private hotelService: HotelService,
-    private HotelsFilteringService: HotelsFilteringService,
-    private homeService: HomeService
+    private HotelsFilteringService: HotelsFilteringService
   ) {
     // this.homeService.hotelsId.subscribe(
     //   (resp) => {
@@ -48,8 +45,8 @@ export class HotelsListingComponent implements OnInit, OnChanges {
         //console.log(this.hotels);
         this.calculateNumberOfPages(this.hotels.length);
       },
-      (error) => {},
-      () => {}
+      (error) => { },
+      () => { }
     );
 
     this.HotelsFilteringService.Filtering.subscribe(
@@ -60,14 +57,15 @@ export class HotelsListingComponent implements OnInit, OnChanges {
         } else {
           this.hotels = this.HotelsFilteringService.Filter(event);
         }
+
       },
       (error) => {
         console.log(error);
       },
-      (copmleted) => {}
+      (copmleted) => { }
     );
   }
-  ngOnChanges(): void {}
+  ngOnChanges(): void { }
 
   calculateNumberOfPages(length) {
     this.pageNumbers = [];

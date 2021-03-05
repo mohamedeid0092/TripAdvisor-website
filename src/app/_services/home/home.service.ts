@@ -77,5 +77,5 @@ export class HomeService {
     return this.httpClient.get(`${this.baseUrl}cities`);
   }
 
- 
+
 }

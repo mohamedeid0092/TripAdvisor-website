@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Cruise } from 'src/app/_model/criuses/cruise';
-import { CommonModule } from '@angular/common';
+import { LocalizationService } from 'src/app/_services/general/localization.service';
+
 @Component({
   selector: 'app-cruise-booking',
   templateUrl: './cruise-booking.component.html',
@@ -19,17 +21,17 @@ export class CruiseBookingComponent implements OnInit {
     obj: {},
   };
 
-  cruise: Cruise ={
+  cruise: Cruise = {
     _id: '1',
     shipName: 'MSC Opera | Balcony',
     price: 1000,
     discount: 150,
-    sailingDate:'2021-10-24',
+    sailingDate: '2021-10-24',
     departureMonth: 'Novamber',
-    activities:['Pool','Arts Classes','Dance Classes','Evening DJ' ,'Gym','Fitness Center','Aquapark','Virtual Games','Baby Club '],
-    entertainment:['Live Music','Sky Lounge','Broadway Theater','Carousel Lounge','Comedy Performances'],
-    dining:['Marketplace Buffet','Cocktail Bar','Panorama Restaurant','Aqua Dining Room','Le Bistro Restaurant',"Cagney's Steakhouse"],
-       images: [
+    activities: ['Pool', 'Arts Classes', 'Dance Classes', 'Evening DJ', 'Gym', 'Fitness Center', 'Aquapark', 'Virtual Games', 'Baby Club '],
+    entertainment: ['Live Music', 'Sky Lounge', 'Broadway Theater', 'Carousel Lounge', 'Comedy Performances'],
+    dining: ['Marketplace Buffet', 'Cocktail Bar', 'Panorama Restaurant', 'Aqua Dining Room', 'Le Bistro Restaurant', "Cagney's Steakhouse"],
+    images: [
       'https://media-cdn.tripadvisor.com/media/photo-s/15/3b/28/2b/star-breeze-ta-listings.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-s/15/3b/6a/2d/ta-star-breeze-suite.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-s/16/51/cb/5d/msc-yacht-club-royal.jpg',
@@ -38,7 +40,7 @@ export class CruiseBookingComponent implements OnInit {
     ],
     days: 20,
     whereTo: 'Caribbean',
-    travelers:[{
+    travelers: [{
       passengers: 120,
       crew: 50
     }],
@@ -88,12 +90,12 @@ export class CruiseBookingComponent implements OnInit {
       },
     ],
   }
-  constructor() { }
+  constructor(private localizationService: LocalizationService, public translate: TranslateService) { }
 
   ngOnInit(): void {
   }
 
-  
+
   inputEvent(event) {
     if (event.target._elementRef.nativeElement.alt == 'checkIn') {
       //  console.log(event.value);
@@ -130,7 +132,7 @@ export class CruiseBookingComponent implements OnInit {
     this.display = true;
     console.log(`papal ${this.display}`);
     console.log(form);
-   // this.hotel.booking.push(form);
+    // this.hotel.booking.push(form);
     console.log(this.cruise.booking);
 
     if (this.cruise.booking[0].rooms < form.rooms) {
@@ -149,8 +151,8 @@ export class CruiseBookingComponent implements OnInit {
     this.rooms = rooms;
   }
   calcPrice() {
-    return this.cruise.discount? (this.cruise.price-this.cruise.discount) * this.days * this.rooms:
-    this.cruise.price * this.days * this.rooms;
+    return this.cruise.discount ? (this.cruise.price - this.cruise.discount) * this.days * this.rooms :
+      this.cruise.price * this.days * this.rooms;
   }
 
 }

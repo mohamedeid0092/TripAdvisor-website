@@ -5,7 +5,9 @@ import { ResturantFilteringService } from 'src/app/_services/resturants/resturan
 import { ResturantService } from 'src/app/_services/resturants/resturant.service';
 import { Restaurant } from 'src/app/_model/resturant/restaurant';
 import { category } from 'src/app/_model/resturant/category';
-import { CommonModule } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
+import { LocalizationService } from 'src/app/_services/general/localization.service';
+
 @Component({
   selector: 'app-restaurant-listing',
   templateUrl: './restaurant-listing.component.html',
@@ -22,8 +24,9 @@ export class RestaurantListingComponent implements OnInit {
   constructor(
     private ResturantCategoryService: ResturantCategoryService,
     private ResturantService: ResturantService,
-    private ResturantFilteringService: ResturantFilteringService
-  ) {}
+    private ResturantFilteringService: ResturantFilteringService,
+    private localizationService: LocalizationService, public translate: TranslateService
+  ) { }
 
   ngOnInit(): void {
     //this.hotels = this.hotelService.getAllHotels();
@@ -37,8 +40,8 @@ export class RestaurantListingComponent implements OnInit {
         console.log(this.resturant);
         this.calculateNumberOfPages(this.resturant.length);
       },
-      (error) => {},
-      () => {}
+      (error) => { },
+      () => { }
     );
 
     this.ResturantFilteringService.Filtering.subscribe(
@@ -46,8 +49,8 @@ export class RestaurantListingComponent implements OnInit {
         this.resturant = this.ResturantFilteringService.Filter(resp);
         console.log(this.resturant);
       },
-      (error) => {},
-      (completed) => {}
+      (error) => { },
+      (completed) => { }
     );
   }
 

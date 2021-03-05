@@ -3,7 +3,8 @@ import { Restaurant } from 'src/app/_model/resturant/restaurant';
 import { getTestBed } from '@angular/core/testing';
 import { ResturantCategoryService } from 'src/app/_services/resturants/resturant-category.service';
 import { ResturantService } from 'src/app/_services/resturants/resturant.service';
-import { CommonModule } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
+import { LocalizationService } from 'src/app/_services/general/localization.service';
 @Component({
   selector: 'app-top-restaurant',
   templateUrl: './top-restaurant.component.html',
@@ -15,8 +16,8 @@ export class TopRestaurantComponent implements OnInit {
   able = false;
   constructor(
     private resturantCategoryService: ResturantCategoryService,
-    private resturantService: ResturantService
-  ) {}
+    private resturantService: ResturantService, private localizationService: LocalizationService, public translate: TranslateService
+  ) { }
 
   ngOnInit(): void {
     this.calcAvg();

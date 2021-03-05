@@ -4,7 +4,9 @@ import { AllCategory } from './../../_model/hotels/AllCategory';
 import { ThisReceiver } from '@angular/compiler';
 import { HotelService } from 'src/app/_services/hotels/hotel.service';
 import { HotelsFilteringService } from './../../_services/hotels/hotels-filtering.service';
-import { CommonModule } from '@angular/common';
+import { LocalizationService } from 'src/app/_services/general/localization.service';
+import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
@@ -19,7 +21,9 @@ export class CategoryComponent implements OnInit {
   constructor(
     private HotelCategoryService: HotelCategoryService,
     private HotelService: HotelService,
-    private HotelsFilteringService: HotelsFilteringService
+    private HotelsFilteringService: HotelsFilteringService,
+    private localizationService: LocalizationService,
+    public translate: TranslateService,
   ) {
     this.HotelCategoryService.getAllCategories().subscribe(
       (resp) => {
@@ -33,7 +37,7 @@ export class CategoryComponent implements OnInit {
       (error) => {
         console.log(error);
       },
-      () => {}
+      () => { }
     );
   }
 
@@ -50,7 +54,7 @@ export class CategoryComponent implements OnInit {
       (error) => {
         console.log(error);
       },
-      () => {}
+      () => { }
     );
     // this.categories = this.HotelCategoryService.getAllCategories();
   }

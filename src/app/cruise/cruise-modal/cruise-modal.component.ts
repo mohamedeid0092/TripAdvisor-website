@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Cruise } from 'src/app/_model/criuses/cruise';
 import { CruiseService } from 'src/app/_services/cruise/cruise.service';
+import { LocalizationService } from 'src/app/_services/general/localization.service';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-cruise-modal',
@@ -8,8 +10,11 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./cruise-modal.component.scss'],
 })
 export class CruiseModalComponent implements OnInit {
-  cruise: Cruise;
-  constructor(private cruiseService: CruiseService) {}
+
+  @Input() cruise: Cruise;
+  constructor(private cruiseService: CruiseService, private localizationService: LocalizationService, public translate: TranslateService) {
+
+  }
 
   ngOnInit(): void {
     console.log(this.cruise);
@@ -20,9 +25,10 @@ export class CruiseModalComponent implements OnInit {
       (error) => {
         console.log(error);
       },
-      (completed) => {}
+      (completed) => { }
     );
   }
+
   bookNow() {
     this.cruiseService.BookNow.emit(this.cruise);
   }

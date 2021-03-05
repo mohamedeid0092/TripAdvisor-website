@@ -1,45 +1,40 @@
 <div class="row bg-white m-2 py-3">
-  <div class="col-md-8">
-    <h2 class="pb-2">{{cruise.days}} Night Cruise to {{cruise.whereTo}}</h2>
-    <p>Ship: {{cruise.shipName}}<br>
-      Sailing Date: {{cruise.sailingDate}}<br>
-      Departs From: {{cruise.departsFrom}}</p>
-  </div>
-  <div class="col-md-4 text-right">
-    <p class="font-weight-bold mt-2"><del class="del-price text-danger" *ngIf='cruise.discount'>EGP
-        {{cruise.price}}</del></p>
-    <p class="font-weight-bold mt-2 price"> EGP {{cruise.discount? cruise.price-cruise.discount : cruise.price}}</p>
+    <div class="col-md-8">
+        <h2 class="pb-2">{{cruise.days}} {{'Cruise.deals.Night Cruise to'|translate}} {{cruise.whereTo}}</h2>
+        <p>{{'Cruise.deals.Ship'|translate}}: {{cruise.shipName}}<br> {{'Cruise.deals.Sailing Date'|translate}}: {{cruise.sailingDate}}<br> {{'Cruise.deals.Departs From'|translate}}: {{cruise.departsFrom}}</p>
+    </div>
+    <div class="col-md-4 text-right">
+        <p class="font-weight-bold mt-2"><del class="del-price text-danger" *ngIf='cruise.discount'>{{'Cruise.deals.EGP'|translate}} {{cruise.price}}</del></p>
+        <p class="font-weight-bold mt-2 price"> {{'Cruise.deals.EGP'|translate}} {{cruise.discount? cruise.price-cruise.discount : cruise.price}}</p>
 
-    <!-- <button type="btn" class="btn view-cruise border border-dark w-100 mt-4">View
+        <!-- <button type="btn" class="btn view-cruise border border-dark w-100 mt-4">View
                   Cruise</button>
           </div> -->
 
-    <ng-template #content let-modal>
-      <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Cruise Details</h4>
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>modal body</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Save</button>
-      </div>
-    </ng-template>
+        <ng-template #content let-modal>
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">{{'Cruise.deals.Cruise Details'|translate}}</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>{{'Cruise.deals.modal body'|translate}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="modal.close()">{{'Cruise.deals.Save'|translate}}</button>
+            </div>
+        </ng-template>
 
-    <!-- Button trigger modal -->
-    <button type="button" class="mb-1 pr-3 btn btn-warning button-raduis text-center" data-toggle="modal"
-      data-target="#exampleModal" (click)='cruiseModal()'>
-      View Details
-    </button>
+        <!-- Button trigger modal -->
+        <button type="button" class="mb-1 pr-3 btn btn-warning button-raduis text-center" data-toggle="modal" data-target="#exampleModal" (click)='cruiseModal()'>
+             {{'Hotel.hotel.ViewDetails'|translate}}
+           </button>
 
 
-    <!-- Modal -->
-    <!-- <app-box-model *ngIf='showState()'></app-box-model> -->
-    <app-cruise-modal *ngIf='showState()'></app-cruise-modal>
-
-    <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">View Cruise</button> -->
-    <!-- <app-modal></app-modal> -->
-  </div>
+        <!-- Modal -->
+        <!-- <app-box-model *ngIf='showState()'></app-box-model> -->
+        <app-cruise-modal *ngIf='showState()'></app-cruise-modal>
+        <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">{{'Cruise.deals.View Cruise'|translate}}</button> -->
+        <!-- <app-modal></app-modal> -->
+    </div>

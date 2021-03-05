@@ -4,14 +4,16 @@ import { Hotel } from './../../_model/hotels/hotel';
 import { Cruise } from './../../_model/criuses/cruise';
 import { PriceDeals } from './../../_model/hotels/PriceDeals';
 import { CruiseService } from 'src/app/_services/cruise/cruise.service';
-import { CommonModule } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
+import { LocalizationService } from 'src/app/_services/general/localization.service';
+
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.scss'],
 })
 export class BookingComponent implements OnInit {
-  constructor(private HotelService: HotelService, private CruiseService:CruiseService) {}
+  constructor(private HotelService: HotelService, private CruiseService: CruiseService, private localizationService: LocalizationService, public translate: TranslateService) { }
   rooms: number = 0;
   display = false;
   checkIn = new Date();
@@ -194,11 +196,11 @@ export class BookingComponent implements OnInit {
         this.bestDeal();
         console.log(this.hotel);
       },
-      (error) => {},
-      (completed) => {}
+      (error) => { },
+      (completed) => { }
     );
   }
-  
+
 
   inputEvent(event) {
     if (event.target._elementRef.nativeElement.alt == 'checkIn') {
@@ -236,7 +238,7 @@ export class BookingComponent implements OnInit {
     this.display = true;
     console.log(`papal ${this.display}`);
     console.log(form);
-   // this.hotel.booking.push(form);
+    // this.hotel.booking.push(form);
     console.log(this.hotel.booking);
 
     if (this.hotel.rooms < form.rooms) {

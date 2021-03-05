@@ -1,156 +1,165 @@
 <div class="header-div text-center mt-5">
-  <div class="col-md-12">
-    <p class="first-header">Find the best cruise for you</p>
-  </div>
+    <div class="col-md-12">
+        <p class="first-header">{{'Cruise.Cruise.Find'|translate}}</p>
+    </div>
 </div>
 
 <div class="cruise-img-div mt-3">
-  <img class="img-fluid" src="../../assets/img/caribbean-cruise-homepage.jpg" />
+    <img class="img-fluid" src="../../assets/img/caribbean-cruise-homepage.jpg" />
 </div>
 
 <div class="row w-100 ml-0 cruise-div">
-  <div class="col-2"></div>
-  <div class="col-8 border bg-white px-3 py-4">
+    <div class="col-2"></div>
+    <div class="col-8 border bg-white px-3 py-4">
 
-    <!-- where to dropdown -->
+        <!-- where to dropdown -->
 
-    <div class="whereTo-div bg-white border p-2 d-inline-block">
+        <div class="whereTo-div bg-white border p-2 d-inline-block">
 
-      <mat-form-field appearance="fill">
-        <mat-label>Where To ?</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let item of whereToArr ;let i = index" [value]="item" (click)="funcTo($event)">
-            {{item}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+            <!-- <div ngbDropdown class="d-inline-block">
+                <button class="btn " id="dropdownBasic1" ngbDropdownToggle>
+        <i class="fas fa-map-marker-alt pr-2"></i> {{'Cruise.Cruise.Where to ?'|translate}}</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem *ngFor="let item of cruise">{{item.whereTo}}</button>
+                </div>
+            </div> -->
+            <mat-form-field appearance="fill">
+                <mat-label>{{'Cruise.Cruise.Where to ?'|translate}}</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let item of whereToArr ;let i = index" [value]="item" (click)="funcTo($event)">
+                        {{item}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+
+
+        <div class="whereTo-div bg-white border px-2 mx-2 d-inline-block">
+            <!-- <i class="far fa-calendar-alt pr-2"></i> -->
+            <!-- <span>
+        <span>Departure Month</span>
+        <i class="fas fa-sort-down pl-2 mr-5 sort-icon"></i>
+        
+      </span> -->
+            <mat-form-field>
+                <mat-label>{{'Cruise.Cruise.Departure Month'|translate}}?</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let item of depMonthArr ;let i = index" [value]="item" (click)="funcMonth($event)">
+                        {{item}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <button type="button" class="btn btn-dark p-2 search-btn" (click)="search()">{{'Cruise.Cruise.Search'|translate}}</button>
     </div>
-    <div class="whereTo-div bg-white border px-2 mx-2 d-inline-block">
-
-      <mat-form-field appearance="fill">
-        <mat-label>Departure Month ?</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let item of depMonthArr ;let i = index" [value]="item" (click)="funcMonth($event)">
-            {{item}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <button type="button" class="btn btn-dark p-2 search-btn" (click)="search()">Search</button>
-  </div>
-  <div class="col-md-2"></div>
+    <div class="col-md-2"></div>
 </div>
 
 <div class="container-div container-fluid pl-5">
-  <div class="row mt-5">
-    <div class="col-md-4">
-      <div class="row">
-        <div class="col-md-12 d-flex justify-content-center">
-          <img class="ship-img" src="https://static.tacdn.com/img2/branding/homepage/messaging/cruise_ship.svg" />
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <img class="ship-img" src="https://static.tacdn.com/img2/branding/homepage/messaging/cruise_ship.svg" />
+                </div>
+                <div class="col-md-12 text-center">
+                    <h3 class="pt-2">{{'Cruise.Cruise.Explore Ship‑tinerary™ pages'|translate}}</h3>
+                    <p class="cruise-txt d-inline">
+                        {{'Cruise.Cruise.Select'|translate}}
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-12 text-center">
-          <h3 class="pt-2">Explore Ship‑tinerary™ pages</h3>
-          <p class="cruise-txt d-inline">
-            Select a ship to see ship details, reviews, photos and itineraries
-          </p>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <img class="ship-img" src="https://static.tacdn.com/img2/branding/homepage/messaging/cruise_reviews.svg" />
+                </div>
+                <div class="col-md-12 text-center">
+                    <h3 class="pt-2">{{'Cruise.Cruise.Write cruise reviews'|translate}}</h3>
+                    <p class="cruise-txt d-inline">
+                        {{'Cruise.Cruise.Share your opinion with our travel community'|translate}}
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="row">
-        <div class="col-md-12 d-flex justify-content-center">
-          <img class="ship-img" src="https://static.tacdn.com/img2/branding/homepage/messaging/cruise_reviews.svg" />
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <img class="ship-img" src="https://static.tacdn.com/img2/branding/homepage/messaging/cruise_low_prices.svg" />
+                </div>
+                <div class="col-md-12 text-center">
+                    <h3 class="pt-2">{{'Cruise.Cruise.The lowest cruise prices'|translate}}</h3>
+                    <p class="cruise-txt d-inline">
+                        {{'Cruise.Cruise.Search 70,000+ cruise deals from over sixty sites with just one search'|translate}}
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-12 text-center">
-          <h3 class="pt-2">Write cruise reviews</h3>
-          <p class="cruise-txt d-inline">
-            Share your opinion with our travel community</p>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12 mt-3">
+            <h2>{{'Cruise.Cruise.Featured cruise deals'|translate}}</h2>
+            <div class="row">
+                <app-cruise-deals class="w-50 pl-3" *ngFor="let cruise of getCruiseSlice()" [cruise]="cruise"></app-cruise-deals>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="col-md-4">
-      <div class="row">
-        <div class="col-md-12 d-flex justify-content-center">
-          <img class="ship-img" src="https://static.tacdn.com/img2/branding/homepage/messaging/cruise_low_prices.svg" />
+
+    <!-- <app-cruise-deals></app-cruise-deals> -->
+
+    <div class="row">
+        <div class="col-md-12 mt-3 ">
+            <h2>{{'Cruise.Cruise.Popular with cruise travelers'|translate}}</h2>
         </div>
-        <div class="col-md-12 text-center">
-          <h3 class="pt-2">The lowest cruise prices</h3>
-          <p class="cruise-txt d-inline">
-            Search 70,000+ cruise deals from over sixty sites with just one search</p>
+    </div>
+
+    <div class="row w-100 mx-auto">
+        <div class="col-md-3 m-0 p-1" data-toggle="modal" data-target="#exampleModal" *ngFor="let cruise of popular.slice(0,4)" (click)="cruiseModal(cruise)">
+            <img class="slider-img" src={{cruise.images[0]}} />
+            <div class="caro-div bg-white w-100 p-2">{{'Cruise.Cruise.Cruises to'|translate}}{{cruise.whereTo}}</div>
+            <app-cruise-modal *ngIf="showState()"></app-cruise-modal>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="row mt-4">
-    <div class="col-md-12 mt-3">
-      <h2>Featured cruise deals</h2>
-      <div class="row">
-        <app-cruise-deals class="w-50 pl-3" *ngFor="let cruise of getCruiseSlice()" [cruise]="cruise">
-        </app-cruise-deals>
-      </div>
-    </div>
-  </div>
+        <div class="row w-100 mx-auto">
+            <div class="col-md-12">
+                <h2>{{'Cruise.Cruise.The Cheapest Cruises Price'|translate}}</h2>
+            </div>
+        </div>
+        <div class="row w-100 mx-auto">
+            <div class="col-md-3 m-0 p-1" data-toggle="modal" data-target="#exampleModal" *ngFor="let cruise of lowPriceCruise.slice(0,4)  " (click)="cruiseModal(cruise)">
+                <img class="slider-img" src={{cruise.images[0]}} />
+                <div class="caro-div bg-white w-100 p-2">{{'Cruise.Cruise.Cruises to'|translate}}{{cruise.whereTo}}</div>
 
+                <app-cruise-modal *ngIf="showState()"></app-cruise-modal>
+            </div>
+        </div>
 
+        <div class="row w-100 mx-auto">
+            <div class="col-md-12">
+                <h2>{{'Cruise.Cruise.Cruises by length'|translate}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 m-0 p-1" *ngFor="let cruise of minNumbDays.slice(0,4)" (click)="cruiseModal(cruise)">
+                <img class="slider-img" src={{cruise.images[0]}}/>
+                <div class="caro-div bg-white w-100 p-2">{{cruise.days}} {{'Cruise.Cruise.days'|translate}}</div>
 
-  <div class="row">
-    <div class="col-md-12 mt-3 ">
-      <h2>Popular with cruise travelers</h2>
-    </div>
-  </div>
+                <app-cruise-modal *ngIf="showState()"></app-cruise-modal>
+            </div>
+        </div>
 
-  <div class="row w-100 mx-auto">
-    <div class="col-md-3 m-0 p-1" data-toggle="modal" data-target="#exampleModal"
-      *ngFor="let cruise of popular.slice(0,4)" (click)="cruiseModal(cruise)">
-      <img class="slider-img" src={{cruise.images[0]}} />
-      <div class="caro-div bg-white w-100 p-2">Cruises to {{cruise.whereTo}}</div>
+        <div class="row">
+            <div class="col-md-12 ">
+                <h2>{{'Cruise.Cruise.Cruise ship quick links'|translate}}</h2>
+            </div>
+        </div>
 
-      <app-cruise-modal *ngIf="showState()"></app-cruise-modal>
-    </div>
-
-
-  </div>
-
-  <div class="row w-100 mx-auto">
-    <div class="col-md-12">
-      <h2>The Cheapest Cruises Price</h2>
-    </div>
-  </div>
-  <div class="row w-100 mx-auto">
-    <div class="col-md-3 m-0 p-1" data-toggle="modal" data-target="#exampleModal"
-      *ngFor="let cruise of lowPriceCruise.slice(0,4)  " (click)="cruiseModal(cruise)">
-      <img class="slider-img" src={{cruise.images[0]}} />
-      <div class="caro-div bg-white w-100 p-2">Cruises to {{cruise.whereTo}}</div>
-
-      <app-cruise-modal *ngIf="showState()"></app-cruise-modal>
-    </div>
-
-  </div>
-
-  <div class="row w-100 mx-auto">
-    <div class="col-md-12">
-      <h2>Cruises by length</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3 m-0 p-1" data-toggle="modal" data-target="#exampleModal"
-      *ngFor="let cruise of minNumbDays.slice(0,4)" (click)="cruiseModal(cruise)">
-      <img class="slider-img" src={{cruise.images[0]}} />
-      <div class="caro-div bg-white w-100 p-2">{{cruise.days}} Days</div>
-
-      <app-cruise-modal *ngIf="showState()"></app-cruise-modal>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12 ">
-      <h2>Cruise ship quick links</h2>
-    </div>
-  </div>
-
-  <form class="pb-5">
-    <select class="select-cruise mr-2" name="selectCurise" id="selectCurise">
+        <form class="pb-5">
+            <select class="select-cruise mr-2" name="selectCurise" id="selectCurise">
       <option value="option1">1A Vista Reisen</option>
       <option value="option1">A-ROSA Cruises</option>
       <option value="option1">AIDA</option>
@@ -161,7 +170,7 @@
       <option value="option1">Adventures by Disney</option>
     </select>
 
-    <select class="select-cruise mr-2" name="selectCurise" id="selectCurise">
+            <select class="select-cruise mr-2" name="selectCurise" id="selectCurise">
       <option value="option1">Chekov</option>
       <option value="option1">Fulvius</option>
       <option value="option1">Junker Jorg</option>
@@ -172,133 +181,69 @@
       <option value="option1">Poseidon</option>
     </select>
 
-    <input class="view-ship-btn py-1" type="submit" value="View Ship" />
-  </form>
-</div>
+            <input class="view-ship-btn py-1" type="submit" value="View Ship" />
+        </form>
+    </div>
 
-<div class="background-div px-3">
-  <div class="row">
-    <div class="col-md-12 pb-3">
-      <h2>Cruising Guide</h2>
-    </div>
-  </div>
+    <div class="background-div px-3">
+        <div class="row">
+            <div class="col-md-12 pb-3">
+                <h2>{{'Cruise.Cruise.Cruising Guide'|translate}}</h2>
+            </div>
+        </div>
 
-  <div class="row">
-    <div class="col-md-6">
-      <h3 class="q-style">Why take a cruise vacation?</h3>
-      <p>
-        If you have a place on your bucket list, chances are, a cruise will get
-        you there. Cruises cover the world, taking millions of passengers each
-        year to destinations like the Caribbean, the Bahamas, Alaska, Europe,
-        the Mediterranean and even Antarctica. Cruising offers a tremendous
-        value, with trips that include your lodging, meals and entertainment,
-        all rolled into one. Some cruise lines even offer fully inclusive
-        vacations, which cover drinks and tours ashore. Cruising means seeing
-        the world while unpacking only once.
-      </p>
-      <p>
-        Cruises also provide a wonderful option for families, with many ships
-        offering things like waterslides, mini-golf courses and fun clubs for
-        kids and teens -- all for free. Planning is easy: Pick your destination
-        and the right ship for you. The cruise line makes it simple, offering
-        packages to help you save on extras like alcohol, shore tours or even
-        airfare.
-      </p>
-      <p>
-        Travelers say they choose to cruise because cruising often costs less
-        per night when compared with staying at a hotel, where they'll have to
-        book -- and pay for -- all their extras.
-      </p>
-      <h3 class="q-style">What are Tips for Finding Cheap Cruises?</h3>
-      <p>
-        If you're a flexible traveler, you'll have a better chance of finding
-        cheap cruises. Take a cruise that doesn't sail over the summer or
-        holidays, when prices are highest. Book an inside cabin, or take your
-        chances with a "guarantee cabin," ideal for passengers who aren't picky
-        about their cabins but really want the lowest price available. Book
-        cabins on lower decks, which often come with lower prices than those
-        rooms on higher floors.
-      </p>
-      <p>
-        Cruise lines such as MSC Cruises, Carnival Cruise Line, Norwegian Cruise
-        Line and Royal Caribbean International offer rates that might drop as
-        low as $75 per person per night -- and sometimes lower. Here's a tip:
-        Many times, the smaller ships from these lines offer the smallest
-        prices.
-      </p>
-      <p>
-        If you want a real bargain, consider a transatlantic or repositioning
-        cruise. These cruises are one-way or open-jaw trips, that start in one
-        port and finish at another. You can score a deal sailing from Florida to
-        Europe, for example, or even from New York to Florida. Just be aware,
-        you'll probably have to pay a bit more for airfare to return.
-      </p>
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="q-style">{{'Cruise.Cruise.Why take a cruise vacation?'|translate}}</h3>
+                <p>
+                    {{'Cruise.Cruise.If'|translate}}
+                </p>
+                <p>
+                    {{'Cruise.Cruise.If2'|translate}}
+                </p>
+                <p>
+                    {{'Cruise.Cruise.If3'|translate}}
+                </p>
+                <h3 class="q-style">{{'Cruise.Cruise.What are Tips for Finding Cheap Cruises?'|translate}}</h3>
+                <p>
+                    {{'Cruise.Cruise.If4'|translate}}
+                </p>
+                <p>
+                    {{'Cruise.Cruise.If5'|translate}}
+                </p>
+                <p>
+                    {{'Cruise.Cruise.If6'|translate}}.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h3 class="q-style">{{'Cruise.Cruise.What are Tips to Finding Last-Minute Cruise Deals?'|translate}}</h3>
+                <p>
+                    {{'Cruise.Cruise.If7'|translate}}
+                </p>
+                <p>
+                    {{'Cruise.Cruise.If8'|translate}}
+                </p>
+                <p>
+                    {{'Cruise.Cruise.If9'|translate}}
+                </p>
+                <h3 class="q-style">{{'Cruise.Cruise.Best cruises in 2020'|translate}}</h3>
+                <p>
+                    {{'Cruise.Cruise.If10'|translate}}
+                </p>
+                <p>
+                    {{'Cruise.Cruise.If11'|translate}}
+                </p>
+                <p>
+                    {{'Cruise.Cruise.If12'|translate}}
+                </p>
+                <p>
+                    {{'Cruise.Cruise.If13'|translate}}
+                </p>
+                <p>
+                    {{'Cruise.Cruise.If14'|translate}}
+                </p>
+            </div>
+        </div>
+
+
     </div>
-    <div class="col-md-6">
-      <h3 class="q-style">What are Tips to Finding Last-Minute Cruise Deals?</h3>
-      <p>
-        Being flexible will get you the best last-minute cruise deals. If you
-        live near a cruise port and can drive, you're probably going to be able
-        to jump on those deals that might pop up a week or two before the ship
-        is set to sail.
-      </p>
-      <p>
-        If you don't have flexibility with dates and locations, be willing to
-        bend on destination. This will allow you to find a wider range of
-        last-minute deals traveling to locations in their off-season or shoulder
-        season.
-      </p>
-      <p>
-        Do plenty of research and know what your ideal cruise costs on average.
-        When you see it drop, pounce! Many cruise lines update pricing several
-        times every day, so be prepared.
-      </p>
-      <h3 class="q-style">Best cruises in 2020</h3>
-      <p>
-        Part of the appeal of cruising is that there's truly something for
-        everyone. Ships come in an array of sizes, some loaded with so many
-        activities, you couldn't get to them all in a week.
-      </p>
-      <p>
-        Families will find plenty of options and activities onboard big ships,
-        which have transformed cruising, making the vessels as exciting as the
-        destinations to which they sail. The Caribbean is a great option for
-        families, offering lots of sunshine, great beaches and culture. Alaska,
-        famous for its incredible vistas and abundant wildlife, also is a solid
-        family cruise option. Consider cruise lines such as Carnival, Princess,
-        Royal Caribbean, Norwegian, Disney, Celebrity, MSC and Holland America
-        for a family cruise.
-      </p>
-      <p>
-        River cruising has been heating up over the past few years, with
-        itineraries that send passengers down the Danube or Rhine rivers in
-        Europe or to even more exotic locations, like the Mekong River in
-        Cambodia or Vietnam or the Volga River in Russia. Popular river cruises
-        embark in cities like Amsterdam, Budapest and Lisbon. Popular river
-        cruise lines include Viking, AmaWaterways, Avalon, Scenic, Emerald
-        Waterways, Tauck, Uniworld and Crystal.
-      </p>
-      <p>
-        If you're a thrill-seeker, consider an expedition cruise. These cruises,
-        often onboard small ships, offer an intimate experience that brings
-        passengers right up next to glaciers, whales, penguins and iguanas.
-        Ships visit tiny spots all over the world, including Antarctica, Alaska,
-        Australia and Greenland. Passengers will spend their time kayaking,
-        hiking, biking and exploring with expert guides and knowledgeable
-        naturalists. Expedition travelers love cruise lines such as Lindblad
-        Expeditions, UnCruise Adventures, Silversea, Hurtigruten, Ponant and
-        Quark Expeditions.
-      </p>
-      <p>
-        Luxury cruises offer all-inclusive experiences onboard smaller ships
-        with perks like butlers, high-end amenities and personalized, intuitive
-        service. Ships often feature luxury touches like marble and crystal
-        decor, intimate spaces and beautiful spas. Because luxury ships tend to
-        be smaller, they can often reach off-the-beaten-path destinations bigger
-        ships can't -- ports like St. Tropez or Guadeloupe. If you're looking
-        for a luxury cruise, consider Crystal, Seabourn, Regent Seven Seas,
-        Oceania, Azamara, Viking Oceans and Silversea.
-      </p>
-    </div>
-  </div>
-</div>

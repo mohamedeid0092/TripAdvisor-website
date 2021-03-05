@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 @Pipe({
   name: 'search'
 })

@@ -52,7 +52,7 @@ export class HotelCategoryService {
   //   ],
   // };
   getAllCategories() {
-    return this.httpClient.get(`${this.baseUrl}hotelscategory`);
+    return this.httpClient.get(`${this.baseUrl}hotelsCategory`);
     //return this.categoryList;
   }
   constructor(private httpClient: HttpClient) {
@@ -68,7 +68,7 @@ export class HotelCategoryService {
       (error) => {
         console.log(error);
       },
-      () => {}
+      () => { }
     );
   }
 

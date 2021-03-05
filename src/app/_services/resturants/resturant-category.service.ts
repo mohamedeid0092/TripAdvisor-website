@@ -96,7 +96,7 @@ export class ResturantCategoryService {
   // };
 
   getAllCategories() {
-    return this.httpClient.get(`${this.baseUrl}resturantscategory`);
+    return this.httpClient.get(`${this.baseUrl}resturantsCategory`);
   }
 
   constructor(private httpClient: HttpClient) {

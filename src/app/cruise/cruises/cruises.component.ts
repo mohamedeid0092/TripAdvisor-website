@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 // import { Cruise } from '../_model/cruise';
 import { CruiseService } from '../../_services/cruise/cruise.service';
 // import { CruiseService } from '../_services/cruise.service';
-// import{CruiseDealsComponent} from '../cruise-deals/cruise-deals.component'
+// import { CruiseDealsComponent } from '../cruise-deals/cruise-deals.component'
 import { FormControl } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Cruise } from './../../_model/criuses/cruise';
-import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-cruises',
   templateUrl: './cruises.component.html',
@@ -31,7 +31,7 @@ export class CruisesComponent implements OnInit {
   lowPriceCruise: Cruise[] = [];
   minNumbDays: Cruise[] = [];
   tempCruise: Cruise[] = [];
-  constructor(private cruiseService: CruiseService) {}
+  constructor(private cruiseService: CruiseService) { }
 
   ngOnInit(): void {
     this.cruiseService.getAllCruises().subscribe((resp) => {

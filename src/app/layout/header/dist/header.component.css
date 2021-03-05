@@ -1,0 +1,59 @@
+body {
+  background-color: #f2f2f2;
+}
+
+.row {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+[class*=col-] {
+  padding: 0px;
+  margin: 0px;
+}
+
+i {
+  font-size: 1.4rem;
+}
+
+.search-style {
+  width: 27rem;
+  height: 3.4rem;
+}
+
+.search-style input {
+  border-radius: 10px;
+  border-width: 1.9px;
+  border-color: #efefef;
+}
+
+a:link a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.span-size {
+  font-size: 16px !important;
+}
+
+.seconditem {
+  color: black;
+  cursor: pointer;
+}
+
+.seconditem:hover {
+  color: #797676;
+}
+
+.searchCont {
+  position: absolute;
+  height: 100px;
+  width: 200px;
+  background-color: rebeccapurple;
+}

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Restaurant } from 'src/app/_model/resturant/restaurant';
+import { LocalizationService } from 'src/app/_services/general/localization.service';
 import { ResturantService } from 'src/app/_services/resturants/resturant.service';
 import { ResturantCategoryService } from './../../_services/resturants/resturant-category.service';
-import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-resturant-details',
   templateUrl: './resturant-details.component.html',
@@ -67,8 +69,9 @@ export class ResturantDetailsComponent implements OnInit {
   longitude = 0;
   constructor(
     private ResturantCategoryService: ResturantCategoryService,
-    private resturantService: ResturantService
-  ) {}
+    private resturantService: ResturantService,
+    private localizationService: LocalizationService, public translate: TranslateService
+  ) { }
 
   ngOnInit(): void {
     this.resturantService.viewDetails.subscribe(
@@ -79,8 +82,8 @@ export class ResturantDetailsComponent implements OnInit {
         console.log(`lat : ${this.latitude}`);
         console.log(`long : ${this.longitude}`);
       },
-      (error) => {},
-      (completed) => {}
+      (error) => { },
+      (completed) => { }
     );
   }
 
