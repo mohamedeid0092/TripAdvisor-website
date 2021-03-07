@@ -29,7 +29,8 @@
     "Hotel": {
         "date": {
             "map": "view map",
-            "Makassar": "Makassar Hotels and Places to Stay"
+            "Makassar": "Makassar Hotels and Places to Stay",
+            "Hotels To Stay": "Hotels To Stay"
         },
         "hotel": {
             "BestSeller": "Best Seller",
@@ -222,6 +223,8 @@
         "Create a password": "Create a password",
         "Join": "Join",
         "Already have an account?": "Already have an account?",
-        "Log in": "Log in"
+        "Log in": "Log in",
+        "Please enter a valid email": "Please enter a valid email",
+        "Please enter a valid password": "Please enter a valid password"
     }
 }

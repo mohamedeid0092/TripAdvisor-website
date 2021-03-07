@@ -29,7 +29,8 @@
     "Hotel": {
         "date": {
             "map": "اظهر الخريطة",
-            "Makassar": "الفنادق و الاماكن في مراكش"
+            "Makassar": "الفنادق و الاماكن في مراكش",
+            "Hotels To Stay": "الفنادق للإقامة في"
         },
         "hotel": {
             "BestSeller": "احسن سعر",
@@ -221,7 +222,9 @@
         "Create a password": "إنشاء كلمة مرور",
         "Join": "انضم",
         "Already have an account?": "هل لديك حساب؟",
-        "Log in": "يسجل دخول"
+        "Log in": "يسجل دخول",
+        "Please enter a valid email": "يرجى إدخال البريد الإلكتروني الصحيح",
+        "Please enter a valid password": "الرجاء إدخال كلمة السر الصحيحة"
     }
 
 }

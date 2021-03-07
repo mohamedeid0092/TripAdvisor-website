@@ -1,51 +1,45 @@
-<div class="container"
-  style="background-color: white;padding: 40px;margin-top: 50px;margin-bottom: 50px;"
-  >
+<div class="container" style="background-color: white;padding: 40px;margin-top: 50px;margin-bottom: 50px;">
 
-  <div *ngIf="isLoading" class="spinner-border" role="status">
-    <span class="sr-only">Loading...</span>
-  </div>
+    <div *ngIf="isLoading" class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
 
-  <form (submit)="signup(signupForm)" #signupForm="ngForm" *ngIf="!isLoading">
-    <div class="form-group">
-      <div>
-        <img
-          src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_registered.svg"
-          width="200px"
-        />
-      </div>
-      <h4 style="padding: 25px 0px 25px 0px">Join now – it’s free!</h4>
+    <form (submit)="signup(signupForm)" #signupForm="ngForm" *ngIf="!isLoading">
+        <div class="form-group">
+            <div>
+                <img src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_registered.svg" width="200px" />
+            </div>
+            <h4 style="padding: 25px 0px 25px 0px">{{'Signup.Join now – it’s free!'|translate}}</h4>
 
-      <div class="form-group">
-        <label class="ml-2 text-secondary font-weight-bold">Email address</label>
-        <input type="email" name="email" ngModel class="form-control" id="InputEmail1" placeholder="Email" #emailInput="ngModel" required email />
+            <div class="form-group">
+                <label class="ml-2 text-secondary font-weight-bold">{{'Signup.Email address'|translate}}</label>
+                <input type="email" name="email" ngModel class="form-control" id="InputEmail1" placeholder="Email" #emailInput="ngModel" required email />
 
-        <div class="alert alert-danger" role="alert" *ngIf="emailInput.invalid && emailInput.touched">
-          Please enter a valid email
-        </div>
-      </div>
+                <div class="alert alert-danger" role="alert" *ngIf="emailInput.invalid && emailInput.touched">
+                    {{'Signup.Please enter a valid email'|translate}}
+                </div>
+            </div>
 
-      <div class="form-group">
-        <label class="ml-2 text-secondary font-weight-bold">Create a password</label>
-        <input type="password"  name="password" ngModel class="form-control" id="InputPassword" placeholder="Password" #passwordInput="ngModel" required/>
-        
-          <div class="alert alert-danger" role="alert" *ngIf="passwordInput.invalid && passwordInput.touched">
-            Please enter a valid password
-          </div>
-        </div>
+            <div class="form-group">
+                <label class="ml-2 text-secondary font-weight-bold">{{'Signup.Create a password'|translate}}</label>
+                <input type="password" name="password" ngModel class="form-control" id="InputPassword" placeholder="Password" #passwordInput="ngModel" required/>
 
-      
-     
-      <button
-        type="submit"class="btn btn-dark btn-lg btn-block">Join
+                <div class="alert alert-danger" role="alert" *ngIf="passwordInput.invalid && passwordInput.touched">
+                    {{'Signup.Please enter a valid password'|translate}}
+                </div>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-dark btn-lg btn-block">{{'Signup.Join'|translate}}
         <!-- <div *ngIf="isLoading" class="spinner-border" role="status">
             <span class="sr-only">Loading...</span>
           </div> -->
       </button>
 
-      <label style="padding: 20px" class="ml-1 text-secondary font-weight-bold">
-        Already have an account?<a [routerLink]="['/login']" style="color: black">Log in</a>
+            <label style="padding: 20px" class="ml-1 text-secondary font-weight-bold">
+        {{'Signup.Already have an account?'|translate}}<a [routerLink]="['/login']" style="color: black">{{'Signup.Log in'|translate}}</a>
     </label>
-    </div>
-  </form>
+        </div>
+    </form>
 </div>
