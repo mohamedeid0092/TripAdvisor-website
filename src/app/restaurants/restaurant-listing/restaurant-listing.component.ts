@@ -43,6 +43,7 @@ export class RestaurantListingComponent implements OnInit {
         this.ResturantService.getResturantById(id).subscribe((res) => {
           this.resturant.push(res);
           // console.log(res);
+          this.calculateNumberOfPages(this.resturant.length);
         });
       }
       this.resturant = [...new Set(this.resturant)];

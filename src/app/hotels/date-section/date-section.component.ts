@@ -17,6 +17,7 @@ export class DateSectionComponent implements OnInit {
   subtractDates = 0;
   days = 0;
   cityMap;
+  cityName;
   inputEvent(event) {
     if (event.target._elementRef.nativeElement.alt == 'checkIn') {
       console.log(event.value);
@@ -45,6 +46,7 @@ export class DateSectionComponent implements OnInit {
     private HomeService: HomeService
   ) {
     this.cityMap = this.HomeService.cityMap;
+    this.cityName = this.HomeService.cityName;
   }
 
   ngOnInit(): void {}

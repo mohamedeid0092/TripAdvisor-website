@@ -92,7 +92,8 @@
                             src="https://static.tacdn.com/img2/branding/homepage/messaging/cruise_ship.svg" />
                         </div>
                         <div class="searchTxt">
-                          <div class="txt">{{ searchInput.value }} Cruises</div>
+                          <div data-dismiss="modal" (click)="getSearchResturants(searchInput.value)"
+                            routerLink="/cruises" class="txt">{{ searchInput.value }} Cruises</div>
                         </div>
                       </a>
                     </div>
@@ -142,4 +143,3 @@
 <!-- Buttons -->
 
 <app-button class="mb-3" [search]="search"></app-button>
-
