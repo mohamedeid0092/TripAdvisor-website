@@ -1,249 +1,223 @@
 <div class="header-div text-center mt-5">
-    <div class="col-md-12">
-        <p class="first-header">{{'Cruise.Cruise.Find'|translate}}</p>
-    </div>
+  <div class="col-md-12">
+    <p class="first-header">{{'Cruise.Cruise.Find'|translate}}</p>
+  </div>
 </div>
 
 <div class="cruise-img-div mt-3">
-    <img class="img-fluid" src="../../assets/img/caribbean-cruise-homepage.jpg" />
+  <img class="img-fluid" src="../../assets/img/caribbean-cruise-homepage.jpg" />
 </div>
 
 <div class="row w-100 ml-0 cruise-div">
-    <div class="col-2"></div>
-    <div class="col-8 border bg-white px-3 py-4">
+  <div class="col-2"></div>
+  <div class="col-8 border bg-white px-3 py-4">
 
-        <!-- where to dropdown -->
+    <!-- where to dropdown -->
 
-        <div class="whereTo-div bg-white border p-2 d-inline-block">
+    <div class="whereTo-div bg-white border p-2 d-inline-block">
 
-            <!-- <div ngbDropdown class="d-inline-block">
+      <!-- <div ngbDropdown class="d-inline-block">
                 <button class="btn " id="dropdownBasic1" ngbDropdownToggle>
         <i class="fas fa-map-marker-alt pr-2"></i> {{'Cruise.Cruise.Where to ?'|translate}}</button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                     <button ngbDropdownItem *ngFor="let item of cruise">{{item.whereTo}}</button>
                 </div>
             </div> -->
-            <mat-form-field appearance="fill">
-                <mat-label>{{'Cruise.Cruise.Where to ?'|translate}}</mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let item of whereToArr ;let i = index" [value]="item" (click)="funcTo($event)">
-                        {{item}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
+      <mat-form-field appearance="fill">
+        <mat-label>{{'Cruise.Cruise.Where to ?'|translate}}</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let item of whereToArr ;let i = index" [value]="item" (click)="funcTo($event)">
+            {{item}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
 
 
-        <div class="whereTo-div bg-white border px-2 mx-2 d-inline-block">
-            <!-- <i class="far fa-calendar-alt pr-2"></i> -->
-            <!-- <span>
+    <div class="whereTo-div bg-white border px-2 mx-2 d-inline-block">
+      <!-- <i class="far fa-calendar-alt pr-2"></i> -->
+      <!-- <span>
         <span>Departure Month</span>
         <i class="fas fa-sort-down pl-2 mr-5 sort-icon"></i>
         
       </span> -->
-            <mat-form-field>
-                <mat-label>{{'Cruise.Cruise.Departure Month'|translate}}?</mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let item of depMonthArr ;let i = index" [value]="item" (click)="funcMonth($event)">
-                        {{item}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-
-        <button type="button" class="btn btn-dark p-2 search-btn" (click)="search()">{{'Cruise.Cruise.Search'|translate}}</button>
+      <mat-form-field>
+        <mat-label>{{'Cruise.Cruise.Departure Month'|translate}}?</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let item of depMonthArr ;let i = index" [value]="item" (click)="funcMonth($event)">
+            {{item}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
-    <div class="col-md-2"></div>
+
+    <button type="button" class="btn btn-dark p-2 search-btn"
+      (click)="search()">{{'Cruise.Cruise.Search'|translate}}</button>
+  </div>
+  <div class="col-md-2"></div>
 </div>
 
 <div class="container-div container-fluid pl-5">
-    <div class="row mt-5">
-        <div class="col-md-4">
-            <div class="row">
-                <div class="col-md-12 d-flex justify-content-center">
-                    <img class="ship-img" src="https://static.tacdn.com/img2/branding/homepage/messaging/cruise_ship.svg" />
-                </div>
-                <div class="col-md-12 text-center">
-                    <h3 class="pt-2">{{'Cruise.Cruise.Explore Ship‑tinerary™ pages'|translate}}</h3>
-                    <p class="cruise-txt d-inline">
-                        {{'Cruise.Cruise.Select'|translate}}
-                    </p>
-                </div>
-            </div>
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+          <img class="ship-img" src="https://static.tacdn.com/img2/branding/homepage/messaging/cruise_ship.svg" />
         </div>
-        <div class="col-md-4">
-            <div class="row">
-                <div class="col-md-12 d-flex justify-content-center">
-                    <img class="ship-img" src="https://static.tacdn.com/img2/branding/homepage/messaging/cruise_reviews.svg" />
-                </div>
-                <div class="col-md-12 text-center">
-                    <h3 class="pt-2">{{'Cruise.Cruise.Write cruise reviews'|translate}}</h3>
-                    <p class="cruise-txt d-inline">
-                        {{'Cruise.Cruise.Share your opinion with our travel community'|translate}}
-                    </p>
-                </div>
-            </div>
+        <div class="col-md-12 text-center">
+          <h3 class="pt-2">{{'Cruise.Cruise.Explore Ship‑tinerary™ pages'|translate}}</h3>
+          <p class="cruise-txt d-inline">
+            {{'Cruise.Cruise.Select'|translate}}
+          </p>
         </div>
-        <div class="col-md-4">
-            <div class="row">
-                <div class="col-md-12 d-flex justify-content-center">
-                    <img class="ship-img" src="https://static.tacdn.com/img2/branding/homepage/messaging/cruise_low_prices.svg" />
-                </div>
-                <div class="col-md-12 text-center">
-                    <h3 class="pt-2">{{'Cruise.Cruise.The lowest cruise prices'|translate}}</h3>
-                    <p class="cruise-txt d-inline">
-                        {{'Cruise.Cruise.Search 70,000+ cruise deals from over sixty sites with just one search'|translate}}
-                    </p>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-
-    <div class="row mt-4">
-        <div class="col-md-12 mt-3">
-            <h2>{{'Cruise.Cruise.Featured cruise deals'|translate}}</h2>
-            <div class="row">
-                <app-cruise-deals class="w-50 pl-3" *ngFor="let cruise of getCruiseSlice()" [cruise]="cruise"></app-cruise-deals>
-            </div>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+          <img class="ship-img" src="https://static.tacdn.com/img2/branding/homepage/messaging/cruise_reviews.svg" />
         </div>
+        <div class="col-md-12 text-center">
+          <h3 class="pt-2">{{'Cruise.Cruise.Write cruise reviews'|translate}}</h3>
+          <p class="cruise-txt d-inline">
+            {{'Cruise.Cruise.Share your opinion with our travel community'|translate}}
+          </p>
+        </div>
+      </div>
     </div>
-
-    <!-- <app-cruise-deals></app-cruise-deals> -->
-
-    <div class="row">
-        <div class="col-md-12 mt-3 ">
-            <h2>{{'Cruise.Cruise.Popular with cruise travelers'|translate}}</h2>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+          <img class="ship-img" src="https://static.tacdn.com/img2/branding/homepage/messaging/cruise_low_prices.svg" />
         </div>
+        <div class="col-md-12 text-center">
+          <h3 class="pt-2">{{'Cruise.Cruise.The lowest cruise prices'|translate}}</h3>
+          <p class="cruise-txt d-inline">
+            {{'Cruise.Cruise.Search 70,000+ cruise deals from over sixty sites with just one search'|translate}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-12 mt-3">
+      <h2>{{'Cruise.Cruise.Featured cruise deals'|translate}}</h2>
+      <div class="row">
+        <app-cruise-deals class="w-50 pl-3" *ngFor="let cruise of getCruiseSlice()" [cruise]="cruise">
+        </app-cruise-deals>
+      </div>
+    </div>
+  </div>
+
+  <!-- <app-cruise-deals></app-cruise-deals> -->
+
+  <div class="row">
+    <div class="col-md-12 mt-3 ">
+      <h2>{{'Cruise.Cruise.Popular with cruise travelers'|translate}}</h2>
+    </div>
+  </div>
+
+  <div class="row w-100 mx-auto">
+    <div class="col-md-3 m-0 p-1" data-toggle="modal" data-target="#exampleModal"
+      *ngFor="let cruise of popular.slice(0,4)" (click)="cruiseModal(cruise)">
+      <img class="slider-img" src={{cruise.images[0]}} />
+      <div class="caro-div bg-white w-100 p-2">{{'Cruise.Cruise.Cruises to'|translate}}{{cruise.whereTo}}</div>
+      <app-cruise-modal *ngIf="showState()"></app-cruise-modal>
     </div>
 
     <div class="row w-100 mx-auto">
-        <div class="col-md-3 m-0 p-1" data-toggle="modal" data-target="#exampleModal" *ngFor="let cruise of popular.slice(0,4)" (click)="cruiseModal(cruise)">
-            <img class="slider-img" src={{cruise.images[0]}} />
-            <div class="caro-div bg-white w-100 p-2">{{'Cruise.Cruise.Cruises to'|translate}}{{cruise.whereTo}}</div>
-            <app-cruise-modal *ngIf="showState()"></app-cruise-modal>
-        </div>
+      <div class="col-md-12">
+        <h2>{{'Cruise.Cruise.The Cheapest Cruises Price'|translate}}</h2>
+      </div>
+    </div>
+    <div class="row w-100 mx-auto">
+      <div class="col-md-3 m-0 p-1" data-toggle="modal" data-target="#exampleModal"
+        *ngFor="let cruise of lowPriceCruise.slice(0,4)  " (click)="cruiseModal(cruise)">
+        <img class="slider-img" src={{cruise.images[0]}} />
+        <div class="caro-div bg-white w-100 p-2">{{'Cruise.Cruise.Cruises to'|translate}}{{cruise.whereTo}}</div>
 
-        <div class="row w-100 mx-auto">
-            <div class="col-md-12">
-                <h2>{{'Cruise.Cruise.The Cheapest Cruises Price'|translate}}</h2>
-            </div>
-        </div>
-        <div class="row w-100 mx-auto">
-            <div class="col-md-3 m-0 p-1" data-toggle="modal" data-target="#exampleModal" *ngFor="let cruise of lowPriceCruise.slice(0,4)  " (click)="cruiseModal(cruise)">
-                <img class="slider-img" src={{cruise.images[0]}} />
-                <div class="caro-div bg-white w-100 p-2">{{'Cruise.Cruise.Cruises to'|translate}}{{cruise.whereTo}}</div>
-
-                <app-cruise-modal *ngIf="showState()"></app-cruise-modal>
-            </div>
-        </div>
-
-        <div class="row w-100 mx-auto">
-            <div class="col-md-12">
-                <h2>{{'Cruise.Cruise.Cruises by length'|translate}}</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 m-0 p-1" *ngFor="let cruise of minNumbDays.slice(0,4)" (click)="cruiseModal(cruise)">
-                <img class="slider-img" src={{cruise.images[0]}}/>
-                <div class="caro-div bg-white w-100 p-2">{{cruise.days}} {{'Cruise.Cruise.days'|translate}}</div>
-
-                <app-cruise-modal *ngIf="showState()"></app-cruise-modal>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 ">
-                <h2>{{'Cruise.Cruise.Cruise ship quick links'|translate}}</h2>
-            </div>
-        </div>
-
-        <form class="pb-5">
-            <select class="select-cruise mr-2" name="selectCurise" id="selectCurise">
-      <option value="option1">1A Vista Reisen</option>
-      <option value="option1">A-ROSA Cruises</option>
-      <option value="option1">AIDA</option>
-      <option value="option1">APT</option>
-      <option value="option1">Abercrombie & Kent</option>
-      <option value="option1">Adventure Canada</option>
-      <option value="option1">Adventure Resorts & Cruises</option>
-      <option value="option1">Adventures by Disney</option>
-    </select>
-
-            <select class="select-cruise mr-2" name="selectCurise" id="selectCurise">
-      <option value="option1">Chekov</option>
-      <option value="option1">Fulvius</option>
-      <option value="option1">Junker Jorg</option>
-      <option value="option1">Kandinsky</option>
-      <option value="option1">Mekong Prestige II</option>
-      <option value="option1">Normandy</option>
-      <option value="option1">Peter Tschaikowsky</option>
-      <option value="option1">Poseidon</option>
-    </select>
-
-            <input class="view-ship-btn py-1" type="submit" value="View Ship" />
-        </form>
+        <app-cruise-modal *ngIf="showState()"></app-cruise-modal>
+      </div>
     </div>
 
-    <div class="background-div px-3">
-        <div class="row">
-            <div class="col-md-12 pb-3">
-                <h2>{{'Cruise.Cruise.Cruising Guide'|translate}}</h2>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <h3 class="q-style">{{'Cruise.Cruise.Why take a cruise vacation?'|translate}}</h3>
-                <p>
-                    {{'Cruise.Cruise.If'|translate}}
-                </p>
-                <p>
-                    {{'Cruise.Cruise.If2'|translate}}
-                </p>
-                <p>
-                    {{'Cruise.Cruise.If3'|translate}}
-                </p>
-                <h3 class="q-style">{{'Cruise.Cruise.What are Tips for Finding Cheap Cruises?'|translate}}</h3>
-                <p>
-                    {{'Cruise.Cruise.If4'|translate}}
-                </p>
-                <p>
-                    {{'Cruise.Cruise.If5'|translate}}
-                </p>
-                <p>
-                    {{'Cruise.Cruise.If6'|translate}}.
-                </p>
-            </div>
-            <div class="col-md-6">
-                <h3 class="q-style">{{'Cruise.Cruise.What are Tips to Finding Last-Minute Cruise Deals?'|translate}}</h3>
-                <p>
-                    {{'Cruise.Cruise.If7'|translate}}
-                </p>
-                <p>
-                    {{'Cruise.Cruise.If8'|translate}}
-                </p>
-                <p>
-                    {{'Cruise.Cruise.If9'|translate}}
-                </p>
-                <h3 class="q-style">{{'Cruise.Cruise.Best cruises in 2020'|translate}}</h3>
-                <p>
-                    {{'Cruise.Cruise.If10'|translate}}
-                </p>
-                <p>
-                    {{'Cruise.Cruise.If11'|translate}}
-                </p>
-                <p>
-                    {{'Cruise.Cruise.If12'|translate}}
-                </p>
-                <p>
-                    {{'Cruise.Cruise.If13'|translate}}
-                </p>
-                <p>
-                    {{'Cruise.Cruise.If14'|translate}}
-                </p>
-            </div>
-        </div>
-
-
+    <div class="row w-100 mx-auto">
+      <div class="col-md-12">
+        <h2>{{'Cruise.Cruise.Cruises by length'|translate}}</h2>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-md-3 m-0 p-1" *ngFor="let cruise of minNumbDays.slice(0,4)" (click)="cruiseModal(cruise)">
+        <img class="slider-img" src={{cruise.images[0]}} />
+        <div class="caro-div bg-white w-100 p-2">{{cruise.days}} {{'Cruise.Cruise.days'|translate}}</div>
+
+        <app-cruise-modal *ngIf="showState()"></app-cruise-modal>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="background-div px-3">
+    <div class="row">
+      <div class="col-md-12 pb-3">
+        <h2>{{'Cruise.Cruise.Cruising Guide'|translate}}</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class="q-style">{{'Cruise.Cruise.Why take a cruise vacation?'|translate}}</h3>
+        <p>
+          {{'Cruise.Cruise.If'|translate}}
+        </p>
+        <p>
+          {{'Cruise.Cruise.If2'|translate}}
+        </p>
+        <p>
+          {{'Cruise.Cruise.If3'|translate}}
+        </p>
+        <h3 class="q-style">{{'Cruise.Cruise.What are Tips for Finding Cheap Cruises?'|translate}}</h3>
+        <p>
+          {{'Cruise.Cruise.If4'|translate}}
+        </p>
+        <p>
+          {{'Cruise.Cruise.If5'|translate}}
+        </p>
+        <p>
+          {{'Cruise.Cruise.If6'|translate}}.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <h3 class="q-style">{{'Cruise.Cruise.What are Tips to Finding Last-Minute Cruise Deals?'|translate}}</h3>
+        <p>
+          {{'Cruise.Cruise.If7'|translate}}
+        </p>
+        <p>
+          {{'Cruise.Cruise.If8'|translate}}
+        </p>
+        <p>
+          {{'Cruise.Cruise.If9'|translate}}
+        </p>
+        <h3 class="q-style">{{'Cruise.Cruise.Best cruises in 2020'|translate}}</h3>
+        <p>
+          {{'Cruise.Cruise.If10'|translate}}
+        </p>
+        <p>
+          {{'Cruise.Cruise.If11'|translate}}
+        </p>
+        <p>
+          {{'Cruise.Cruise.If12'|translate}}
+        </p>
+        <p>
+          {{'Cruise.Cruise.If13'|translate}}
+        </p>
+        <p>
+          {{'Cruise.Cruise.If14'|translate}}
+        </p>
+      </div>
+    </div>
+
+
+  </div>

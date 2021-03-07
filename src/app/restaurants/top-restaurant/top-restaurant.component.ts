@@ -14,10 +14,14 @@ export class TopRestaurantComponent implements OnInit {
   @Input() resturant: Restaurant;
   rate: number = 0;
   able = false;
+  clicked;
+
   constructor(
     private resturantCategoryService: ResturantCategoryService,
-    private resturantService: ResturantService, private localizationService: LocalizationService, public translate: TranslateService
-  ) { }
+    private resturantService: ResturantService,
+    private localizationService: LocalizationService,
+    public translate: TranslateService
+  ) {}
 
   ngOnInit(): void {
     this.calcAvg();
@@ -25,7 +29,6 @@ export class TopRestaurantComponent implements OnInit {
   Counter(i) {
     return new Array(i);
   }
-
   calcAvg(): void {
     let sum: number = 0;
     let avg: number = 0;
@@ -46,5 +49,18 @@ export class TopRestaurantComponent implements OnInit {
   }
   showState() {
     return this.able;
+  }
+
+  toggle() {
+    this.clicked = !this.clicked;
+  }
+  openModal = false;
+  ResturantModal() {
+    console.log('work1');
+    this.openModal = true;
+  }
+  showModal() {
+    console.log('work');
+    return this.openModal;
   }
 }

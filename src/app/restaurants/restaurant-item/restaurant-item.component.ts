@@ -13,10 +13,21 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class RestaurantItemComponent implements OnInit {
   @Input() resturant: Restaurant;
+  rate: number = 0;
+  openModal=false;
   constructor(private ResturantService: ResturantService,
     private ResturantCategoryService: ResturantCategoryService, private localizationService: LocalizationService, public translate: TranslateService) { }
 
   ngOnInit(): void {
 
+  }
+  Counter(i) {
+    return new Array(i);
+  }
+  ResturantModal(){
+    this.openModal=true;
+  }
+  showModal(){
+    return this.openModal;
   }
 }

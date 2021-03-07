@@ -525,28 +525,45 @@ export class HotelService {
   //   },
   // ];
 
-  hotels: Hotel[] = [];
+  hotels = [];
   baseUrl = 'https://sleepy-basin-52383.herokuapp.com/';
-
+  hotelsId: string[] = [];
   viewDetails = new EventEmitter<Hotel>();
   BookNow = new EventEmitter<Hotel>();
+
+  constructor(
+    private httpClient: HttpClient,
+    private homeService: HomeService
+  ) {
+    this.hotelsId = JSON.parse(localStorage.getItem('hotelsId'));
+    console.log(this.hotelsId);
+    // this.homeService.hotelsId.subscribe((resp) => {
+    //   this.hotelsId = resp;
+    //   for (let id of this.hotelsId) {
+    //     this.getHotelById(id).subscribe((res) => {
+    //       this.hotels.push(res);
+    //       console.log(res);
+    //     });
+    //   }
+    //   // console.log(this.hotels);
+    // });
+
+    // this.getAllHotels().subscribe((resp) => {
+    //   Object.values(resp).map((res) => {
+    //     //console.log(res);
+    //     this.hotels.push(res);
+    //   });
+    //   //  console.log(this.hotels);
+    // });
+  }
   getAllHotels() {
-    return this.httpClient.get(`${this.baseUrl}hotels`);
+    return this.hotels;
     //return this.hotels.slice();
   }
 
-  constructor(private httpClient: HttpClient, private homeService: HomeService) {
-    this.getAllHotels().subscribe((resp) => {
-      Object.values(resp).map((res) => {
-        //console.log(res);
-        this.hotels.push(res);
-      });
-      //  console.log(this.hotels);
-    });
-  }
   getHotelById(_id: String) {
-    //return this.httpClient.get(`${this.baseUrl}hotel/${_id}`);
-    return this.hotels.find((hotel) => hotel._id == _id);
+    return this.httpClient.get(`${this.baseUrl}hotels/${_id}`);
+    //return this.hotels.find((hotel) => hotel._id == _id);
     //return this.httpClient.get(`${this.baseUrl}hotezsdfgZl/${id}`);
   }
 

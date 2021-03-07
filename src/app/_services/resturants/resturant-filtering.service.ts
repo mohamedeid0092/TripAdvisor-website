@@ -1,5 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Restaurant } from 'src/app/_model/resturant/restaurant';
+import { HomeService } from '../home/home.service';
 import { ResturantCategoryService } from './resturant-category.service';
 import { ResturantService } from './resturant.service';
 
@@ -7,26 +8,53 @@ import { ResturantService } from './resturant.service';
   providedIn: 'root',
 })
 export class ResturantFilteringService {
-  resturant: Restaurant[] = [];
+  resturant = [];
   tempRest: Restaurant[] = [];
   filterdRest: Restaurant[] = [];
   checkedArray = [];
-
+  resturantsId = [];
   Filtering = new EventEmitter();
   constructor(
     private ResturantCategoryService: ResturantCategoryService,
-    private ResturantService: ResturantService
+    private ResturantService: ResturantService,
+    private homeService: HomeService
   ) {
-    this.ResturantService.getAllResturants().subscribe(
-      (resp) => {
-        Object.values(resp).map((res) => {
-          this.resturant.push(res);
-        });
-        // console.log(this.resturant);
-      },
-      (error) => {},
-      () => {}
-    );
+    this.getResturants();
+    // this.ResturantService.getAllResturants().subscribe(
+    //   (resp) => {
+    //     Object.values(resp).map((res) => {
+    //       this.resturant.push(res);
+    //     });
+    //     // console.log(this.resturant);
+    //   },
+    //   (error) => {},
+    //   () => {}
+    // );
+  }
+  getResturants() {
+    this.resturantsId = JSON.parse(localStorage.getItem('resturantsId'));
+    console.log(this.resturantsId);
+    for (let id of this.resturantsId) {
+      this.ResturantService.getResturantById(id).subscribe((res) => {
+        this.resturant.push(res);
+        console.log(res);
+        this.resturant = [...new Set(this.resturant)];
+      });
+    }
+
+    // this.resturant = this.ResturantService.getAllResturants();
+
+    // this.HotelService.getAllHotels().subscribe(
+    //   (resp) => {
+    //     Object.values(resp).map((res) => {
+    //       console.log(res);
+    //       this.hotels.push(res);
+    //     });
+    //     console.log(this.hotels);
+    //   },
+    //   (error) => {},
+    //   () => {}
+    // );
   }
 
   Filter(event) {

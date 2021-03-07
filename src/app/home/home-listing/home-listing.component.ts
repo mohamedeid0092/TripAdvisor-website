@@ -18,6 +18,8 @@ import { HotelService } from 'src/app/_services/hotels/hotel.service';
 import { Hotel } from 'src/app/_model/hotels/hotel';
 import { CommonModule } from '@angular/common';
 import { City } from './../../_model/home/city';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home-listing',
@@ -27,7 +29,7 @@ import { City } from './../../_model/home/city';
 export class HomeListingComponent implements OnInit {
   cities: City[] = [];
   city: string;
-
+  openModal = false;
   dataset = ['MDB', 'Angular', 'Bootstrap', 'Framework', 'SPA', 'React', 'Vue'];
 
   top: DreamTripCards[];
@@ -38,14 +40,24 @@ export class HomeListingComponent implements OnInit {
   size: 2;
   slides: any = [[]];
   hotels: Hotel[] = [];
-
+  authCity = false;
+  clicked = false;
+  // @ViewChild('closeModal') closeModal: ElementRef
   constructor(
     private renderer: Renderer2,
     private dreamTripSerivce: DreamTripService,
     private moreExploreSerivce: MoreExploreService,
     private homeService: HomeService,
-    private hotelService: HotelService
-  ) {}
+    private hotelService: HotelService,
+    // private activeModal: NgbActiveModal
+    private modalService: NgbModal,
+    private el: ElementRef
+  ) {
+    this.homeService.HotelClick.subscribe((resp) => {
+      this.myInputField.nativeElement.click();
+      // this.searchInput.nativeElement.focus();
+    });
+  }
 
   ngOnInit() {
     this.top = this.dreamTripSerivce.getTop();
@@ -57,8 +69,28 @@ export class HomeListingComponent implements OnInit {
       });
       console.log(this.cities);
     });
+
     // this.cards = this.homeService.getCard();
   }
+
+  alertClick() {
+    alert('clicked');
+  }
+  ModalOpen() {
+    // this.homeService.showModal();
+  }
+  // @ViewChild('exampleModal') exampleModal: any;
+
+  // showModal:boolean;
+  //  open() {
+  //   this.showModal = this.homeService.openModalFromHeader();
+  //   console.log(this.showModal);
+  //   // if(this.showModal){
+  //   //   this.exampleModal.open();
+  //   // }
+  //   return this.showModal;
+
+  // }
 
   myFunction() {
     this.isToggel = !this.isToggel;
@@ -107,11 +139,24 @@ export class HomeListingComponent implements OnInit {
       this.search.push(value);
       for (let targetCity of this.cities) {
         console.log(targetCity.name);
-        if (value == targetCity.name) {
+        if (value.toLowerCase() == targetCity.name.toLowerCase()) {
           console.log('match', targetCity.name);
-          this.homeService.hotelsId.emit(targetCity.hotelsId);
+          this.homeService.auth = true;
+          this.homeService.cityName = targetCity.name;
+          this.homeService.cityMap = targetCity.mapUrl;
+          localStorage.setItem('hotelsId', JSON.stringify(targetCity.hotelsId));
+          localStorage.setItem(
+            'resturantsId',
+            JSON.stringify(targetCity.resturantsId)
+          );
+          localStorage.setItem(
+            'cruisesId',
+            JSON.stringify(targetCity.cruisesId)
+          );         
         }
       }
+      this.authCity = this.homeService.auth;
+      this.clicked = true;
     }
   }
 
@@ -122,7 +167,14 @@ export class HomeListingComponent implements OnInit {
     }
     return R;
   }
+
+  @ViewChild('myinput') myInputField: ElementRef;
+  // @ViewChild("searchInput") searchInput: ElementRef;
+
   ngAfterViewInit() {
+    //   this.el.nativeElement.addEventListener('focus', ()=> {
+    //     this.open()
+    // })
     const buttons = document.querySelectorAll('.btn-floating');
     buttons.forEach((el: any) => {
       this.renderer.removeClass(el, 'btn-floating');
@@ -131,8 +183,15 @@ export class HomeListingComponent implements OnInit {
     });
   }
 
+  getSearchResturants(resturantValue) {
+    this.city = resturantValue.toLowerCase();
+    console.log(this.city);
+  }
   getSearchHotels(hotelValue) {
     this.city = hotelValue.toLowerCase();
+    // this.activeModal.dismiss();
+    // this.closeModal.nativeElement.click()
+    // this.modalService.dismissAll();
     console.log(this.city);
 
     //  this.hotelService.getAllHotels().subscribe((resp) => {

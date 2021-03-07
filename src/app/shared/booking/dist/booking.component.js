@@ -20,11 +20,12 @@ exports.__esModule = true;
 exports.BookingComponent = void 0;
 var core_1 = require("@angular/core");
 var BookingComponent = /** @class */ (function () {
-    function BookingComponent(HotelService, CruiseService, localizationService, translate) {
+    function BookingComponent(HotelService, CruiseService, localizationService, translate, http) {
         this.HotelService = HotelService;
         this.CruiseService = CruiseService;
         this.localizationService = localizationService;
         this.translate = translate;
+        this.http = http;
         this.rooms = 0;
         this.display = false;
         this.checkIn = new Date();
@@ -36,6 +37,7 @@ var BookingComponent = /** @class */ (function () {
         this.theBestDeal = {
             obj: {}
         };
+        this.endpoint = 'https://sleepy-basin-52383.herokuapp.com/hotels/booking';
         this.hotel = {
             _id: '5ff8f01a394ad263f625f560',
             name: 'Iberostar Club Palmeraie Marrakech',
@@ -237,6 +239,7 @@ var BookingComponent = /** @class */ (function () {
         console.log(form);
         // this.hotel.booking.push(form);
         console.log(this.hotel.booking);
+        console.log(this.hotel._id);
         if (this.hotel.rooms < form.rooms) {
             alert("Sorry there's No available rooms");
         }
@@ -248,9 +251,21 @@ var BookingComponent = /** @class */ (function () {
             this.hotel.rooms -= form.rooms;
             // console.log(this.hotel.rooms);
         }
+        var id = this.hotel._id;
+        return this.http
+            .put(this.endpoint + "/" + id, {
+            Phone: form.Phone,
+            adults: form.adults,
+            checkIn: form.checkIn,
+            checkOut: form.checkout,
+            children: form.children,
+            email: form.email,
+            rooms: form.rooms
+        });
     };
-    BookingComponent.prototype.takeroomsNum = function (rooms) {
-        this.rooms = rooms;
+    ;
+    BookingComponent.prototype.takeroomsNum = function (room) {
+        this.rooms = room;
     };
     BookingComponent.prototype.calcPrice = function () {
         return this.theBestDeal.obj[0].pricePerNight * this.days * this.rooms;

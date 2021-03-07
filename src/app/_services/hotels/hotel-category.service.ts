@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { AllCategory } from '../../_model/hotels/AllCategory';
 import { HttpClient } from '@angular/common/http';
+import { HomeService } from 'src/app/_services/home/home.service';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class HotelCategoryService {
   baseUrl = 'https://sleepy-basin-52383.herokuapp.com/';
   categoryList: AllCategory;
+  catEvent = new EventEmitter();
+
   // categoryList: AllCategory = {
   //   _id: '2525',
   //   safety: { _id: '1', name: 'Properties taking safety measures' },
@@ -55,12 +58,16 @@ export class HotelCategoryService {
     return this.httpClient.get(`${this.baseUrl}hotelsCategory`);
     //return this.categoryList;
   }
-  constructor(private httpClient: HttpClient) {
+  constructor(
+    private httpClient: HttpClient,
+    private HomeService: HomeService
+  ) {
     this.getAllCategories().subscribe(
       (resp) => {
         Object.values(resp).map((res) => {
           //console.log(res);
           this.categoryList = res;
+          //  this.catEvent.emit();
         });
         // this.categories = { ...resp };
         //console.log(this.categories);
@@ -68,7 +75,7 @@ export class HotelCategoryService {
       (error) => {
         console.log(error);
       },
-      () => { }
+      () => {}
     );
   }
 

@@ -1,0 +1,50 @@
+<div class="container"
+  style="background-color: white;padding: 40px;margin-top: 50px;margin-bottom: 50px;"
+  >
+
+  <div *ngIf="isLoading" class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <form (submit)="login(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+    <div class="form-group">
+      <div>
+        <img
+          src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_registered.svg"
+          width="200px"
+        />
+      </div>
+      <h4 style="padding: 25px 0px 25px 0px">Welcom back-log in!</h4>
+
+      <div class="form-group">
+        <label class="ml-2 text-secondary font-weight-bold">Email address</label>
+        <input type="email" name="email" ngModel class="form-control" id="InputEmail1" placeholder="Email" #emailInput="ngModel" required email/>
+
+        <div class="alert alert-danger" role="alert" *ngIf="emailInput.invalid && emailInput.touched">
+          Please enter a valid email
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="ml-2 text-secondary font-weight-bold">Password</label>
+        <input type="password"  name="password" ngModel class="form-control" id="InputPassword" placeholder="Password" #passwordInput="ngModel" required/>
+        
+          <div class="alert alert-danger" role="alert" *ngIf="passwordInput.invalid && passwordInput.touched">
+            Please enter a valid password
+          </div>
+        </div>
+
+      
+     
+      <button
+        type="submit"class="btn btn-dark btn-lg btn-block" >Login
+        <!-- <div *ngIf="isLoading" class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div> -->
+      </button>
+
+      <label style="padding: 20px" class="ml-1 text-secondary font-weight-bold">
+        Don't have an account?<a style="color:black" [routerLink]="['/signup']" >Sign up</a>
+    </label>
+    </div>
+  </form>
+</div>

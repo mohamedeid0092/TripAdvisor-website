@@ -13,7 +13,7 @@ import { Cruise } from './../../_model/criuses/cruise';
   styleUrls: ['./cruises.component.scss'],
 })
 export class CruisesComponent implements OnInit {
-  cruise: Cruise[] = [];
+  cruise = [];
   // numberOfCruises : number[] = [];
   pageSize: number = 4;
   minDate = new Date(2021, 1, 17);
@@ -30,22 +30,42 @@ export class CruisesComponent implements OnInit {
   able = false;
   lowPriceCruise: Cruise[] = [];
   minNumbDays: Cruise[] = [];
-  tempCruise: Cruise[] = [];
-  constructor(private cruiseService: CruiseService) { }
-
-  ngOnInit(): void {
-    this.cruiseService.getAllCruises().subscribe((resp) => {
-      Object.values(resp).map((res) => {
+  tempCruise = [];
+  cruisesId = [];
+  constructor(private cruiseService: CruiseService) {
+    this.cruisesId = JSON.parse(localStorage.getItem('cruisesId'));
+    console.log(this.cruisesId);
+    console.log(this.cruiseService.getCruiseById);
+    for (let id of this.cruisesId) {
+      // console.log(this.cruiseService.getCruiseById(id));
+      this.cruiseService.getCruiseById(id).subscribe((res) => {
         this.cruise.push(res);
         this.tempCruise.push(res);
+        console.log(res);
+        if (this.cruise.length == this.cruisesId.length) {
+          console.log('all data arrived');
+          this.whereToFun();
+          this.depMonth();
+          this.popularFun();
+          this.lowPrice();
+          this.calcMinDays();
+        }
       });
+    }
+  }
 
-      this.whereToFun();
-      this.depMonth();
-      this.popularFun();
-      this.lowPrice();
-      this.calcMinDays();
-    });
+  ngOnInit(): void {
+    // this.cruiseService.getAllCruises().subscribe((resp) => {
+    //   Object.values(resp).map((res) => {
+    //     this.cruise.push(res);
+    //     this.tempCruise.push(res);
+    //   });
+    //   this.whereToFun();
+    //   this.depMonth();
+    //   this.popularFun();
+    //   this.lowPrice();
+    //   this.calcMinDays();
+    // });
   }
 
   getCruiseSlice() {
@@ -89,11 +109,13 @@ export class CruisesComponent implements OnInit {
   search() {
     this.cruise = this.tempCruise;
     this.filteredCruise = [];
+    console.log('here');
     for (let cruise of this.cruise) {
       if (
         cruise.departureMonth == this.month &&
         cruise.whereTo == this.whereToCity
       ) {
+        console.log('push');
         this.filteredCruise.push(cruise);
       }
     }

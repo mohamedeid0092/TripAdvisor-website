@@ -1,6 +1,8 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Cruise } from '../../_model/criuses/cruise';
 import { HttpClient } from '@angular/common/http';
+//import { HomeService } from '../../_services/home/HomeService';
+import { HomeService } from 'src/app/_services/home/home.service';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class CruiseService {
   baseUrl = 'https://sleepy-basin-52383.herokuapp.com/';
   cruise: Cruise[] = [];
+  cruisesId = [];
   // cruise: Cruise[] = [
   //   {
   //     _id: '1',
@@ -570,20 +573,23 @@ export class CruiseService {
   // viewDetails = new EventEmitter<Cruise>();
   BookNow = new EventEmitter<Cruise>();
   BoxModal = new EventEmitter<Cruise>();
-  constructor(private httpClient: HttpClient) {
-    this.getAllCruises().subscribe((resp) => {
-      Object.values(resp).map((res) => {
-        this.cruise.push(res);
-      });
-    });
+  constructor(
+    private httpClient: HttpClient,
+    private HomeService: HomeService
+  ) {
+    // this.getAllCruises().subscribe((resp) => {
+    //   Object.values(resp).map((res) => {
+    //     this.cruise.push(res);
+    //   });
+    // });
   }
 
   getAllCruises() {
     return this.httpClient.get(`${this.baseUrl}cruise`);
   }
 
-  getCruiseById(id) {
-    return this.cruise.find((c) => c._id == id);
+  getCruiseById(_id: string) {
+    return this.httpClient.get(`${this.baseUrl}cruise/${_id}`);
   }
 
   searchByName(cruiseName: string) {

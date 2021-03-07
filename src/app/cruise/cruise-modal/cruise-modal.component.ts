@@ -10,22 +10,23 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./cruise-modal.component.scss'],
 })
 export class CruiseModalComponent implements OnInit {
-
   @Input() cruise: Cruise;
-  constructor(private cruiseService: CruiseService, private localizationService: LocalizationService, public translate: TranslateService) {
-
-  }
+  constructor(
+    private cruiseService: CruiseService,
+    private localizationService: LocalizationService,
+    public translate: TranslateService
+  ) {}
 
   ngOnInit(): void {
-    console.log(this.cruise);
     this.cruiseService.BoxModal.subscribe(
       (resp) => {
         this.cruise = resp;
+        console.log(this.cruise);
       },
       (error) => {
         console.log(error);
       },
-      (completed) => { }
+      (completed) => {}
     );
   }
 

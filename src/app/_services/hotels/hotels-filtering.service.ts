@@ -2,12 +2,13 @@ import { Injectable, Output, EventEmitter } from '@angular/core';
 import { HotelCategoryService } from './hotel-category.service';
 import { HotelService } from 'src/app/_services/hotels/hotel.service';
 import { Hotel } from '../../_model/hotels/hotel';
+import { HomeService } from '../home/home.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HotelsFilteringService {
-  hotels: Hotel[] = [];
+  hotels = [];
   tempHotels: Hotel[] = [];
   filterdHotels: Hotel[] = [];
   checkedArray = [];
@@ -15,27 +16,40 @@ export class HotelsFilteringService {
   closeToMainStreet = 5;
   closeToCityCenter = 10;
   CloseToPark = 6;
+  hotelsId = [];
   Filtering = new EventEmitter();
   constructor(
     private HotelCategoryService: HotelCategoryService,
-    private HotelService: HotelService
+    private HotelService: HotelService,
+    private homeService: HomeService
   ) {
     this.getHotels();
   }
 
   getHotels() {
-    this.HotelService.getAllHotels().subscribe(
-      (resp) => {
-        Object.values(resp).map((res) => {
-          console.log(res);
-          this.hotels.push(res);
-        });
-        console.log(this.hotels);
-      },
-      (error) => {},
-      () => {}
-    );
+    this.hotelsId = JSON.parse(localStorage.getItem('hotelsId'));
+    console.log(this.hotelsId);
+    for (let id of this.hotelsId) {
+      this.HotelService.getHotelById(id).subscribe((res) => {
+        this.hotels.push(res);
+        console.log(res);
+      });
+    }
   }
+
+  //  this.hotels = this.HotelService.getAllHotels();
+
+  // this.HotelService.getAllHotels().subscribe(
+  //   (resp) => {
+  //     Object.values(resp).map((res) => {
+  //       console.log(res);
+  //       this.hotels.push(res);
+  //     });
+  //     console.log(this.hotels);
+  //   },
+  //   (error) => {},
+  //   () => {}
+  // );
 
   Filter(event) {
     this.tempHotels = [];
@@ -92,7 +106,6 @@ export class HotelsFilteringService {
       //console.log(this.checkedArray);
     }
     if (this.checkedArray.length == 0) {
-     
       this.filterdHotels = this.hotels;
     } else {
       if (event.target.checked) {

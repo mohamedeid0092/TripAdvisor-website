@@ -1,24 +1,25 @@
 <div class="row">
-    <div class="row w-100 m-0">
-        <div class="col-12 bg-white">
-            <br />
-            <h1 class="center">{{'Restaurant.list.Restaurants in Hurghada'|translate}}</h1>
-            <br />
-        </div>
+  <div class="row w-100 m-0">
+    <div class="col-12 bg-white">
+      <br />
+      <!-- {{'Restaurant.list.Restaurants in Hurghada'|translate}} -->
+      <h1 class="center"> Restaurant list In {{cityName}}</h1>
+      <br />
     </div>
+  </div>
 
 
-    <div class="col-4 mt-3 display">
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-10 ">
-                <app-resturant-category></app-resturant-category>
-            </div>
-        </div>
+  <div class="col-4 mt-3 display">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-10 ">
+        <app-resturant-category></app-resturant-category>
+      </div>
     </div>
+  </div>
 
-    <div class="col-8 pr-3 pl-3 mt-3">
-        <!-- <div class="row">
+  <div class="col-8 pr-3 pl-3 mt-3">
+    <!-- <div class="row">
       <div class="col-sm col-xs-12 pt-3">
         <h3>
           Delivery Available
@@ -169,17 +170,18 @@
       </div>
     </div> -->
 
-        <div class="row">
-            <div class="col-sm-12 pt-3">
-                <h4>{{'Restaurant.list.Top Restaurants'|translate}}</h4>
-                <form class="form-inline float-right">
-                    <p class="text-dark" style="font-size: 15px; text-decoration: none">
-                        {{'Restaurant.list.Search'|translate}} :
-                        <input #searchInput class="form-control" type="text" placeholder="Search.." aria-label="Search" (input)="onSearchHandler(searchInput)" type="text" />
-                    </p>
-                </form>
-                <!-- <br /> -->
-                <!-- <h6>
+    <div class="row">
+      <div class="col-sm-12 pt-3">
+        <h4>{{'Restaurant.list.Top Restaurants'|translate}}</h4>
+        <form class="form-inline float-right">
+          <p class="text-dark" style="font-size: 15px; text-decoration: none">
+            {{'Restaurant.list.Search'|translate}} :
+            <input #searchInput class="form-control" type="text" placeholder="Search.." aria-label="Search"
+              (input)="onSearchHandler(searchInput)" type="text" />
+          </p>
+        </form>
+        <!-- <br /> -->
+        <!-- <h6>
           <b>375</b> results match your filters
           <b role="button">Clear all filters</b>
         </h6>
@@ -189,15 +191,16 @@
           establishes.name
           <span aria-hidden="true" style="color: black">&times;</span>
         </button> -->
-            </div>
-        </div>
-        <br />
-        <app-top-restaurant *ngFor='let rest of getResturantsSlice()' [resturant]='rest'></app-top-restaurant>
-
-        <div class="bg-white border row mb-4 d-fex justify-content-center align-items-center p-2 ">
-            <div *ngFor='let page of pageNumbers; let i = index' class="mr-2 btn-success btn" (click)="currentPage=i" [ngClass]="{'active': i==currentPage}">
-                {{page}}
-            </div>
-        </div>
+      </div>
     </div>
+    <br />
+    <app-top-restaurant *ngFor='let rest of getResturantsSlice()' [resturant]='rest'></app-top-restaurant>
+
+    <div class="bg-white border row mb-4 d-fex justify-content-center align-items-center p-2 ">
+      <div *ngFor='let page of pageNumbers; let i = index' class="mr-2 btn-success btn" (click)="currentPage=i"
+        [ngClass]="{'active': i==currentPage}">
+        {{page}}
+      </div>
+    </div>
+  </div>
 </div>

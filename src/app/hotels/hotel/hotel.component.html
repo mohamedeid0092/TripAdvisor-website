@@ -1,111 +1,123 @@
 <div class="row bg-white border hotel-div mb-4 mt-3">
-    <div class="col-4 h-100">
-        <div class="style-like bg-white mt-3 rounded-circle d-flex justify-content-center align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-suit-heart-fill heart-color" viewBox="0 0 16 16">
+  <div class="col-4 h-100">
+    <div (click)="toggle()" [ngClass]="{'like':clicked}"
+      class="style-like bg-white mt-3 rounded-circle d-flex justify-content-center align-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+        class="bi bi-suit-heart-fill heart-color" viewBox="0 0 16 16">
         <path
           d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
       </svg>
-        </div>
-        <div class="badge-style d-flex align-items-center" *ngIf='bestSeller'>
-            <span class=" badge badge-danger badge-text" data-toggle="tooltip" data-placement="top" title="This is one of the most booked hotels in Hurghada over the last 60 days.">{{'Hotel.hotel.BestSeller'|translate}}</span>
-        </div>
-        <div class="badge-style d-flex align-items-center" *ngIf='allInclusive'>
-            <span class=" mt-4 badge badge-dark badge-text" data-toggle="tooltip" data-placement="top" title="This is one of the most booked hotels in Hurghada over the last 60 days.">{{'Hotel.hotel.AllInclusive'|translate}}</span>
-
-        </div>
-        <div id="myCarousel" class="carousel slide h-100 style-slider" data-ride="carousel">
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner h-100">
-
-                <div *ngFor="let img of hotel.images;let i= index ;let isFirst=first" [ngClass]="{active:isFirst}" class="carousel-item h-100">
-                    <img id={{i}} src={{img}} class="h-100">
-                </div>
-            </div>
-
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                <span class="sr-only">{{'Hotel.hotel.Previous'|translate}}</span>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                <span class="sr-only">{{'Hotel.hotel.Next'|translate}}</span>
-            </a>
-        </div>
+    </div>
+    <div class="badge-style d-flex align-items-center" *ngIf='bestSeller'>
+      <span class=" badge badge-danger badge-text" data-toggle="tooltip" data-placement="top"
+        title="This is one of the most booked hotels in Hurghada over the last 60 days.">{{'Hotel.hotel.BestSeller'|translate}}</span>
+    </div>
+    <div class="badge-style d-flex align-items-center" *ngIf='allInclusive'>
+      <span class=" mt-4 badge badge-dark badge-text" data-toggle="tooltip" data-placement="top"
+        title="This is one of the most booked hotels in Hurghada over the last 60 days.">{{'Hotel.hotel.AllInclusive'|translate}}</span>
 
     </div>
+    <div id={{hotel._id}} class="carousel slide h-100 style-slider" data-ride="carousel">
 
-    <div class="col-8">
-        <div class="row p-2">
-            <h3><b><span>{{hotel[translate.currentLang]}}</span></b></h3>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner h-100">
 
-            <!-- <button type="button" class="float-end mb-1 btn btn-warning button-raduis text-center" data-toggle="modal"
+        <div *ngFor="let img of hotel.images;let i= index ;let isFirst=first" [ngClass]="{active:isFirst}"
+          class="carousel-item h-100">
+          <img id={{i}} src={{img}} class="h-100">
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#{{hotel._id}}" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="sr-only">{{'Hotel.hotel.Previous'|translate}}</span>
+      </a>
+      <a class="carousel-control-next" href="#{{hotel._id}}" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="sr-only">{{'Hotel.hotel.Next'|translate}}</span>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="col-8">
+    <div class="row p-2">
+      <h3><b><span>{{hotel[translate.currentLang]}}</span></b></h3>
+
+      <!-- <button type="button" class="float-end mb-1 btn btn-warning button-raduis text-center" data-toggle="modal"
           data-target="#booking">
           Book Now
         </button> -->
-        </div>
-        <div class="row h-75">
-            <div class="col-7 h-100 w-100">
-                <div class="row h-100 w-100">
-                    <div class="col-8 h-100 w-100 d-flex border-right">
-                        <div class="d-flex align-items-center justify-content-center flex-column w-100">
-                            <img src={{theBestDeal.img}} class="img-fluid" width="150px" alt={{theBestDeal.obj[0].name}}>
-                            <h4><a href={{theBestDeal.obj[0].link}} class="text-dark"><b>{{theBestDeal.obj[0].pricePerNight | number: "1.0"}} {{'Hotel.hotel.EGP'|translate}}</b></a></h4>
-                            <!-- <button type="button" class="mb-1 btn btn-warning button-raduis text-center w-50">Book Now</button> -->
+    </div>
+    <div class="row h-75">
+      <div class="col-7 h-100 w-100">
+        <div class="row h-100 w-100">
+          <div class="col-8 h-100 w-100 d-flex border-right">
+            <div class="d-flex align-items-center justify-content-center flex-column w-100">
+              <img src={{theBestDeal.img}} class="img-fluid" width="150px" alt={{theBestDeal.obj[0].name}}>
+              <h4><a href={{theBestDeal.obj[0].link}}
+                  class="text-dark"><b>{{theBestDeal.obj[0].pricePerNight | number: "1.0"}}
+                    {{'Hotel.hotel.EGP'|translate}}</b></a></h4>
+              <!-- <button type="button" class="mb-1 btn btn-warning button-raduis text-center w-50">Book Now</button> -->
 
 
-                            <!-- Button trigger modal -->
-                            <button type="button" class="mb-1 pr-3 btn btn-warning button-raduis text-center" data-toggle="modal" data-target="#exampleModal" (click)='BookNow()'>
+              <!-- Button trigger modal -->
+              <button type="button" class="mb-1 pr-3 btn btn-warning button-raduis text-center" data-toggle="modal"
+                data-target="#exampleModal" (click)='BookNow()'>
                 {{'Hotel.hotel.ViewDetails'|translate}}
               </button>
 
 
-                            <!-- Modal -->
-                            <app-box-model *ngIf='showState()'></app-box-model>
+              <!-- Modal -->
+              <app-box-model *ngIf='showState()'></app-box-model>
 
 
 
-                            <span *ngIf='freeCancellation'>
+              <span *ngIf='freeCancellation'>
                 <i class="fas fa-check check"></i><span><b> {{'Hotel.hotel.Freecancellation'|translate}}</b></span>
-                            </span>
-                            <span *ngIf='reserveNow'>
+              </span>
+              <span *ngIf='reserveNow'>
                 <i class="fas fa-check check"></i><span><b> {{"Hotel.hotel.Reserve"|translate}}</b></span>
-                            </span>
-                        </div>
-
-                    </div>
-                    <div class="col-4 text-center">
-                        <div class="text-dark" *ngFor='let deal of hotel.Pricedeals'>
-                            <div>
-                                <a href={{deal.link}} class="text-dark">{{deal.name}}</a><br>
-                                <a href={{deal.link}} class="text-dark"><b>{{deal.pricePerNight | number: "1.0"}}</b></a><br><br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+              </span>
             </div>
 
-            <div class="col-5 h-100 border-left ">
-                <div class="ml-3 mb-2">
-                    <span class="dot" *ngFor='let dot of Counter(rate)'></span>
-                    <a href="#" class="text-dark pl-2">{{hotel.reviews.length}} {{'Hotel.hotel.reviews'|translate}} </a><br>
-                </div>
-
-                <!-- If condition filter == amenites -->
-                <div class="ml-3 mr-3">
-                    <span>{{'Hotel.hotel.Best'|translate}}</span>
-                </div><br>
-
-                <div class="ml-3 mr-3" *ngFor='let amt of hotel.amenities.slice(0,3)'>
-                    <span><i class="fas fa-check-circle"></i><span> {{getAmt(amt)}}</span></span><br>
-                </div>
-                <a href={{theBestDeal.obj[0].link}} class="text-dark ml-3 mr-3"><i class="fas fa-globe"></i><span>
-            {{'Hotel.hotel.Visit'|translate}}</span></a>
+          </div>
+          <div class="col-4 text-center">
+            <div class="text-dark" *ngFor='let deal of hotel.Pricedeals'>
+              <div>
+                <a href={{deal.link}} class="text-dark">{{deal.name}}</a><br>
+                <a href={{deal.link}} class="text-dark"><b>{{deal.pricePerNight | number: "1.0"}}</b></a><br><br>
+              </div>
             </div>
+          </div>
         </div>
+
+      </div>
+
+      <div class="col-5 h-100 border-left ">
+        <div class="ml-3 mb-2">
+          <div *ngIf="hotel.rating.length">
+            <span class="dot" *ngFor='let dot of Counter(rate)'></span>
+          </div>
+          <a data-toggle="modal" data-target="#exampleModal1" (click)='HotelModal()'
+            class="text-dark pl-2 review">{{hotel.reviews.length}} {{'Hotel.hotel.reviews'|translate}} </a><br>
+        </div>
+        <app-hotel-modal [hotel]="hotel" *ngIf="showModal"></app-hotel-modal>
+
+        <!-- If condition filter == amenites -->
+        <div class="ml-3 mr-3">
+          <span>{{'Hotel.hotel.Best'|translate}}</span>
+        </div><br>
+
+        <div class="ml-3 mr-3" *ngFor='let amt of hotel.amenities.slice(0,3)'>
+          <span><i class="fas fa-check-circle"></i><span> {{getAmt(amt)}}</span></span><br>
+        </div>
+        <a href={{theBestDeal.obj[0].link}} class="text-dark ml-3 mr-3"><i class="fas fa-globe"></i><span>
+            {{'Hotel.hotel.Visit'|translate}}</span></a>
+      </div>
     </div>
+  </div>
 </div>
 
 

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { AllCategory } from 'src/app/_model/resturant/AllCategory';
 
 @Injectable({
@@ -8,6 +8,7 @@ import { AllCategory } from 'src/app/_model/resturant/AllCategory';
 export class ResturantCategoryService {
   baseUrl = 'https://sleepy-basin-52383.herokuapp.com/';
   categoryList: AllCategory;
+  catEvent = new EventEmitter();
   // categoryList: AllCategory = {
   //   _id: '1000',
   //   Establishment: [
@@ -105,7 +106,7 @@ export class ResturantCategoryService {
         Object.values(resp).map((res) => {
           //console.log(res);
           this.categoryList = res;
-          //console.log(this.categoryList);
+          console.log(this.categoryList);
         });
       },
       (error) => {

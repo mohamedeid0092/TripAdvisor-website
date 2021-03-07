@@ -5,6 +5,7 @@ import { Hotel } from 'src/app/_model/hotels/hotel';
 import { LocalizationService } from 'src/app/_services/general/localization.service';
 import { HotelService } from 'src/app/_services/hotels/hotel.service';
 import { HotelCategoryService } from './../../_services/hotels/hotel-category.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-hotel',
@@ -20,7 +21,10 @@ export class HotelComponent implements OnInit {
   reserveNow: boolean = false;
   theBestDeal = { obj: {}, img: '' };
   rate: number = 0;
-  able = false;
+  able = false; 
+  clicked = false;
+
+  openModal=false;
 
   constructor(
     private hotelService: HotelService,
@@ -28,7 +32,7 @@ export class HotelComponent implements OnInit {
     config: NgbModalConfig,
     private modalService: NgbModal,
     private localizationService: LocalizationService,
-    public translate: TranslateService,
+    public translate: TranslateService
   ) {
     config.backdrop = 'static';
     config.keyboard = false;
@@ -124,5 +128,15 @@ export class HotelComponent implements OnInit {
   }
   showState() {
     return this.able;
+  }
+
+  toggle() {
+    this.clicked = !this.clicked;
+  }
+  HotelModal(){
+    this.openModal=true;
+  }
+  showModal(){
+    return this.openModal;
   }
 }

@@ -35,11 +35,6 @@ export class CruiseDealsComponent implements OnInit {
     // })
   }
 
-  // BookNow() {
-  //   console.log(this.cruise);
-  //   this.cruiseService.viewDetails.emit(this.cruise);
-  //   this.able = true;
-  // }
   showState() {
     return this.able;
   }

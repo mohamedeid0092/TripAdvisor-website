@@ -5,5 +5,24 @@ body{
 
 .cont5{
 position: relative;
-right: 215px;
+//right: 215px;
 }
+.ship-img{
+    width: 1.5rem;
+    height: 2rem;
+}
+.row{
+    margin: 0px;
+}
+// .shadow{
+//     position: fixed;
+//     width: 200px;
+//     height: 200px;
+//     // top: 50px;
+//     // left: 50px;
+//     /* for IE */
+//     box-shadow: 0 0 0 1000px rgba(0,0,0,.3);
+//     /* for real browsers */
+//     box-shadow: 0 0 0 100vmax rgba(0,0,0,.3);
+//     pointer-events: none;
+// }

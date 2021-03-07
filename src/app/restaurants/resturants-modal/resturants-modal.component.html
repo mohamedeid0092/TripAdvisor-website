@@ -1,0 +1,48 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-body ">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Rate:</h2>
+            <ngb-rating [(rate)]="currentRate">
+              <ng-template let-fill="fill" let-index="index">
+                <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+              </ng-template>
+            </ngb-rating>
+            <hr>
+            <!-- <pre>Rate: <b>{{currentRate}}</b></pre> -->
+            <h2>Write Review: <mdb-icon fas icon="pencil-alt" class="prefix"></mdb-icon></h2>
+            <!--Textarea with icon prefix-->
+            <div class="md-form">
+              <textarea #inputVal type="text" id="form8" class="md-textarea form-control textArea" mdbInput></textarea>
+            </div>
+          </div>
+
+          <div class="col-md-6 pl-2 pb-2 text-left border-left">
+              <h2>Users Reviews: </h2>
+              <div *ngIf="this.resturant.reviews">
+              <div class="border-bottom p-2 border-success " *ngFor="let review of this.resturant.reviews">{{review.review}}</div>
+          </div>
+              <div>
+
+          </div>
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button (click)="submitReview(inputVal.value,currentRate)" type="button" class="mr-3 float-end btn btn-warning button-raduis text-center">
+          Submit Review
+        </button>
+        <button type="button" class="btn btn-secondary"
+          data-dismiss="modal">Cancel</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+

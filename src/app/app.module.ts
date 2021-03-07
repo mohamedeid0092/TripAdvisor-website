@@ -12,7 +12,7 @@ import { DateSectionComponent } from './hotels/date-section/date-section.compone
 import { CategoryComponent } from './shared/category/category.component';
 import { HotelComponent } from './hotels/hotel/hotel.component';
 import { DetailsComponent } from './hotels/details/details.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -30,7 +30,11 @@ import { BoxModelComponent } from './shared/box-model/box-model.component';
 import { AgmCoreModule } from '@agm/core';
 import { BookingComponent } from './shared/booking/booking.component';
 import { PaymentComponent } from './payment/payment.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpClientModule,
+  HTTP_INTERCEPTORS,
+} from '@angular/common/http';
 import { ShoppingComponent } from './shopping/shopping/shopping.component';
 import { ShoppingItemComponent } from './shopping/shopping-item/shopping-item.component';
 import { ShoppingTicketComponent } from './shopping/shopping-ticket/shopping-ticket.component';
@@ -45,11 +49,25 @@ import { CruiseModalComponent } from './cruise/cruise-modal/cruise-modal.compone
 import { CruiseBookingComponent } from './cruise/cruise-booking/cruise-booking.component';
 import { CommonModule } from '@angular/common';
 import { ResturantDetailsComponent } from './restaurants/resturant-details/resturant-details.component';
-import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import {
+  TranslateService,
+  TranslateModule,
+  TranslateLoader,
+} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SingupComponent } from './profile/singup/singup.component';
 import { MediaCenterComponent } from './media-center/media-center.component';
 import { HelpCenterComponent } from './help-center/help-center.component';
+
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { AuthInterceptor } from './auth/auth-interceptor';
+import { HotelModalComponent } from './hotels/hotel-modal/hotel-modal.component';
+// MDB Angular Free
+import { InputsModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ResturantsModalComponent } from './restaurants/resturants-modal/resturants-modal.component';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
@@ -88,6 +106,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     SingupComponent,
     MediaCenterComponent,
     HelpCenterComponent,
+    LoginComponent,
+    SignupComponent,
+    HotelModalComponent,
+    ResturantsModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,6 +117,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     FormsModule,
     NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatDatepickerModule,
     MatInputModule,
@@ -102,23 +126,34 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatSliderModule,
     HttpClientModule,
     MatSelectModule,
+    MDBBootstrapModule.forRoot(),
+    InputsModule, WavesModule, ButtonsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCUx00mtjJ5MpIINJmBoLm41CYEg4axO4I',
     }),
     TranslateModule.forRoot({
-      defaultLanguage: "en",
+      defaultLanguage: 'en',
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    }),],
+
+
+        deps: [HttpClient],
+      },
+    }),
+  ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+
+    // deps: [HttpClient],
     HotelsFilteringService,
     HotelsListingComponent,
     HotelCategoryService,
-    // { provide: HTTP_INTERCEPTORS, useClass: MyInterceptorService, multi: true }
   ],
+  // providers: [
+
+  //   // { provide: HTTP_INTERCEPTORS, useClass: MyInterceptorService, multi: true }
+  // ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

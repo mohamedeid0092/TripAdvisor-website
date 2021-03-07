@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { HotelCategoryService } from './../../_services/hotels/hotel-category.service';
 import { AllCategory } from './../../_model/hotels/AllCategory';
 import { ThisReceiver } from '@angular/compiler';
@@ -17,7 +17,6 @@ export class CategoryComponent implements OnInit {
   priceCategory: number = 0;
   selectType: string;
   valuex: number = 0;
-
   constructor(
     private HotelCategoryService: HotelCategoryService,
     private HotelService: HotelService,
@@ -31,6 +30,7 @@ export class CategoryComponent implements OnInit {
           //  console.log(res);
           this.categories = res;
         });
+        this.HotelCategoryService.catEvent.emit();
         // this.categories = { ...resp };
         //console.log(this.categories);
       },

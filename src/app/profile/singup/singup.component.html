@@ -5,11 +5,11 @@
 </h1>
 <br>
 <hr class="mt-2">
-<form>
+<form [formGroup]="userForm"  >
     <div class="row w-100">
       <div class="col">
-        <label for="firstname" class="ml-2 text-secondary font-weight-bold small">First name</label>
-        <input type="text" class="form-control mb-2 mr-sm-2" id="firstname"  name="firstname">
+        <label for="firstname" class="ml-2 text-secondary font-weight-bold small" >First name</label>
+        <input type="text" class="form-control mb-2 mr-sm-2" id="firstname" formControlName="FirstName" name="FirstName">
         <label for="homeairport" class="ml-2 text-secondary font-weight-bold small">Home airport</label>
         <input type="text" class="form-control mb-2 mr-sm-2" id="homeairport"  name="homeairport">
         <label for="email" class="ml-2 text-secondary font-weight-bold small">E-mail</label>
@@ -127,5 +127,5 @@
   <hr>
   <div class="p-4 bg-light text-center justify-content-center">
       <p class="text-secondary font-weight-bold ">Click 'Save' to confirm your changes:</p>
-      <button type="button" class="btn btn-success pl-3 pr-3 mr-3 font-weight-bold">Save</button> <a href="#">cancel</a>
+      <button type="submit" class="btn btn-success pl-3 pr-3 mr-3 font-weight-bold" (click)="SubmitUserForm()">Save</button> <a href="#">cancel</a>
     </div>

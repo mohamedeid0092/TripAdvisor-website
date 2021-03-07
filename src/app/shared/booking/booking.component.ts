@@ -6,6 +6,8 @@ import { PriceDeals } from './../../_model/hotels/PriceDeals';
 import { CruiseService } from 'src/app/_services/cruise/cruise.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizationService } from 'src/app/_services/general/localization.service';
+import { HttpClient } from '@angular/common/http';
+import { EmailValidator } from '@angular/forms';
 
 @Component({
   selector: 'app-booking',
@@ -13,7 +15,7 @@ import { LocalizationService } from 'src/app/_services/general/localization.serv
   styleUrls: ['./booking.component.scss'],
 })
 export class BookingComponent implements OnInit {
-  constructor(private HotelService: HotelService, private CruiseService: CruiseService, private localizationService: LocalizationService, public translate: TranslateService) { }
+  constructor(private HotelService: HotelService, private CruiseService: CruiseService, private localizationService: LocalizationService, public translate: TranslateService, private http: HttpClient) { }
   rooms: number = 0;
   display = false;
   checkIn = new Date();
@@ -26,6 +28,7 @@ export class BookingComponent implements OnInit {
     obj: {},
   };
 
+  endpoint = 'https://sleepy-basin-52383.herokuapp.com/hotels/booking';
   hotel: Hotel = {
     _id: '5ff8f01a394ad263f625f560',
     name: 'Iberostar Club Palmeraie Marrakech',
@@ -240,7 +243,7 @@ export class BookingComponent implements OnInit {
     console.log(form);
     // this.hotel.booking.push(form);
     console.log(this.hotel.booking);
-
+    console.log(this.hotel._id)
     if (this.hotel.rooms < form.rooms) {
       alert("Sorry there's No available rooms");
     } else {
@@ -250,11 +253,25 @@ export class BookingComponent implements OnInit {
       // console.log(this.hotel.booking);
       this.hotel.rooms -= form.rooms;
       // console.log(this.hotel.rooms);
-    }
-  }
 
-  takeroomsNum(rooms) {
-    this.rooms = rooms;
+    }
+    var id = this.hotel._id;
+    return this.http
+      .put(`${this.endpoint}/${id}`, {
+        Phone: form.Phone,
+        adults: form.adults,
+        checkIn: form.checkIn,
+        checkOut: form.checkout,
+        children: form.children,
+        email: form.email,
+        rooms: form.rooms,
+      })
+  };
+
+
+
+  takeroomsNum(room) {
+    this.rooms = room;
   }
   calcPrice() {
     return this.theBestDeal.obj[0].pricePerNight * this.days * this.rooms;
