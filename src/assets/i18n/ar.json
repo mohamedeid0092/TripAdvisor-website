@@ -217,7 +217,11 @@
     },
     "Signup": {
         "Join now – it’s free!": "انضم الآن - إنه مجاني!",
-        "Email address": "عنوان بريد الكتروني"
+        "Email address": "عنوان بريد الكتروني",
+        "Create a password": "إنشاء كلمة مرور",
+        "Join": "انضم",
+        "Already have an account?": "هل لديك حساب؟",
+        "Log in": "يسجل دخول"
     }
 
 }

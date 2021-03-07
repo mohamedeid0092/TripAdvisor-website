@@ -218,6 +218,10 @@
     },
     "Signup": {
         "Join now – it’s free!": "Join now – it’s free!",
-        "Email address": "Email address"
+        "Email address": "Email address",
+        "Create a password": "Create a password",
+        "Join": "Join",
+        "Already have an account?": "Already have an account?",
+        "Log in": "Log in"
     }
 }
