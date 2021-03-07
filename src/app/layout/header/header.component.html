@@ -1,84 +1,79 @@
 <!-- TOP NAV -->
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand ml-4" routerLink="home">
-    <img src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg"
-      width="180">
-  </a>
+    <a class="navbar-brand ml-4" routerLink="home">
+        <img src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg" width="180">
+    </a>
 
-  <div class="collapse navbar-collapse">
-    <form class="form1 form-inline mr-auto mt-2 mt-lg-0" name="myForm">
+    <div class="collapse navbar-collapse">
+        <form class="form1 form-inline mr-auto mt-2 mt-lg-0" name="myForm">
 
-      <i *ngIf="show" class="fas fa-search position-absolute p-3"></i>
+            <i *ngIf="show" class="fas fa-search position-absolute p-3"></i>
 
-    </form>
-
-
-    <ul class="navbar-nav  my-2 my-lg-0  d-flex align-items-center ">
+        </form>
 
 
-      <li class="nav-item active d-inline ml-4">
-        <a class="nav-link d-flex" href="#">
-          <svg viewBox="0 0 24 24" width="25px" height="28px">
+        <ul class="navbar-nav  my-2 my-lg-0  d-flex align-items-center ">
+
+
+            <li class="nav-item active d-inline ml-4">
+                <a class="nav-link d-flex" href="#">
+                    <svg viewBox="0 0 24 24" width="25px" height="28px">
             <path
               d="M12.001 20.729s-6.741-5.85-8.485-8.003c-2.055-2.541-2.018-5.837.089-7.836a5.928 5.928 0 014.104-1.618c1.548 0 3.005.575 4.104 1.618l.174.165.162-.155a5.93 5.93 0 014.104-1.618c1.548 0 3.005.574 4.104 1.618 2.158 2.049 2.192 5.273.084 7.841-1.755 2.139-8.44 7.988-8.44 7.988zM7.709 5.271a3.935 3.935 0 00-2.727 1.068c-1.578 1.498-1.06 3.708.088 5.128 1.306 1.613 5.333 5.204 6.925 6.605 1.583-1.404 5.58-4.993 6.899-6.601 1.195-1.455 1.685-3.603.085-5.122-.726-.689-1.694-1.069-2.728-1.069s-2.001.38-2.728 1.069l-1.539 1.462-1.551-1.473a3.925 3.925 0 00-2.724-1.067z">
             </path>
           </svg>
-          <div class="d-inline pl-1 pt-1">
-            <h5><span class="span-size">Likes</span></h5>
-          </div>
-        </a>
-      </li>
-      <!-- <li class="nav-item ml-4 mr-4">
+                    <div class="d-inline pl-1 pt-1">
+                        <h5><span class="span-size">{{'Header.Likes'|translate}}</span></h5>
+                    </div>
+                </a>
+            </li>
+            <!-- <li class="nav-item ml-4 mr-4">
         <a class="nav-link" routerLink="profile">
           <img class="rounded-circle" width="35px" src="../../../assets/img/gondol.jpg">
         </a>
       </li> -->
-      <li class="nav-item ml-4 mr-4">
-        <button *ngIf="!userIsAutenticated" type="button" routerLink="/login"
-          class="btn btn-outline-dark mr-2">Login</button>
-        <button *ngIf="!userIsAutenticated" type="button" routerLink="/signup" class="btn btn-outline-dark">Sign
-          up</button>
+            <li class="nav-item ml-4 mr-4">
+                <button *ngIf="!userIsAutenticated" type="button" routerLink="/login" class="btn btn-outline-dark mr-2">{{'Header.Login'|translate}}</button>
+                <button *ngIf="!userIsAutenticated" type="button" routerLink="/signup" class="btn btn-outline-dark">{{'Header.Sign up'|translate}}</button>
 
-        <div *ngIf="userIsAutenticated" class="dropdown">
+                <div *ngIf="userIsAutenticated" class="dropdown">
 
-          <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            <img class="rounded-circle" width="35px" src="../../../assets/img/gondol.jpg">
-          </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" routerLink="profile">Profile</a>
-            <a class="dropdown-item" (click)="onLogout()">Logout</a>
-          </div>
-        </div>
-      </li>
-    </ul>
+                    <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="rounded-circle" width="35px" src="../../../assets/img/gondol.jpg">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-  </div>
+                        <a class="dropdown-item" (click)="onLogout()">{{'Header.Logout'|translate}}</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
 </nav>
 
 <!-- BOTTOM NAV  -->
 
 <nav class="navbar  navbar-expand-sm p-1 bg-white border-top border-bottom d-none d-lg-block ">
 
-  <ul class="navbar-nav p-0  borderr ">
-    <li class="nav-item dropdown myLinkedDropdown ml-2 mr-5 ">
-      <!-- {{'Header.Hurghada'|translate}} -->
-      <a class="nav-link  seconditem" routerLink="home">{{cityName}}</a>
+    <ul class="navbar-nav p-0  borderr ">
+        <li class="nav-item dropdown myLinkedDropdown ml-2 mr-5 ">
+            <!-- {{'Header.Hurghada'|translate}} -->
+            <a class="nav-link  seconditem" routerLink="home">{{cityName}}</a>
 
-    </li>
-    <li class="nav-item dropdown myLinkedDropdown mr-5">
-      <a class="nav-link seconditem" routerLink="hotels">{{'Header.Hotels'|translate}} </a>
+        </li>
+        <li class="nav-item dropdown myLinkedDropdown mr-5">
+            <a class="nav-link seconditem" routerLink="hotels">{{'Header.Hotels'|translate}} </a>
 
-    </li>
+        </li>
 
-    <li class="nav-item dropdown myLinkedDropdown mr-5">
-      <a class="nav-link active text-dark" routerLink="resturants">{{'Header.Restaurants'|translate}}</a>
-      <!-- <div class="dropdown-menu dropdown-menu-wide shadow">
+        <li class="nav-item dropdown myLinkedDropdown mr-5">
+            <a class="nav-link active text-dark" routerLink="resturants">{{'Header.Restaurants'|translate}}</a>
+            <!-- <div class="dropdown-menu dropdown-menu-wide shadow">
             
             <a href="/url1" id="customFilterPreset1" class="dropdown-item seconditem" >All Hurghada Restaurants</a>
             <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Popular Types of Food</a>
@@ -87,28 +82,28 @@
             <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Near Hotels</a>
             <a href="/url2" id="customFilterPreset2" class="dropdown-item seconditem" >Near Landmarks</a>  
       </div> -->
-    </li>
-    <!-- <li class="nav-item ">
+        </li>
+        <!-- <li class="nav-item ">
         <a class="nav-link seconditem" href="#">Flights</a>
       </li> -->
-    <!-- <li class="nav-item ">
+        <!-- <li class="nav-item ">
         <a class="nav-link seconditem" href="#">Vacation Rentals</a>
       </li> -->
-    <!-- <li class="nav-item mr-5">
+        <!-- <li class="nav-item mr-5">
       <a class="nav-link seconditem" routerLink="shopping">{{'Header.Shopping'|translate}}</a>
     </li> -->
 
-    <li class="nav-item mr-5">
-      <a class="nav-link seconditem" routerLink="cruises">{{'Header.Cruises'|translate}}</a>
-    </li>
+        <li class="nav-item mr-5">
+            <a class="nav-link seconditem" routerLink="cruises">{{'Header.Cruises'|translate}}</a>
+        </li>
 
-    <li class="nav-item mr-5">
-      <a class="nav-link seconditem" routerLink="mediaCenter">{{'Header.MediaCenter'|translate}}</a>
-    </li>
-    <li class="nav-item mr-5">
-      <a class="nav-link seconditem" routerLink="helpCenter">{{'Header.HelpCenter'|translate}}</a>
-    </li>
+        <li class="nav-item mr-5">
+            <a class="nav-link seconditem" routerLink="mediaCenter">{{'Header.MediaCenter'|translate}}</a>
+        </li>
+        <li class="nav-item mr-5">
+            <a class="nav-link seconditem" routerLink="helpCenter">{{'Header.HelpCenter'|translate}}</a>
+        </li>
 
 
-  </ul>
+    </ul>
 </nav>

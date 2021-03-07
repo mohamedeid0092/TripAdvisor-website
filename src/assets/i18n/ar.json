@@ -20,7 +20,11 @@
         "Cruises": "رحلات بحرية",
         "Bestof2020": "الاحسن في 2020",
         "MediaCenter": "المركز الاعلامي",
-        "HelpCenter": "مركز المساعدة"
+        "HelpCenter": "مركز المساعدة",
+        "Likes": "الإعجابات",
+        "Login": "تسجيل الدخول",
+        "Sign up": "اشتراك",
+        "Logout": "تسجيل خروج"
     },
     "Hotel": {
         "date": {
@@ -135,7 +139,8 @@
         "list": {
             "Restaurants in Hurghada": "الفنادق في الغردقة",
             "Top Restaurants": "افضل الفنادق",
-            "Search": "بحث"
+            "Search": "بحث",
+            "Restaurant list In": "قائمة المطاعم في"
         },
         "category": {
             "Establishment Type": "نوع المنشأة",
@@ -209,6 +214,10 @@
         "General Contact Information": "معلومات الاتصال العامة",
         "If10": "العنوان البريدي: Tripadvisor Inc.، 400 1st Avenue، Needham، MA، USA 02494 <br> رقم هاتف الشركة العام: +1 781800 5000",
         "If11": "الفنادق والمطاعم وشركات الضيافة والوجهات حول العالم التي تستفيد إلى أقصى حد من موقع TripAdvisor لتحقيق النجاح."
+    },
+    "Signup": {
+        "Join now – it’s free!": "انضم الآن - إنه مجاني!",
+        "Email address": "عنوان بريد الكتروني"
     }
 
 }

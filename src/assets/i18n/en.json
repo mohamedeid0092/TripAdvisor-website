@@ -20,7 +20,11 @@
         "Cruises": "Cruises",
         "Bestof2020": "Best of 2020",
         "MediaCenter": "Media Center",
-        "HelpCenter": "Help Center"
+        "HelpCenter": "Help Center",
+        "Likes": "Likes",
+        "Login": "Login",
+        "Sign up": "Sign up",
+        "Logout": "Logout"
     },
     "Hotel": {
         "date": {
@@ -136,7 +140,8 @@
         "list": {
             "Restaurants in Hurghada": "Restaurants in Hurghada",
             "Top Restaurants": "Top Restaurants",
-            "Search": "Search"
+            "Search": "Search",
+            "Restaurant list In": "Restaurant list In"
         },
         "category": {
             "Establishment Type": "Establishment Type",
@@ -210,5 +215,9 @@
         "If10": "Mailing address: Tripadvisor Inc., 400 1st Avenue, Needham, MA, USA 02494<br> General company phone number: +1 781 800 5000",
         "If11": " Hotels, restaurants, hospitality businesses and destinations around the world who are making the most of TripAdvisor to achieve success."
 
+    },
+    "Signup": {
+        "Join now – it’s free!": "Join now – it’s free!",
+        "Email address": "Email address"
     }
 }
